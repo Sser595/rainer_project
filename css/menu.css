@@ -1,3 +1,7 @@
+/* =========================
+   BASE PAGE
+========================= */
+
 .menu-page {
     background-color: var(--bg-light);
     color: #1a1a1a;
@@ -6,6 +10,10 @@
 .menu-main {
     padding-bottom: 100px;
 }
+
+/* =========================
+   HERO
+========================= */
 
 .menu-hero {
     text-align: center;
@@ -35,11 +43,19 @@
     font-weight: 300;
 }
 
+/* =========================
+   CONTAINER
+========================= */
+
 .menu-container {
     max-width: 900px;
     margin: 0 auto;
     padding: 80px 40px;
 }
+
+/* =========================
+   CATEGORY
+========================= */
 
 .menu-category {
     margin-bottom: 80px;
@@ -60,50 +76,52 @@
     margin: 0 auto 40px;
 }
 
+/* =========================
+   MENU GRID
+========================= */
+
 .menu-items-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px 60px;
 }
 
+/* =========================
+   ITEM
+========================= */
+
 .menu-item {
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
-.item-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 8px;
-    border-bottom: 1px dashed rgba(0, 103, 71, 0.15);
-    padding-bottom: 6px;
-}
-
+/* nome piatto */
 .item-name {
     font-family: var(--font-serif);
     font-size: 1.2rem;
     color: #0c1a13;
     font-weight: 600;
+    margin-bottom: 8px;
 }
 
-.item-price {
-    font-family: var(--font-sans);
-    font-size: 0.95rem;
-    color: var(--gold-dark);
-    font-weight: 600;
-}
-
+/* descrizione */
 .item-description {
     font-family: var(--font-sans);
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     line-height: 1.5;
     color: #555;
     font-weight: 300;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
-/* Responsiveness */
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media (max-width: 768px) {
+
     .menu-hero {
         padding: 80px 20px 40px;
     }
@@ -127,5 +145,9 @@
     .menu-items-grid {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+
+    .item-name {
+        font-size: 1.15rem;
     }
 }

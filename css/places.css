@@ -18,8 +18,8 @@
 
 /* ─── IMMAGINE (40%) ── */
 .loc-image {
-    width: 40%;
-    height: 600px;
+    width: 30%;
+    height: 50%;
     display: flex;
     overflow: hidden;
 }
