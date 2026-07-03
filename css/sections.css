@@ -1,0 +1,431 @@
+.split-carousel-section {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #f7f3ed;
+}
+
+.carousel-container {
+    width: 40%;
+    height: 650px;
+    overflow: hidden;
+    position: relative;
+    background-color: #f7f3ed;
+}
+
+.carousel-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Curva più fluida */
+}
+
+.carousel-slide {
+    min-width: 100%;
+    /* Ogni slide occupa tutta la larghezza del contenitore */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Crea il bordo/margine per vedere l'immagine intera */
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Mostra l'immagine 3:4 intera */
+}
+
+/* Il contenitore deve avere position: relative per "tenere dentro" i dot */
+
+
+/* Ora i dot saranno legati a .carousel-container e non alla pagina o all'hero */
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #ffffff;
+}
+
+.text-content {
+    width: 60%;
+    padding: 60px 80px;
+    color: #0c1a13;
+    /* Padding ridotto per adattarsi all'altezza minore */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f7f3ed;
+}
+
+/* Responsive: impilamento su schermi piccoli */
+@media (max-width: 900px) {
+    .split-carousel-section {
+        flex-direction: column;
+        height: auto;
+        /* Lascia che il contenuto detti l'altezza su mobile */
+    }
+
+    .carousel-container {
+        width: 100%;
+        height: 400px;
+        /* Altezza definita per il carosello su mobile */
+    }
+
+    .text-content {
+        width: 100%;
+        padding: 50px 40px;
+    }
+}
+
+.philosophy-section {
+    background-color: var(--bg-dark);
+    padding: 140px 60px;
+    position: relative;
+    border-top: 1px solid var(--card-border);
+}
+
+.philosophy-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+
+.philosophy-text-col {
+    flex: 1.2;
+}
+
+.philosophy-title {
+    font-size: 3rem;
+    line-height: 1.2;
+    color: var(--text-light);
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+.philosophy-paragraph {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    font-weight: 300;
+    line-height: 1.85;
+}
+
+.philosophy-image-col {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-stack-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    height: 580px;
+}
+
+.philosophy-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: var(--shadow-premium);
+    border: 1px solid var(--card-border);
+    transition: var(--transition-smooth);
+}
+
+.image-offset-card {
+    position: absolute;
+    bottom: -20px;
+    left: -35px;
+    background-color: #ffffff;
+    border: 1.5px solid var(--gold);
+    padding: 20px 25px;
+    border-radius: 6px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 10;
+}
+
+.offset-number {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+}
+
+.offset-text {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--bg-dark);
+    /* dark green text for excellent readability on white/light background */
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* --- SEZIONE PRODUCTS (STILE CATALOGO CARTACEO) --- */
+.products-grid-layout {
+    width: 100%;
+    padding: 140px 60px;
+    background-color: var(--bg-light);
+}
+
+.products-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.products-section-title {
+    font-size: 3rem;
+    line-height: 1.25;
+    color: #0c1a13;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+/* Container Principale */
+.products-main-wrapper {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.products-main-wrapper.inverted {
+    grid-template-columns: 1fr 2.2fr;
+    margin-top: 100px;
+}
+
+/* Griglia Immagini: Divide lo spazio sinistro in 2 colonne */
+.products-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    height: 100%;
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(197, 160, 89, 0.15);
+    transition: var(--transition-smooth);
+}
+
+.product-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+}
+
+/* Immagini */
+.img-swap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background-color: #f5f2eb;
+}
+
+.large-item .img-swap {
+    height: 100%;
+    aspect-ratio: auto;
+}
+
+.small-items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.img-swap img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Effetto Hover: Fade + Zoom */
+.img-hover {
+    opacity: 0;
+    transform: scale(1.05);
+}
+
+.product-item:hover .img-main {
+    opacity: 0;
+    transform: scale(1.05);
+}
+
+.product-item:hover .img-hover {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Sidebar di testo */
+.products-text-side {
+    padding: 0;
+    background: none;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    color: #0c1a13;
+}
+
+.products-text-side h3 {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #0c1a13;
+}
+
+.products-text-side p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    font-weight: 300;
+}
+
+/* --- 2. RESPONSIVE OTTIMIZZATO --- */
+@media (max-width: 1024px) {
+
+    .products-main-wrapper,
+    .products-main-wrapper.inverted {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .products-main-wrapper.inverted {
+        margin-top: 60px;
+    }
+
+    .products-container {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .products-grid-layout {
+        padding: 80px 20px;
+    }
+
+    .products-section-title {
+        font-size: 2.5rem;
+    }
+
+    .products-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Media query for larger screens */
+
+
+
+/* --- RESPONSIVE BASICO --- */
+@media (max-width: 1024px) {
+    .hero-fullscreen {
+        padding: 140px 40px 40px;
+        align-items: flex-start;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fullscreen-overlay {
+        background: rgba(12, 26, 19, 0.75);
+    }
+
+    .hero-badge-wrapper {
+        display: none;
+    }
+
+    .philosophy-section {
+        padding: 80px 40px;
+    }
+
+    .philosophy-container {
+        flex-direction: column;
+        gap: 60px;
+        text-align: center;
+    }
+
+
+
+    .philosophy-img {
+        height: 380px;
+    }
+
+    .image-offset-card {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -20px;
+        width: 180px;
+        padding: 15px 20px;
+    }
+
+    /* Su mobile i testi sono sempre visibili perché manca l'hover */
+    .card-text-group {
+        transform: translateY(0);
+        background: rgba(12, 26, 19, 0.65);
+    }
+
+    .card-address,
+    .card-desc,
+    .action-link {
+        opacity: 1;
+        max-height: 150px;
+        /* Permette al testo di aprirsi */
+    }
+
+    .card-title {
+        margin-bottom: 8px;
+    }
+
+    .card-address {
+        margin-bottom: 12px;
+    }
+
+    .card-desc {
+        margin-bottom: 20px;
+    }
+
+}

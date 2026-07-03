@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caffè Rainer | Firenze</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <nav class="header-nav nav-left">
+            <a href="#filosofia" class="nav-btn">La Storia</a>
+            <a href="menu.html" class="nav-btn">Il Menù</a>
+        </nav>
+
+        <div class="logo-container">
+            <img src="img_pieghevole/logoRainer.png" alt="Caffè Rainer Logo" class="gambero-logo">
+        </div>
+
+        <nav class="header-nav nav-right">
+            <a href="#products" class="nav-btn">I Prodotti</a>
+            <a href="places.html" class="nav-btn">I Nostri Luoghi</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-section hero-editorial">
+            <!-- Colonna di Sinistra: Testo -->
+            <div class="editorial-text-col">
+                <div class="editorial-content">
+                    <span class="gold-subtitle">DAL 2011</span>
+                    <h1 class="editorial-title">Pasticceria e caffetteria<br>nel cuore di Firenze.</h1>
+                    <div class="gold-line left-aligned"></div>
+                    <p class="editorial-description">
+                        Il primo bistrot-pasticceria austriaco a Firenze, dove la ricca tradizione dolciaria viennese incontra l'eccellenza della panificazione artigianale toscana.
+                    </p>
+                    <div class="editorial-actions">
+                        <a href="menu.html" class="btn-hero btn-primary">Sfoglia il Menù</a>
+                        <a href="#filosofia" class="btn-hero btn-secondary">La nostra storia</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Colonna di Destra: Immagine Premium -->
+            <div class="editorial-image-col">
+                <img src="img_pieghevole/Croissant.jpeg" alt="Dettaglio Croissant Artigianale">
+                <div class="image-overlay-gold"></div>
+            </div>
+        </section>
+
+        <!-- SEZIONE FILOSOFIA -->
+        <section id="filosofia" class="philosophy-section">
+            <div class="philosophy-container">
+                <div class="philosophy-text-col">
+                    <span class="gold-subtitle">LA NOSTRA STORIA</span>
+                    <h2 class="philosophy-title">Una tradizione di famiglia nata a Innsbruck nel 1962.</h2>
+                    <div class="gold-line"></div>
+                    <p class="philosophy-paragraph">
+                        Nel cuore di Firenze, Caffè Rainer unisce l'eccellenza della pasticceria viennese con
+                        l'artigianalità della panificazione toscana. Fondato nel 2011 da Rudolf Rainer e Silvia Rabito,
+                        il locale nasce dal desiderio di portare a Firenze l'esperienza del Caffè Rainer di Innsbruck,
+                        fondato nel 1962 dal padre di Rudolf.
+                    </p>
+                </div>
+                <div class="philosophy-image-col">
+                    <div class="image-stack-wrapper">
+                        <img src="img_pieghevole/silviaRudi.png" alt="Rainer e Silvia" class="philosophy-img main-img">
+                        <div class="image-offset-card">
+                            <span class="offset-number">1962</span>
+                            <span class="offset-text">Tradizione<br>Familiare</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SEZIONE PROCESSO-->
+        <section class="split-carousel-section">
+            <div class="carousel-container">
+                <!-- Wrapper per tutte le immagini -->
+                <div class="carousel-wrapper" id="carouselWrapper">
+                    <div class="carousel-slide"><img src="img_handmade/segale_hm.jpeg" alt="Pane"></div>
+                    <div class="carousel-slide"><img src="img_handmade/cinnamon_hm.jpeg" alt="Dough"></div>
+                    <div class="carousel-slide"><img src="img_handmade/croiss_hm.jpeg" alt="Croissant"></div>
+                    <div class="carousel-slide"><img src="img_handmade/pain_hm.jpeg" alt="Croissant"></div>
+                    <div class="carousel-slide"><img src="img_handmade/segale_hm.jpeg" alt="Pane"></div>
+                </div>
+                <div class="carousel-dots" id="carouselDots">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+
+                </div>
+            </div>
+
+            <div class="text-content">
+                <h2 class="products-section-title">Il nostro processo artigianale.</h2>
+                <p>Ogni giorno dal nostro laboratorio, sforniamo un grande numero di croissant e pane, fabbricati con
+                    materie prime di ottima qualità. Scegliamo accuratamente la farina dall'Austria e il burro dalla
+                    Francia per rispettare la tradizione dei prodotti che vendiamo</p>
+            </div>
+        </section>
+        <!-- sezione PRODOTTI CON DESCRIZIONE-->
+        <section id="products" class="products-grid-layout">
+            <div class="products-header">
+                <span class="gold-subtitle">I NOSTRI PRODOTTI</span>
+                <h2 class="products-section-title">Alcune delle nostre creazioni</h2>
+                <div class="gold-line center"></div>
+            </div>
+
+            <div class="products-main-wrapper">
+                <div class="products-container">
+                    <article class="product-item large-item">
+                        <div class="img-swap">
+                            <img src="img_pieghevole/Croissant.jpeg" class="img-main">
+                            <img src="img_pieghevole/croissant_after.jpeg" class="img-hover">
+                        </div>
+                    </article>
+                    <div class="small-items-grid">
+                        <article class="product-item small-item">
+                            <div class="img-swap">
+                                <img src="img_pieghevole/pain_au_chocolat.jpeg" class="img-main">
+                                <img src="img_pieghevole/pain_au_chocolat_after.jpeg" class="img-hover">
+                            </div>
+
+                        </article>
+                        <article class="product-item small-item">
+                            <div class="img-swap">
+                                <img src="img_pieghevole/cannelès.jpeg" class="img-main">
+                                <img src="img_pieghevole/canneles_after.jpeg" class="img-hover">
+                            </div>
+                        </article>
+                        <article class="product-item small-item">
+                            <div class="img-swap">
+                                <img src="img_pieghevole/financier.jpeg" class="img-main">
+                                <img src="img_pieghevole/financier_after.jpeg" class="img-hover">
+                            </div>
+                        </article>
+                        <article class="product-item small-item">
+                            <div class="img-swap">
+                                <img src="img_pieghevole/eclair.jpeg" class="img-main">
+                                <img src="img_pieghevole/eclair_after.jpeg" class="img-hover">
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="products-text-side">
+                    <h3>La pasticceria</h3>
+                    <p>Una raffinata selezione di creazioni che unisce la ricca tradizione della pasticceria viennese con l'eleganza della sfoglia francese, per regalarvi momenti di dolcezza indimenticabili.</p>
+                </div>
+            </div>
+
+            <!-- SECONDA GRIGLIA A ZIG ZAG (INVERTITA) -->
+            <div class="products-main-wrapper inverted">
+                <div class="products-text-side">
+                    <h3>Il nostro pane</h3>
+                    <p>Ogni giorno sforniamo tanti tipi di pagnotte differenti, tutte realizzate con farine austriache
+                        di alta qualità, lievito madre e ingredienti semplici e genuini.</p>
+                </div>
+
+                <div class="products-container">
+                    <div class="small-items-grid">
+                        <article class="product-item small-item">
+                            <div class="img-swap">
+                                <img src="img_pieghevole/baguette.jpeg" class="img-main">
+                                <img src="img_pieghevole/baguette_after.jpeg" class="img-hover">
+                            </div>
+                        </article>
+                        <article class="product-item small-item">
+                            <div class="img-swap">
+                                <img src="img_pieghevole/bread.jpeg" class="img-main">
+                                <img src="img_pieghevole/bread_after.jpeg" class="img-hover">
+                            </div>
+                        </article>
+                        <article class="product-item small-item">
+                            <div class="img-swap">
+                                <img src="img_pieghevole/bread1.jpeg" class="img-main">
+                                <img src="img_pieghevole/bread1_after.jpeg" class="img-hover">
+                            </div>
+                        </article>
+                        <article class="product-item small-item">
+                            <div class="img-swap">
+                                <img src="img_pieghevole/bread2.jpeg" class="img-main">
+                                <img src="img_pieghevole/bread2_after.jpeg" class="img-hover">
+                            </div>
+                        </article>
+                    </div>
+                    <article class="product-item large-item">
+                        <div class="img-swap">
+                            <img src="bread/focaccia.jpeg" class="img-main" alt="Croissant">
+                            <img src="bread/focaccia_after.jpeg" class="img-hover" alt="Croissant">
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- sezione PRODOTTI -->
+
+
+        <footer class="minimal-footer">
+        <div class="footer-grid">
+            <!-- Colonna Sedi -->
+            <div class="footer-locations">
+                <div class="location-group">
+                    <span class="location-title">Rainer Bakery</span>
+                    <a href="#"><i class="fa-solid fa-instagram"></i> @cafferainer.bakery</a>
+                    <a href="tel:+390555276634"><i class="fa-solid fa-phone"></i> +39 055 527 6634</a>
+                    <address><i class="fa-solid fa-location-dot"></i> Via fra Bartolomeo Cristofori, 8</address>
+                </div>
+
+                <div class="location-group">
+                    <span class="location-title">Caffè Rainer</span>
+                    <a href="#"><i class="fa-solid fa-instagram"></i> @cafferainer</a>
+                    <a href="tel:+390554932207"><i class="fa-solid fa-phone"></i> +39 055 493 2207</a>
+                    <address><i class="fa-solid fa-location-dot"></i> Via San Zanobi 97/R</address>
+                </div>
+            </div>
+
+            <!-- Colonna Contatto Generale -->
+            <!-- Colonna Contatto Generale -->
+            <div class="footer-general">
+                <!-- Trasformato in link verso places.html -->
+                <a href="places.html" class="location-title">I nostri luoghi</a>
+                <a href="mailto:info@cafferainer.it"><i class="fa-solid fa-envelope"></i> info@cafferainer.it</a>
+                <div class="gambero-rosso-badge">
+                    <img src="img_pieghevole/gambero-rosso.png" alt="Guida Gambero Rosso" class="filter-white">
+                    <span>Selezionato nelle Guide</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Caffè Rainer. All rights reserved.</p>
+        </div>
+    </footer>
+        <script src="javascript/script.js"></script>
+</body>
+
+</html>

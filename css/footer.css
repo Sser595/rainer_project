@@ -1,0 +1,104 @@
+.minimal-footer {
+    background-color: var(--bg-dark-accent);
+    color: #f7f3ed;
+    padding: 80px 5%;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1000px;
+    margin: 0 auto 60px auto;
+}
+
+.location-group {
+    margin-bottom: 40px;
+    /* Spazio tra le due sedi */
+}
+
+.location-title {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.footer-locations a,
+.footer-locations address,
+.footer-general a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-style: normal;
+    text-decoration: none;
+    color: #f7f3ed;
+    opacity: 0.8;
+}
+
+/* Allineamento icone */
+.footer-locations i,
+.footer-general i {
+    width: 18px;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.7rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 40px;
+    opacity: 0.6;
+}
+
+.footer-general .location-title {
+    color: #f7f3ed;
+    text-decoration: none;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.footer-general .location-title:hover {
+    opacity: 0.6;
+    /* Un leggero effetto al passaggio del mouse */
+    text-decoration: underline;
+}
+
+.gambero-rosso-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    opacity: 0.7;
+    /* Leggermente trasparente per non urlare */
+}
+
+.gambero-rosso-badge img {
+    max-height: 40px;
+    /* Deve essere piccolo, poco più alto del testo */
+    width: auto;
+}
+
+.gambero-rosso-badge span {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.filter-white {
+    /* Il filtro 'brightness(0) invert(1)' trasforma quasi ogni logo in bianco puro */
+    filter: brightness(0) invert(1);
+    max-height: 40px;
+    transition: opacity 0.3s;
+}
+
+/* Se vuoi un effetto grigio elegante invece di bianco puro: */
+.filter-grey {
+    filter: brightness(0) invert(0.8);
+    /* Regola lo 0.8 per variare il grigio */
+    max-height: 40px;
+}

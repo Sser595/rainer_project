@@ -1,0 +1,167 @@
+.hero-section {
+    position: relative;
+    width: 100%;
+    background-color: var(--bg-dark);
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   CONCETTO 1: L'IMPATTO EDITORIALE (SPLIT 50/50)
+   ========================================================================== */
+.hero-editorial {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 80px);
+}
+
+.editorial-text-col {
+    width: 50%;
+    background-color: #fcf9f5;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.editorial-content {
+    max-width: 520px;
+}
+
+.editorial-title {
+    font-family: var(--font-serif);
+    font-size: 3.2rem;
+    line-height: 1.15;
+    color: #0c1a13;
+    margin-bottom: 25px;
+}
+
+.editorial-description {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 35px;
+    font-weight: 300;
+}
+
+.left-aligned {
+    margin: 0 0 25px 0;
+}
+
+.editorial-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-hero {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 4px;
+    transition: var(--transition-smooth);
+    display: inline-block;
+}
+
+.btn-hero.btn-primary {
+    background-color: var(--gold);
+    color: #ffffff;
+    border: 1.5px solid var(--gold);
+}
+
+.btn-hero.btn-primary:hover {
+    background-color: var(--gold-dark);
+    border-color: var(--gold-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
+}
+
+.btn-hero.btn-secondary {
+    background-color: transparent;
+    color: #000000;
+    border: 1.5px solid rgba(0, 0, 0, 0.2);
+}
+
+.btn-hero.btn-secondary:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: #000000;
+    transform: translateY(-2px);
+}
+
+.editorial-image-col {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.editorial-image-col img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.image-overlay-gold {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 103, 71, 0.1) 0%, rgba(197, 160, 89, 0.15) 100%);
+    mix-blend-mode: multiply;
+}
+
+/* ==========================================================================
+   RESPONSIVENESS
+   ========================================================================== */
+@media (max-width: 900px) {
+    .hero-editorial {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .editorial-text-col {
+        width: 100%;
+        height: auto;
+        padding: 60px 40px;
+        text-align: center;
+    }
+    
+    .editorial-title {
+        font-size: 2.4rem;
+    }
+    
+    .left-aligned {
+        margin: 0 auto 25px auto;
+    }
+    
+    .editorial-actions {
+        justify-content: center;
+    }
+    
+    .editorial-image-col {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-editorial {
+        height: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .editorial-actions {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .btn-hero {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+}

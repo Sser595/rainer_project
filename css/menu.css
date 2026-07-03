@@ -1,0 +1,131 @@
+.menu-page {
+    background-color: var(--bg-light);
+    color: #1a1a1a;
+}
+
+.menu-main {
+    padding-bottom: 100px;
+}
+
+.menu-hero {
+    text-align: center;
+    padding: 120px 20px 80px;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.menu-hero .gold-subtitle {
+    margin-bottom: 12px;
+}
+
+.menu-title {
+    font-family: var(--font-serif);
+    font-size: 3.2rem;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.menu-subtitle {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--text-hero-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+.menu-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 40px;
+}
+
+.menu-category {
+    margin-bottom: 80px;
+}
+
+.category-title {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    color: var(--bg-dark);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.category-line {
+    width: 40px;
+    height: 1.5px;
+    background-color: var(--gold);
+    margin: 0 auto 40px;
+}
+
+.menu-items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 60px;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+    border-bottom: 1px dashed rgba(0, 103, 71, 0.15);
+    padding-bottom: 6px;
+}
+
+.item-name {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: #0c1a13;
+    font-weight: 600;
+}
+
+.item-price {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--gold-dark);
+    font-weight: 600;
+}
+
+.item-description {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #555;
+    font-weight: 300;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .menu-hero {
+        padding: 80px 20px 40px;
+    }
+
+    .menu-title {
+        font-size: 2.2rem;
+    }
+
+    .menu-container {
+        padding: 40px 20px;
+    }
+
+    .menu-category {
+        margin-bottom: 50px;
+    }
+
+    .category-title {
+        font-size: 1.8rem;
+    }
+
+    .menu-items-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}

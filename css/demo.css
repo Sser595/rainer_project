@@ -1,0 +1,535 @@
+/* ==========================================================================
+   RESET & DEMO SWITCHER STYLES
+   ========================================================================== */
+.demo-page {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-sans);
+    background-color: var(--bg-light);
+    color: #1a1a1a;
+    overflow: hidden; /* Blocca scrolling per far risaltare il full-screen dell'hero */
+}
+
+/* Switcher fisso in alto */
+.demo-switcher {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(12, 26, 19, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1.5px solid var(--gold);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    z-index: 10000;
+}
+
+.switcher-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.switcher-label {
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-right: 10px;
+}
+
+.switcher-btn {
+    background: transparent;
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    color: var(--text-light);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.switcher-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background-color: rgba(197, 160, 89, 0.05);
+}
+
+.switcher-btn.active {
+    background-color: var(--gold);
+    color: #ffffff;
+    border-color: var(--gold);
+    font-weight: 600;
+}
+
+.switcher-back {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+.switcher-back:hover {
+    color: var(--gold);
+}
+
+/* Contenitore principale */
+.demo-main {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    padding-top: 60px; /* Spazio per lo switcher */
+    box-sizing: border-box;
+}
+
+/* Nascondi i prototipi inattivi */
+.hero-demo-section {
+    display: none;
+    width: 100%;
+    height: calc(100vh - 60px);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-demo-section.active {
+    display: block;
+}
+
+/* ==========================================================================
+   CONCETTO 1: L'IMPATTO EDITORIALE (SPLIT 50/50)
+   ========================================================================== */
+.hero-editorial {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.editorial-text-col {
+    width: 50%;
+    background-color: #fcf9f5;
+    padding: 80px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.editorial-content {
+    max-width: 500px;
+}
+
+.editorial-title {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    line-height: 1.15;
+    color: #0c1a13;
+    margin-bottom: 25px;
+}
+
+.editorial-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 35px;
+    font-weight: 300;
+}
+
+.left-aligned {
+    margin: 0 0 25px 0;
+}
+
+.editorial-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-demo {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 4px;
+    transition: var(--transition-smooth);
+    display: inline-block;
+}
+
+.btn-demo.btn-primary {
+    background-color: var(--gold);
+    color: #ffffff;
+    border: 1.5px solid var(--gold);
+}
+
+.btn-demo.btn-primary:hover {
+    background-color: var(--gold-dark);
+    border-color: var(--gold-dark);
+    transform: translateY(-2px);
+}
+
+.btn-demo.btn-secondary {
+    background-color: transparent;
+    color: #000000;
+    border: 1.5px solid rgba(0, 0, 0, 0.2);
+}
+
+.btn-demo.btn-secondary:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: #000000;
+    transform: translateY(-2px);
+}
+
+.editorial-image-col {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.editorial-image-col img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.image-overlay-gold {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 103, 71, 0.1) 0%, rgba(197, 160, 89, 0.15) 100%);
+    mix-blend-mode: multiply;
+}
+
+/* ==========================================================================
+   CONCETTO 2: LA VETRINA DINAMICA (ACCORDION HOVER)
+   ========================================================================== */
+.hero-accordion {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.accordion-col {
+    position: relative;
+    flex: 1;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    cursor: pointer;
+    transition: flex 0.8s cubic-bezier(0.25, 1, 0.3, 1);
+    display: flex;
+    align-items: flex-end;
+    padding: 60px 40px;
+}
+
+.accordion-col.active {
+    flex: 2.2; /* Si allarga notevolmente sul hover */
+}
+
+.col-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 30, 20, 0.9) 0%, rgba(0, 30, 20, 0.4) 60%, rgba(0, 30, 20, 0.2) 100%);
+    transition: background 0.5s;
+    z-index: 1;
+}
+
+.accordion-col.active .col-overlay {
+    background: linear-gradient(to top, rgba(0, 45, 30, 0.95) 0%, rgba(0, 45, 30, 0.5) 60%, rgba(0, 45, 30, 0.2) 100%);
+}
+
+.col-content {
+    position: relative;
+    z-index: 10;
+    color: #ffffff;
+    width: 100%;
+}
+
+.col-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: var(--gold);
+    font-weight: 600;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+    opacity: 0.8;
+}
+
+.col-title {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    margin: 0 0 10px 0;
+    font-weight: 400;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.col-hidden-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.6s cubic-bezier(0.25, 1, 0.3, 1), opacity 0.5s ease-out;
+}
+
+.col-hidden-content p {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #e2dcd0;
+    margin-bottom: 20px;
+    max-width: 400px;
+    font-weight: 300;
+}
+
+.btn-col-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 1.5px solid var(--gold);
+    padding-bottom: 6px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.btn-col-action:hover {
+    color: var(--gold);
+    transform: translateX(4px);
+}
+
+/* Quando attiva, mostra la parte nascosta */
+.accordion-col.active .col-hidden-content {
+    max-height: 160px;
+    opacity: 1;
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   CONCETTO 3: L'ATMOSFERA VIENNESE (CINEMATIC)
+   ========================================================================== */
+.hero-cinematic {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #060e0a;
+}
+
+/* Slideshow con Ken Burns */
+.cinematic-slideshow {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.cinematic-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.8s ease-in-out;
+}
+
+.cinematic-slide.active {
+    opacity: 1;
+    animation: kenBurnsAnimation 10s infinite alternate ease-in-out;
+}
+
+@keyframes kenBurnsAnimation {
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+    100% {
+        transform: scale(1.08) translate(1%, -1%);
+    }
+}
+
+.cinematic-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(6, 15, 10, 0.65); /* Overlay uniforme scuro */
+    z-index: 2;
+}
+
+/* Testo centrale */
+.cinematic-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 600px;
+    padding: 0 20px;
+    color: #ffffff;
+}
+
+.cinematic-title {
+    font-family: var(--font-serif);
+    font-size: 3.4rem;
+    line-height: 1.15;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.cinematic-description {
+    font-size: 1rem;
+    color: var(--text-hero-muted);
+    line-height: 1.7;
+    margin-bottom: 35px;
+    font-weight: 300;
+}
+
+.cinematic-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.cinematic-actions .btn-demo.btn-secondary {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+}
+
+.cinematic-actions .btn-demo.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+}
+
+/* Indicatore di scroll animato */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.7;
+}
+
+.scroll-mouse {
+    width: 20px;
+    height: 32px;
+    border: 2px solid #ffffff;
+    border-radius: 12px;
+    display: block;
+    position: relative;
+}
+
+.scroll-wheel {
+    width: 4px;
+    height: 8px;
+    background-color: var(--gold);
+    border-radius: 2px;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollWheelAnim 1.6s infinite ease-in-out;
+}
+
+@keyframes scrollWheelAnim {
+    0% {
+        top: 6px;
+        opacity: 1;
+    }
+    100% {
+        top: 16px;
+        opacity: 0;
+    }
+}
+
+.scroll-text {
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   RESPONSIVESS DELLE HERO DEMO
+   ========================================================================== */
+@media (max-width: 900px) {
+    /* Switcher compatto */
+    .demo-switcher {
+        padding: 0 15px;
+    }
+    .switcher-label {
+        display: none;
+    }
+    .switcher-btn {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+    }
+
+    /* Concept 1: Split a colonna singola */
+    .hero-editorial {
+        flex-direction: column;
+    }
+    .editorial-text-col {
+        width: 100%;
+        height: 55%;
+        padding: 40px 20px;
+    }
+    .editorial-image-col {
+        width: 100%;
+        height: 45%;
+    }
+    .editorial-title {
+        font-size: 2.2rem;
+    }
+
+    /* Concept 2: Accordion a righe */
+    .hero-accordion {
+        flex-direction: column;
+    }
+    .accordion-col {
+        padding: 30px 20px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .accordion-col.active {
+        flex: 1.8;
+    }
+    .col-title {
+        font-size: 1.8rem;
+    }
+    
+    /* Concept 3: Riduzione testi */
+    .cinematic-title {
+        font-size: 2.2rem;
+    }
+    .cinematic-actions {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    .cinematic-actions .btn-demo {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+    }
+}

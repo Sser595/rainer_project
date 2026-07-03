@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Concept Hero | Caffè Rainer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/demo.css">
+</head>
+
+<body class="demo-page">
+
+    <!-- Switcher della Demo (Fisso in alto) -->
+    <div class="demo-switcher">
+        <div class="switcher-nav">
+            <span class="switcher-label"><i class="fa-solid fa-wand-magic-sparkles"></i> PROTOTIPI HERO:</span>
+            <button class="switcher-btn active" data-target="concept-1">1. Impatto Editoriale</button>
+            <button class="switcher-btn" data-target="concept-2">2. Vetrina Dinamica</button>
+            <button class="switcher-btn" data-target="concept-3">3. Atmosfera Viennese</button>
+        </div>
+        <a href="index.html" class="switcher-back"><i class="fa-solid fa-arrow-left"></i> Torna alla Home</a>
+    </div>
+
+    <!-- MAIN CONTAINER PER I PROTOTIPI -->
+    <main class="demo-main">
+
+        <!-- ========================================== -->
+        <!-- CONCETTO 1: L'IMPATTO EDITORIALE           -->
+        <!-- ========================================== -->
+        <section id="concept-1" class="hero-demo-section active">
+            <div class="hero-editorial">
+                <!-- Colonna di Sinistra: Testo -->
+                <div class="editorial-text-col">
+                    <div class="editorial-content">
+                        <span class="gold-subtitle">Pasticceria Viennese & Forno</span>
+                        <h1 class="editorial-title">Il gusto dell'artigianalità austriaca.</h1>
+                        <div class="gold-line left-aligned"></div>
+                        <p class="editorial-description">
+                            Nel cuore di Firenze, Caffè Rainer unisce la ricca tradizione dolciaria di Innsbruck con la panificazione naturale a lievito madre.
+                        </p>
+                        <div class="editorial-actions">
+                            <a href="menu.html" class="btn-demo btn-primary">Sfoglia il Menù</a>
+                            <a href="index.html#filosofia" class="btn-demo btn-secondary">La nostra storia</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Colonna di Destra: Immagine Premium -->
+                <div class="editorial-image-col">
+                    <img src="img_pieghevole/Croissant.jpeg" alt="Dettaglio Croissant">
+                    <div class="image-overlay-gold"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- CONCETTO 2: LA VETRINA DINAMICA (ACCORDION)-->
+        <!-- ========================================== -->
+        <section id="concept-2" class="hero-demo-section">
+            <div class="hero-accordion">
+                <!-- Colonna 1: Pasticceria -->
+                <div class="accordion-col active" style="background-image: url('img_locali/hero3.jpeg');">
+                    <div class="col-overlay"></div>
+                    <div class="col-content">
+                        <span class="col-eyebrow">VIENNA A FIRENZE</span>
+                        <h2 class="col-title">La Pasticceria</h2>
+                        <div class="col-hidden-content">
+                            <p>Torte della tradizione austriaca, sacher artigianali e croissant sfogliati a mano.</p>
+                            <a href="menu.html" class="btn-col-action">Vedi Dolci <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonna 2: Forno -->
+                <div class="accordion-col" style="background-image: url('img_hero/bread_hero.jpeg');">
+                    <div class="col-overlay"></div>
+                    <div class="col-content">
+                        <span class="col-eyebrow">LIEVITAZIONE NATURALE</span>
+                        <h2 class="col-title">Il Forno</h2>
+                        <div class="col-hidden-content">
+                            <p>Pane artigianale biologico cotto su pietra con lievito madre e farine austriache selezionate.</p>
+                            <a href="menu.html" class="btn-col-action">Vedi Pane <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonna 3: Bistrot -->
+                <div class="accordion-col" style="background-image: url('img_hero/baguette_hero.jpeg');">
+                    <div class="col-overlay"></div>
+                    <div class="col-content">
+                        <span class="col-eyebrow">COLAZIONI E PRANZO</span>
+                        <h2 class="col-title">Il Bistrot</h2>
+                        <div class="col-hidden-content">
+                            <p>Caffetteria viennese ed eccellenze toscane salate nel nostro accogliente locale.</p>
+                            <a href="places.html" class="btn-col-action">I Nostri Locali <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- CONCETTO 3: L'ATMOSFERA VIENNESE           -->
+        <!-- ========================================== -->
+        <section id="concept-3" class="hero-demo-section">
+            <div class="hero-cinematic">
+                <!-- Slideshow in background con Ken Burns -->
+                <div class="cinematic-slideshow">
+                    <div class="cinematic-slide active" style="background-image: url('img_locali/hero3.jpeg');"></div>
+                    <div class="cinematic-slide" style="background-image: url('img_hero/bread_hero.jpeg');"></div>
+                    <div class="cinematic-slide" style="background-image: url('img_hero/baguette_hero.jpeg');"></div>
+                </div>
+                <!-- Overlay scuro calibrato per contrasto testi -->
+                <div class="cinematic-overlay"></div>
+
+                <!-- Testo fisso centrale -->
+                <div class="cinematic-content">
+                    <span class="gold-subtitle">Bistrot & Pasticceria Austriaca</span>
+                    <h1 class="cinematic-title">Un'esperienza sensoriale dal 2011.</h1>
+                    <div class="gold-line"></div>
+                    <p class="cinematic-description">L'arte della sfoglia e della panificazione nel cuore di Firenze, custodi di una tradizione dal 1962.</p>
+                    <div class="cinematic-actions">
+                        <a href="menu.html" class="btn-demo btn-primary">Esplora il Menù</a>
+                        <a href="places.html" class="btn-demo btn-secondary">Trova una Sede</a>
+                    </div>
+                </div>
+
+                <!-- Indicatore di Scroll Animato -->
+                <div class="scroll-indicator">
+                    <span class="scroll-mouse"><span class="scroll-wheel"></span></span>
+                    <span class="scroll-text">Scorri</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- LOGICA DI SWITCHING E ACCORDION INTERATTIVO -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- LOGICA SWITCHER ---
+            const buttons = document.querySelectorAll('.switcher-btn');
+            const sections = document.querySelectorAll('.hero-demo-section');
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    buttons.forEach(b => b.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    btn.classList.add('active');
+                    const targetId = btn.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+
+            // --- LOGICA CONCEPT 2: ACCORDION ---
+            const cols = document.querySelectorAll('.accordion-col');
+            cols.forEach(col => {
+                col.addEventListener('mouseenter', () => {
+                    cols.forEach(c => c.classList.remove('active'));
+                    col.classList.add('active');
+                });
+            });
+
+            // --- LOGICA CONCEPT 3: CAROUSEL CINEMATICO ---
+            const slides = document.querySelectorAll('.cinematic-slide');
+            let currentSlide = 0;
+
+            function nextSlide() {
+                if (slides.length > 0) {
+                    slides[currentSlide].classList.remove('active');
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    slides[currentSlide].classList.add('active');
+                }
+            }
+
+            setInterval(nextSlide, 5000); // Cambio slide ogni 5 secondi
+        });
+    </script>
+</body>
+
+</html>
