@@ -1,102 +1,109 @@
-.split-carousel-section {
+/* ============================
+   SEZIONE HANDMADE
+   ============================ */
+.handmade-section {
     display: flex;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: var(--bg-light);
-}
-
-.carousel-container {
-    width: 40%;
-    height: 650px;
-    overflow: hidden;
-    position: relative;
-    background-color: var(--bg-light);
-}
-
-.carousel-wrapper {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    /* Curva più fluida */
-}
-
-.carousel-slide {
-    min-width: 100%;
-    /* Ogni slide occupa tutta la larghezza del contenitore */
-    height: 100%;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    /* Crea il bordo/margine per vedere l'immagine intera */
+    gap: 80px;
+    padding: 100px 7%;
+    background-color: var(--bg-dark);
 }
 
-.carousel-slide img {
+/* Left: statement text */
+.handmade-intro {
+    flex: 0 0 260px;
+    color: var(--text-light);
+}
+
+.handmade-title {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+    line-height: 1.15;
+    color: #ffffff;
+    margin: 12px 0 22px;
+    font-weight: 400;
+}
+
+.handmade-section .gold-line {
+    background-color: var(--gold);
+    height: 1.5px;
+    width: 40px;
+    border: none;
+    margin: 0 0 22px;
+}
+
+.handmade-desc {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+    font-weight: 300;
+}
+
+/* Right: 4 portrait photos in a row */
+.handmade-photos {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.handmade-photo-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.photo-wrap {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+}
+
+.photo-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Mostra l'immagine 3:4 intera */
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: brightness(0.92);
 }
 
-/* Il contenitore deve avere position: relative per "tenere dentro" i dot */
-
-
-/* Ora i dot saranno legati a .carousel-container e non alla pagina o all'hero */
-.carousel-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 10;
+.handmade-photo-item:hover .photo-wrap img {
+    transform: scale(1.04);
+    filter: brightness(1);
 }
 
-.dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
 
-.dot.active {
-    background-color: #ffffff;
-}
 
-.text-content {
-    width: 60%;
-    padding: 60px 80px;
-    color: #0c1a13;
-    /* Padding ridotto per adattarsi all'altezza minore */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: var(--bg-light);
-}
-
-/* Responsive: impilamento su schermi piccoli */
-@media (max-width: 900px) {
-    .split-carousel-section {
+/* Responsive */
+@media (max-width: 1024px) {
+    .handmade-section {
         flex-direction: column;
-        height: auto;
-        /* Lascia che il contenuto detti l'altezza su mobile */
+        gap: 50px;
+        padding: 80px 5%;
     }
-
-    .carousel-container {
+    .handmade-intro {
+        flex: none;
         width: 100%;
-        height: 400px;
-        /* Altezza definita per il carosello su mobile */
+        text-align: center;
     }
-
-    .text-content {
+    .handmade-section .gold-line {
+        margin: 0 auto 22px;
+    }
+    .handmade-photos {
         width: 100%;
-        padding: 50px 40px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
     }
 }
+
+@media (max-width: 600px) {
+    .handmade-photos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+
 
 .philosophy-section {
     background-color: var(--bg-dark);
@@ -146,13 +153,37 @@
     height: 580px;
 }
 
+.image-frame-border {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--gold);
+    z-index: 1;
+    transition: var(--transition-smooth);
+    pointer-events: none;
+}
+
 .philosophy-img {
+    position: relative;
+    z-index: 2;
     width: 100%;
     height: 100%;
     object-fit: cover;
     box-shadow: var(--shadow-premium);
     border: 1px solid var(--card-border);
     transition: var(--transition-smooth);
+}
+
+.image-stack-wrapper:hover .image-frame-border {
+    transform: translate(-15px, -15px);
+    border-color: var(--gold-dark);
+}
+
+.image-stack-wrapper:hover .philosophy-img {
+    transform: translate(15px, 15px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
 }
 
 
@@ -290,12 +321,26 @@
 
     .products-main-wrapper,
     .products-main-wrapper.inverted {
+        display: grid;
         grid-template-columns: 1fr;
         gap: 40px;
     }
 
     .products-main-wrapper.inverted {
         margin-top: 60px;
+    }
+
+    .products-main-wrapper .products-container {
+        order: 1;
+    }
+
+    .products-main-wrapper .products-text-side {
+        order: 2;
+    }
+
+    .large-item .img-swap {
+        aspect-ratio: 3 / 4;
+        height: auto;
     }
 
     .products-container {
@@ -324,27 +369,6 @@
 
 /* --- RESPONSIVE BASICO --- */
 @media (max-width: 1024px) {
-    .hero-fullscreen {
-        padding: 140px 40px 40px;
-        align-items: flex-start;
-    }
-
-    .hero-content {
-        max-width: 100%;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .fullscreen-overlay {
-        background: rgba(12, 26, 19, 0.75);
-    }
-
-    .hero-badge-wrapper {
-        display: none;
-    }
-
     .philosophy-section {
         padding: 80px 40px;
     }
@@ -355,44 +379,13 @@
         text-align: center;
     }
 
-
+    .image-stack-wrapper {
+        height: 380px;
+        max-width: 320px;
+        margin: 0 auto;
+    }
 
     .philosophy-img {
-        height: 380px;
+        height: 100%;
     }
-
-    .image-offset-card {
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -20px;
-        width: 180px;
-        padding: 15px 20px;
-    }
-
-    /* Su mobile i testi sono sempre visibili perché manca l'hover */
-    .card-text-group {
-        transform: translateY(0);
-        background: rgba(12, 26, 19, 0.65);
-    }
-
-    .card-address,
-    .card-desc,
-    .action-link {
-        opacity: 1;
-        max-height: 150px;
-        /* Permette al testo di aprirsi */
-    }
-
-    .card-title {
-        margin-bottom: 8px;
-    }
-
-    .card-address {
-        margin-bottom: 12px;
-    }
-
-    .card-desc {
-        margin-bottom: 20px;
-    }
-
 }

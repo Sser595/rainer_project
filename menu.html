@@ -16,8 +16,10 @@
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/sections.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/menu.css">
 </head>
 
 <body class="menu-page">
@@ -36,12 +38,26 @@
             <a href="index.html#products" class="nav-btn">I Prodotti</a>
             <a href="places.html" class="nav-btn">I Nostri Luoghi</a>
         </nav>
+
+        <button class="hamburger" id="hamburgerBtn" aria-label="Apri Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
     </header>
+
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <nav class="mobile-nav">
+            <a href="index.html#filosofia" class="mobile-nav-btn">La Storia</a>
+            <a href="menu.html" class="mobile-nav-btn active-nav">Il Menù</a>
+            <a href="index.html#products" class="mobile-nav-btn">I Prodotti</a>
+            <a href="places.html" class="mobile-nav-btn">I Nostri Luoghi</a>
+        </nav>
+    </div>
 <main class="menu-main">
     <section class="menu-hero">
         <span class="gold-subtitle">IL PRANZO</span>
         <h1 class="menu-title">Proposte Gastronomiche</h1>
-        <div class="gold-line"></div>
         <p class="menu-subtitle">
             Ogni giorno, la nostra cucina propone una selezione di piatti pensati per accompagnare il ritmo della vostra giornata. 
             Utilizziamo materie prime fresche, che variano in base alla stagionalità del mercato.
@@ -103,35 +119,37 @@
 </main>
 
     <footer class="minimal-footer">
-        <div class="footer-grid">
-            <!-- Colonna Sedi -->
-            <div class="footer-locations">
-                <div class="location-group">
-                    <span class="location-title">Rainer Bakery</span>
-                    <a href="#"><i class="fa-solid fa-instagram"></i> @cafferainer.bakery</a>
-                    <a href="tel:+390555276634"><i class="fa-solid fa-phone"></i> +39 055 527 6634</a>
-                    <address><i class="fa-solid fa-location-dot"></i> Via fra Bartolomeo Cristofori, 8</address>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo-title">Caffè Rainer</a>
+                <p class="footer-tagline">Firenze — Innsbruck dal 1962</p>
+                <a href="mailto:info@cafferainer.it" class="footer-email">info@cafferainer.it</a>
+            </div>
+            
+            <div class="footer-links-grid">
+                <div class="footer-col">
+                    <span class="footer-col-title">Caffè & Bistrot</span>
+                    <a href="tel:+390554932207" class="footer-link">055 493 2207</a>
+                    <a href="https://instagram.com/cafferainer" target="_blank" class="footer-link">@cafferainer</a>
+                    <a href="places.html" class="footer-link">Via San Zanobi 97/R</a>
                 </div>
-
-                <div class="location-group">
-                    <span class="location-title">Caffè Rainer</span>
-                    <a href="#"><i class="fa-solid fa-instagram"></i> @cafferainer</a>
-                    <a href="tel:+390554932207"><i class="fa-solid fa-phone"></i> +39 055 493 2207</a>
-                    <address><i class="fa-solid fa-location-dot"></i> Via San Zanobi 97/R</address>
+                
+                <div class="footer-col">
+                    <span class="footer-col-title">Rainer Bakery</span>
+                    <a href="tel:+390555276634" class="footer-link">055 527 6634</a>
+                    <a href="https://instagram.com/cafferainer.bakery" target="_blank" class="footer-link">@cafferainer.bakery</a>
+                    <a href="places.html" class="footer-link">Via Cristofori 8</a>
                 </div>
             </div>
 
-            <!-- Colonna Contatto Generale -->
-            <div class="footer-general">
-                <a href="places.html" class="location-title">I nostri luoghi</a>
-                <a href="mailto:info@cafferainer.it"><i class="fa-solid fa-envelope"></i> info@cafferainer.it</a>
+            <div class="footer-badge-col">
                 <div class="gambero-rosso-badge">
                     <img src="img_pieghevole/gambero-rosso.png" alt="Guida Gambero Rosso" class="filter-white">
                     <span>Selezionato nelle Guide</span>
                 </div>
             </div>
         </div>
-
+        
         <div class="footer-bottom">
             <p>&copy; 2026 Caffè Rainer. All rights reserved.</p>
         </div>

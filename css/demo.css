@@ -533,3 +533,345 @@
         text-align: center;
     }
 }
+
+/* ==========================================================================
+   CONCETTO 4: LA DOPPIA ANIMA (DUAL HERITAGE SPLIT)
+   ========================================================================== */
+.hero-split-double {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-dark);
+    position: relative;
+}
+
+.split-pane {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.split-pane::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(12, 26, 19, 0.75);
+    transition: background-color 0.5s ease;
+    z-index: 1;
+}
+
+.split-pane:hover::before {
+    background: rgba(12, 26, 19, 0.45);
+}
+
+/* Hover behaviors */
+.hero-split-double:has(.pane-left:hover) .pane-left {
+    width: 65%;
+}
+.hero-split-double:has(.pane-left:hover) .pane-right {
+    width: 35%;
+}
+
+.hero-split-double:has(.pane-right:hover) .pane-right {
+    width: 65%;
+}
+.hero-split-double:has(.pane-right:hover) .pane-left {
+    width: 35%;
+}
+
+.pane-content {
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+    max-width: 480px;
+    color: var(--text-light);
+    opacity: 0.85;
+    transform: translateY(0);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.split-pane:hover .pane-content {
+    opacity: 1;
+    transform: translateY(-10px);
+}
+
+.pane-subtitle {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.pane-title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.pane-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: var(--text-hero-muted);
+    font-weight: 300;
+}
+
+/* Center Emblem */
+.split-center-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: #0c1a13;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-premium);
+    pointer-events: none;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.hero-split-double:hover .split-center-badge {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.5;
+}
+
+.badge-text {
+    font-family: var(--font-serif);
+    color: var(--gold);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.1;
+}
+
+/* Responsive adjustment for Concept 4 */
+@media (max-width: 900px) {
+    .hero-split-double {
+        flex-direction: column;
+    }
+    .split-pane {
+        width: 100% !important;
+        height: 50% !important;
+    }
+    .hero-split-double:has(.pane-left:hover) .pane-left,
+    .hero-split-double:has(.pane-left:hover) .pane-right,
+    .hero-split-double:has(.pane-right:hover) .pane-right,
+    .hero-split-double:has(.pane-right:hover) .pane-left {
+        width: 100% !important;
+        height: 50% !important;
+    }
+    .pane-title {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    .pane-desc {
+        display: none;
+    }
+    .pane-content {
+        padding: 20px;
+    }
+    .split-center-badge {
+        width: 90px;
+        height: 90px;
+    }
+    .badge-text {
+        font-size: 0.75rem;
+    }
+}
+
+/* ==========================================================================
+   CONCETTO 5: EDITORIAL SHOWCASE (VETRINA EDITORIALE)
+   ========================================================================== */
+.hero-editorial-showcase {
+    width: 100%;
+    height: 100%;
+    background-color: #fbf8f3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 4%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background grid details for premium feel */
+.hero-editorial-showcase::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(var(--gold) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.showcase-header {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 40px;
+    z-index: 2;
+}
+
+.showcase-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.showcase-title {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    color: #0c1a13;
+    line-height: 1.15;
+    margin-bottom: 15px;
+}
+
+.showcase-desc {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* Symmetrical Grid of Cards */
+.showcase-grid {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    max-width: 1000px;
+    justify-content: center;
+    z-index: 2;
+}
+
+.showcase-card {
+    flex: 1;
+    height: 280px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s, filter 0.5s;
+    text-decoration: none;
+}
+
+.showcase-card-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.showcase-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(12, 26, 19, 0.9) 10%, rgba(12, 26, 19, 0.2) 60%);
+    z-index: 1;
+    transition: background-color 0.4s;
+}
+
+.showcase-card-content {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    right: 25px;
+    z-index: 2;
+    color: #ffffff;
+    transition: transform 0.4s;
+}
+
+.card-tag {
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.card-title {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.card-hover-desc {
+    font-size: 0.75rem;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s, max-height 0.4s, margin-top 0.4s;
+}
+
+/* Hover States */
+.showcase-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(12, 26, 19, 0.15);
+}
+
+.showcase-card:hover .showcase-card-bg {
+    transform: scale(1.08);
+}
+
+.showcase-card:hover .card-hover-desc {
+    opacity: 0.85;
+    max-height: 50px;
+    margin-top: 5px;
+}
+
+/* Dim non-hovered cards in the grid */
+.showcase-grid:hover .showcase-card:not(:hover) {
+    filter: brightness(0.9) grayscale(0.2);
+    transform: translateY(5px);
+}
+
+@media (max-width: 900px) {
+    .hero-editorial-showcase {
+        height: auto;
+        min-height: calc(100vh - 60px);
+        padding: 50px 20px;
+    }
+    .showcase-title {
+        font-size: 2.2rem;
+    }
+    .showcase-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .showcase-card {
+        height: 180px;
+    }
+}

@@ -16,9 +16,10 @@
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/sections.css">
-    <link rel="stylesheet" href="css/places.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/places.css">
 </head>
 
 <body class="places-page">
@@ -37,120 +38,151 @@
             <a href="index.html#products" class="nav-btn">I Prodotti</a>
             <a href="places.html" class="nav-btn active-nav">I Nostri Luoghi</a>
         </nav>
+
+        <button class="hamburger" id="hamburgerBtn" aria-label="Apri Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
     </header>
 
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <nav class="mobile-nav">
+            <a href="index.html#filosofia" class="mobile-nav-btn">La Storia</a>
+            <a href="menu.html" class="mobile-nav-btn">Il Menù</a>
+            <a href="index.html#products" class="mobile-nav-btn">I Prodotti</a>
+            <a href="places.html" class="mobile-nav-btn active-nav">I Nostri Luoghi</a>
+        </nav>
+    </div>
+
     <main class="places-main">
-        <!-- Location Row 1 -->
-        <section class="location-split">
-            <div class="loc-image"><img src="img_locali/hero3.jpeg" alt="Caffè Rainer"></div>
-            <div class="loc-content">
-                <span class="loc-eyebrow">CAFFETTERIA • PASTICCERIA • BISTROT</span>
-                <h2 class="loc-name">Caffè Rainer</h2>
-                <p class="loc-description">
-                    Il nostro storico bistrot-pasticceria nel cuore di Firenze, dove respirare l'atmosfera dei tipici caffè viennesi unita all'eccellenza della pasticceria artigianale austriaca e francese.
-                </p>
-                <div class="loc-gold-line"></div>
-                <div class="loc-details-grid">
-                    <div class="loc-block">
-                        <h3>Orari</h3>
-                        <p>Martedì - Sabato: 8:00 - 18:00<br>Domenica: 8:00 - 15:00</p>
-                    </div>
-                    <div class="loc-block">
-                        <h3>Contatti & Mappa</h3>
-                        <p>Via San Zanobi 97/R<br>Tel: 055 527 6634</p>
-                        <a href="https://maps.google.com/?q=Caffe+Rainer+Via+San+Zanobi+97+Firenze" target="_blank" class="map-link">
-                            <i class="fa-solid fa-map-location-dot"></i> Indicazioni Stradali
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="places-header">
+            <span class="gold-subtitle">I NOSTRI LOCALI</span>
+            <h1 class="places-title">Tre anime a Firenze</h1>
+            <div class="gold-line center"></div>
+            <p class="places-intro">Ogni punto vendita racconta una parte della nostra storia. Vieni a trovarci per gustare la vera pasticceria viennese o acquistare il nostro pane a lievitazione naturale.</p>
+        </div>
 
-        <!-- Location Row 2 (Add class: reverse) -->
-        <section class="location-split reverse">
-            <div class="loc-image"><img src="img_locali/hero2.jpeg" alt="Il Forno"></div>
-            <div class="loc-content">
-                <span class="loc-eyebrow">FORNO</span>
-                <h2 class="loc-name">Il forno più piccolo di Firenze</h2>
-                <p class="loc-description">
-                    Un piccolo scrigno di profumi artigianali, dove pane a lievitazione naturale e sfoglie fragranti vengono sfornati ogni giorno seguendo antiche ricette e materie prime d'eccellenza.
-                </p>
-                <div class="loc-gold-line"></div>
-                <div class="loc-details-grid">
-                    <div class="loc-block">
-                        <h3>Orari</h3>
-                        <p>Martedì - Sabato: 8:00 - 18:00</p>
-                    </div>
-                    <div class="loc-block">
-                        <h3>Contatti & Mappa</h3>
-                        <p>Via delle Ruote 33/R<br>Tel: 055 527 6634</p>
-                        <a href="https://maps.google.com/?q=Via+delle+Ruote+33+Firenze" target="_blank" class="map-link">
-                            <i class="fa-solid fa-map-location-dot"></i> Indicazioni Stradali
-                        </a>
-                    </div>
+        <div class="places-grid">
+            <!-- Card 1: Caffè Rainer -->
+            <article class="place-card">
+                <div class="place-image-wrap">
+                    <img src="img_locali/hero3.jpeg" alt="Caffè Rainer">
                 </div>
-            </div>
-        </section>
+                <div class="place-body">
+                    <span class="place-eyebrow">CAFFETTERIA • PASTICCERIA • BISTROT</span>
+                    <h2 class="place-name">Caffè Rainer</h2>
+                    <p class="place-description">
+                        Il nostro storico bistrot nel cuore di Firenze, dove respirare l'atmosfera dei tipici caffè viennesi unita all'eccellenza della pasticceria austriaca e francese.
+                    </p>
+                    <div class="place-divider"></div>
+                    <div class="place-details">
+                        <div class="place-info-block">
+                            <h4>Orari</h4>
+                            <p>Martedì - Sabato: 8:00 - 18:00<br>Domenica: 8:00 - 15:00</p>
+                        </div>
+                        <div class="place-info-block">
+                            <h4>Contatti & Indirizzo</h4>
+                            <p>Via San Zanobi 97/R<br>Tel: 055 493 2207</p>
+                        </div>
+                    </div>
+                    <a href="https://maps.google.com/?q=Caffe+Rainer+Via+San+Zanobi+97+Firenze" target="_blank" class="place-map-btn">
+                        <i class="fa-solid fa-map-location-dot"></i> Indicazioni Stradali
+                    </a>
+                </div>
+            </article>
 
-        <section class="location-split">
-            <div class="loc-image"><img src="img_locali/hero1.jpeg" alt="Rainer Bakery"></div>
-            <div class="loc-content">
-                <span class="loc-eyebrow">FORNO • TAKE-AWAY</span>
-                <h2 class="loc-name">Rainer Bakery</h2>
-                <p class="loc-description">
-                    Il nostro moderno laboratorio e punto vendita focalizzato sulla panificazione artigianale e sulla pasticceria fresca d'asporto per una colazione fragrante.
-                </p>
-                <div class="loc-gold-line"></div>
-                <div class="loc-details-grid">
-                    <div class="loc-block">
-                        <h3>Orari</h3>
-                        <p>Martedì - Sabato: 8:00 - 14:30</p>
-                    </div>
-                    <div class="loc-block">
-                        <h3>Contatti & Mappa</h3>
-                        <p>Via Bartolomeo Cristofori 8<br>Tel: 055 493 2207</p>
-                        <a href="https://maps.google.com/?q=Rainer+Bakery+Via+Bartolomeo+Cristofori+8+Firenze" target="_blank" class="map-link">
-                            <i class="fa-solid fa-map-location-dot"></i> Indicazioni Stradali
-                        </a>
-                    </div>
+            <!-- Card 2: Il Forno -->
+            <article class="place-card">
+                <div class="place-image-wrap">
+                    <img src="img_locali/hero2.jpeg" alt="Il Forno più piccolo di Firenze">
                 </div>
-            </div>
-        </section>
+                <div class="place-body">
+                    <span class="place-eyebrow">FORNO ARTIGIANALE</span>
+                    <h2 class="place-name">Il Forno più piccolo di Firenze</h2>
+                    <p class="place-description">
+                        Un piccolo scrigno di profumi artigianali, dove pane a lievitazione naturale e sfoglie fragranti vengono sfornati ogni giorno seguendo antiche ricette.
+                    </p>
+                    <div class="place-divider"></div>
+                    <div class="place-details">
+                        <div class="place-info-block">
+                            <h4>Orari</h4>
+                            <p>Martedì - Sabato: 8:00 - 18:00<br>&nbsp;</p>
+                        </div>
+                        <div class="place-info-block">
+                            <h4>Contatti & Indirizzo</h4>
+                            <p>Via delle Ruote 33/R<br>Tel: 055 527 6634</p>
+                        </div>
+                    </div>
+                    <a href="https://maps.google.com/?q=Via+delle+Ruote+33+Firenze" target="_blank" class="place-map-btn">
+                        <i class="fa-solid fa-map-location-dot"></i> Indicazioni Stradali
+                    </a>
+                </div>
+            </article>
+
+            <!-- Card 3: Rainer Bakery -->
+            <article class="place-card">
+                <div class="place-image-wrap">
+                    <img src="img_locali/hero1.jpeg" alt="Rainer Bakery">
+                </div>
+                <div class="place-body">
+                    <span class="place-eyebrow">FORNO • TAKE-AWAY</span>
+                    <h2 class="place-name">Rainer Bakery</h2>
+                    <p class="place-description">
+                        Il nostro moderno laboratorio focalizzato sulla panificazione a lievito madre, lievitati per la colazione e pasticceria fresca d'asporto d'eccellenza.
+                    </p>
+                    <div class="place-divider"></div>
+                    <div class="place-details">
+                        <div class="place-info-block">
+                            <h4>Orari</h4>
+                            <p>Martedì - Sabato: 8:00 - 14:30<br>&nbsp;</p>
+                        </div>
+                        <div class="place-info-block">
+                            <h4>Contatti & Indirizzo</h4>
+                            <p>Via Bartolomeo Cristofori 8<br>Tel: 055 527 6634</p>
+                        </div>
+                    </div>
+                    <a href="https://maps.google.com/?q=Rainer+Bakery+Via+Bartolomeo+Cristofori+8+Firenze" target="_blank" class="place-map-btn">
+                        <i class="fa-solid fa-map-location-dot"></i> Indicazioni Stradali
+                    </a>
+                </div>
+            </article>
+        </div>
     </main>
 
     <!-- FOOTER -->
     <footer class="minimal-footer">
-        <div class="footer-grid">
-            <!-- Colonna Sedi -->
-            <div class="footer-locations">
-                <div class="location-group">
-                    <span class="location-title">Rainer Bakery</span>
-                    <a href="#"><i class="fa-solid fa-instagram"></i> @cafferainer.bakery</a>
-                    <a href="tel:+390555276634"><i class="fa-solid fa-phone"></i> +39 055 527 6634</a>
-                    <address><i class="fa-solid fa-location-dot"></i> Via fra Bartolomeo Cristofori, 8</address>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo-title">Caffè Rainer</a>
+                <p class="footer-tagline">Firenze — Innsbruck dal 1962</p>
+                <a href="mailto:info@cafferainer.it" class="footer-email">info@cafferainer.it</a>
+            </div>
+            
+            <div class="footer-links-grid">
+                <div class="footer-col">
+                    <span class="footer-col-title">Caffè & Bistrot</span>
+                    <a href="tel:+390554932207" class="footer-link">055 493 2207</a>
+                    <a href="https://instagram.com/cafferainer" target="_blank" class="footer-link">@cafferainer</a>
+                    <a href="places.html" class="footer-link">Via San Zanobi 97/R</a>
                 </div>
-
-                <div class="location-group">
-                    <span class="location-title">Caffè Rainer</span>
-                    <a href="#"><i class="fa-solid fa-instagram"></i> @cafferainer</a>
-                    <a href="tel:+390554932207"><i class="fa-solid fa-phone"></i> +39 055 493 2207</a>
-                    <address><i class="fa-solid fa-location-dot"></i> Via San Zanobi 97/R</address>
+                
+                <div class="footer-col">
+                    <span class="footer-col-title">Rainer Bakery</span>
+                    <a href="tel:+390555276634" class="footer-link">055 527 6634</a>
+                    <a href="https://instagram.com/cafferainer.bakery" target="_blank" class="footer-link">@cafferainer.bakery</a>
+                    <a href="places.html" class="footer-link">Via Cristofori 8</a>
                 </div>
             </div>
 
-            <!-- Colonna Contatto Generale -->
-            <!-- Colonna Contatto Generale -->
-            <div class="footer-general">
-                <!-- Trasformato in link verso places.html -->
-                <a href="places.html" class="location-title">I nostri luoghi</a>
-                <a href="mailto:info@cafferainer.it"><i class="fa-solid fa-envelope"></i> info@cafferainer.it</a>
+            <div class="footer-badge-col">
                 <div class="gambero-rosso-badge">
                     <img src="img_pieghevole/gambero-rosso.png" alt="Guida Gambero Rosso" class="filter-white">
                     <span>Selezionato nelle Guide</span>
                 </div>
             </div>
         </div>
-
+        
         <div class="footer-bottom">
             <p>&copy; 2026 Caffè Rainer. All rights reserved.</p>
         </div>

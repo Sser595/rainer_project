@@ -83,7 +83,7 @@
 .menu-items-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px 60px;
+    gap: 30px;
 }
 
 /* =========================
@@ -93,27 +93,41 @@
 .menu-item {
     display: flex;
     flex-direction: column;
-    text-align: center;
+    text-align: left;
+    background: transparent;
+    padding: 25px 15px;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px dashed rgba(197, 160, 89, 0.25);
+    box-shadow: none;
+    transition: var(--transition-smooth);
+}
+
+.menu-item:hover {
+    transform: translateX(4px);
 }
 
 /* nome piatto */
 .item-name {
     font-family: var(--font-serif);
-    font-size: 1.2rem;
+    font-size: 1.35rem;
     color: #0c1a13;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 8px;
+    transition: color 0.3s;
+}
+
+.menu-item:hover .item-name {
+    color: var(--gold);
 }
 
 /* descrizione */
 .item-description {
     font-family: var(--font-sans);
     font-size: 0.9rem;
-    line-height: 1.5;
-    color: #555;
+    line-height: 1.6;
+    color: #666;
     font-weight: 300;
-    max-width: 90%;
-    margin: 0 auto;
 }
 
 /* =========================

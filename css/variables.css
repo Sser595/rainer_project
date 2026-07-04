@@ -1,7 +1,8 @@
 :root {
-    --bg-light: #fcf9f5;
+    --bg-light: #ffffff;
     --bg-dark: #006747; /* Original brand green */
-    --bg-dark-accent: #005238; /* Harmonious darker green shade */
+    --bg-img: url("../img_bg/bg-pattern.png");
+    --bg-dark-accent: #0c1a13;
     --text-hero-light: #ffffff;
     --text-hero-muted: #e2dcd0;
     --text-light: #f5f2eb;

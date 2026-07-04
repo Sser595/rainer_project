@@ -1,142 +1,230 @@
 /* ─── BASE & RESET ───────────────────────────── */
 .places-page {
-    background-color: #f7f3ed;
+    background-color: var(--bg-light);
     color: #1a1a1a;
     margin: 0;
 }
 
-/* ─── LAYOUT 40/60 CONTINUO ── */
-.location-split {
-    display: flex;
-    align-items: stretch;
-    width: 100%;
-    margin-bottom: 0;
-    padding: 0;
-    /* Linea divisoria tra le sezioni */
-    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+.places-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 140px 4% 80px 4%;
 }
 
-/* ─── IMMAGINE (40%) ── */
-.loc-image {
-    width: 30%;
-    height: 50%;
-    display: flex;
-    overflow: hidden;
+/* Header */
+.places-header {
+    text-align: center;
+    margin-bottom: 60px;
 }
 
-.loc-image img {
-    width: 100%;
-    height: 100%;
-    /* Si estende per tutta l'altezza del blocco */
-    object-fit: cover;
-    display: block;
-}
-
-/* ─── TESTO (60%) ── */
-.loc-content {
-    width: 60%;
-    padding: 80px 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #f7f3ed;
-}
-
-/* ─── TYPOGRAPHY & ELEMENTS ── */
-.loc-eyebrow {
-    font-family: var(--font-sans);
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 20px;
-    font-weight: 500;
-}
-
-.loc-name {
+.places-title {
     font-family: var(--font-serif);
-    font-size: 2.2rem;
-    line-height: 1.1;
-    margin: 15px 0 20px 0;
+    font-size: 3rem;
+    color: #0c1a13;
+    margin: 15px 0 20px;
     font-weight: 400;
 }
 
-.loc-description {
+.places-intro {
     font-family: var(--font-sans);
     font-size: 0.95rem;
-    line-height: 1.7;
+    line-height: 1.8;
     color: #555;
-    margin-bottom: 25px;
-    max-width: 500px;
-    /* Leggermente più largo per occupare il 60% */
+    max-width: 600px;
+    margin: 0 auto;
     font-weight: 300;
 }
 
-.loc-gold-line {
-    width: 30px;
-    height: 1px;
-    background-color: var(--gold);
-    margin-bottom: 30px;
+/* Grid layout */
+.places-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
 }
 
-/* Details Grid */
-.loc-details-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    max-width: 500px;
+/* Card design */
+.place-card {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+    display: flex;
+    flex-direction: row;
+    min-height: 380px;
+    box-shadow: none;
+    padding-bottom: 60px;
+    border-bottom: 1px dashed rgba(197, 160, 89, 0.25);
+    transition: var(--transition-smooth);
 }
 
-.loc-block h3 {
-    font-family: var(--font-sans);
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: #999;
-    margin-bottom: 10px;
+.place-card:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
-.loc-block p {
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-.location-split.reverse {
+.place-card:nth-child(even) {
     flex-direction: row-reverse;
 }
 
-.map-link {
+.place-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Image section */
+.place-image-wrap {
+    width: 45%;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1px;
+}
+
+.place-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.place-card:hover .place-image-wrap img {
+    transform: scale(1.05);
+}
+
+
+/* Card body */
+.place-body {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.place-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     color: var(--gold);
-    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.place-name {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: #0c1a13;
+    margin: 0 0 15px 0;
+    font-weight: 400;
+}
+
+.place-description {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: #666;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+.place-divider {
+    height: 1px;
+    background-color: rgba(197, 160, 89, 0.15);
+    margin-bottom: 20px;
+}
+
+/* Details grid inside body */
+.place-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.place-info-block h4 {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    margin: 0 0 4px 0;
+    font-weight: 500;
+}
+
+.place-info-block p {
+    font-family: var(--font-sans);
     font-size: 0.8rem;
+    line-height: 1.5;
+    color: #444;
+    margin: 0;
+    font-weight: 300;
+}
+
+/* Map link button */
+.place-map-btn {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    margin-top: 12px;
-    font-weight: 500;
-    transition: color 0.3s;
+    gap: 8px;
+    align-self: flex-start;
+    padding: 0 0 4px 0;
+    background: transparent;
+    color: var(--gold);
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+    transition: var(--transition-smooth);
 }
 
-.map-link:hover {
-    color: var(--gold-dark);
+.place-map-btn:hover {
+    color: var(--bg-dark);
+    border-bottom-color: var(--bg-dark);
+    transform: translateX(4px);
 }
 
-/* ─── RESPONSIVE ── */
-@media (max-width: 1024px) {
+/* Responsive details */
+@media (max-width: 992px) {
+    .place-card {
+        min-height: 320px;
+    }
+    .place-body {
+        padding: 30px;
+    }
+}
 
-    .location-split,
-    .location-split.reverse {
-        flex-direction: column;
-        border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+@media (max-width: 768px) {
+    .places-main {
+        padding: 100px 6% 60px 6%;
+    }
+    
+    .places-title {
+        font-size: 2.2rem;
+    }
+    
+    .places-grid {
+        gap: 45px;
     }
 
-    .loc-image {
-        width: 100%;
-        height: 450px;
+    .place-card {
+        flex-direction: column !important;
+        min-height: auto;
     }
 
-    .loc-content {
+    .place-image-wrap {
         width: 100%;
-        padding: 60px 40px;
+        aspect-ratio: 16 / 10;
+    }
+
+    .place-body {
+        padding: 25px;
+    }
+
+    .place-details {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
 }

@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-light);
     color: var(--text-light);
     font-family: var(--font-sans);
     line-height: 1.6;
@@ -28,4 +28,34 @@ h4,
 
 em {
     font-style: italic;
+}
+
+/* Global Gold Subtitle Utility */
+.gold-subtitle {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+/* Global Gold Line Divider Utility */
+.gold-line {
+    height: 1.5px;
+    width: 40px;
+    background-color: var(--gold);
+    border: none;
+    margin: 15px 0;
+    display: block;
+}
+
+.gold-line.center {
+    margin: 15px auto;
+}
+
+.gold-line.left-aligned {
+    margin: 15px 0;
 }

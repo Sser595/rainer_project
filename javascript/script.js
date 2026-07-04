@@ -1,14 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Smooth scroll with offset for nav buttons
-    document.querySelectorAll('.nav-btn').forEach(btn => {
+    document.querySelectorAll('.nav-btn, .mobile-nav-btn').forEach(btn => {
         btn.addEventListener('click', e => {
             const href = btn.getAttribute('href');
-            const target = document.querySelector(href);
-            if (target) {
-                e.preventDefault();
-                const headerHeight = document.querySelector('.main-header').offsetHeight;
-                const top = target.getBoundingClientRect().top + window.scrollY - headerHeight + 20;
-                window.scrollTo({ top, behavior: 'smooth' });
+            if (href && href.startsWith('#')) {
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    const headerHeight = document.querySelector('.main-header').offsetHeight;
+                    const top = target.getBoundingClientRect().top + window.scrollY - headerHeight + 20;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
             }
         });
     });
@@ -39,61 +41,25 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', checkVisibility);
     // Controllo al caricamento iniziale
     checkVisibility();
-});
 
+    // Toggle Mobile Menu
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-// --- LOGICA PROCESS CAROUSEL ---
-
-
-
-
-const wrapper = document.getElementById('carouselWrapper');
-if (wrapper) {
-    const slides = document.querySelectorAll('.carousel-slide');
-    const dots = document.querySelectorAll('.dot');
-    let index = 0;
-    const totalRealSlides = dots.length;
-
-    function updateDots() {
-        if (totalRealSlides > 0) {
-            dots.forEach(dot => dot.classList.remove('active'));
-            dots[index % totalRealSlides].classList.add('active');
-        }
-    }
-
-    function autoScroll() {
-        index++;
-        wrapper.style.transition = 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-        wrapper.style.transform = `translateX(-${index * 100}%)`;
-
-        // Aggiorna i pallini
-        updateDots();
-
-        if (index >= slides.length - 1) {
-            wrapper.addEventListener('transitionend', function reset() {
-                wrapper.style.transition = 'none';
-                index = 0;
-                wrapper.style.transform = `translateX(0)`;
-                updateDots(); // Reset pallini
-                wrapper.removeEventListener('transitionend', reset);
-            });
-        }
-    }
-
-    let intervalId = setInterval(autoScroll, 4000);
-
-    function resetInterval() {
-        clearInterval(intervalId);
-        intervalId = setInterval(autoScroll, 4000);
-    }
-
-    dots.forEach((dot, dotIdx) => {
-        dot.addEventListener('click', () => {
-            index = dotIdx;
-            wrapper.style.transition = 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-            wrapper.style.transform = `translateX(-${index * 100}%)`;
-            updateDots();
-            resetInterval();
+    if (hamburgerBtn && mobileMenu) {
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
         });
-    });
-}
+
+        // Close menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            });
+        });
+    }
+});
