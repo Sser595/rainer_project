@@ -16,24 +16,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Effetto Fade-In allo scroll per gli elementi
-    const elementsToAnimate = document.querySelectorAll('.place-card, .info-item, .philosophy-text-col, .philosophy-image-col, .products-main-wrapper');
+    const elementsToAnimate = document.querySelectorAll(
+        '.place-card, .philosophy-text-col, .philosophy-image-col, .handmade-intro, .handmade-photos, .products-main-wrapper'
+    );
 
     // Imposta l'opacità iniziale a 0
     elementsToAnimate.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
-        el.style.transition = 'all 0.8s ease-out';
+        el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
     });
 
     const checkVisibility = () => {
-        const triggerBottom = window.innerHeight / 5 * 4;
+        const triggerBottom = (window.innerHeight / 5) * 4;
 
         elementsToAnimate.forEach(el => {
+            if (el.classList.contains('is-animated')) return;
+
             const boxTop = el.getBoundingClientRect().top;
 
             if (boxTop < triggerBottom) {
+                el.classList.add('is-animated');
                 el.style.opacity = '1';
                 el.style.transform = 'translateY(0)';
+
+                // Rimuove gli stili inline a fine animazione per consentire
+                // le transizioni dell'hover definite nei file CSS
+                el.addEventListener('transitionend', (e) => {
+                    if (e.target === el) {
+                        el.style.opacity = '';
+                        el.style.transform = '';
+                        el.style.transition = '';
+                    }
+                }, { once: true });
             }
         });
     };

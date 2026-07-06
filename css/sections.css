@@ -153,18 +153,6 @@
     height: 580px;
 }
 
-.image-frame-border {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 100%;
-    height: 100%;
-    border: 2px solid var(--gold);
-    z-index: 1;
-    transition: var(--transition-smooth);
-    pointer-events: none;
-}
-
 .philosophy-img {
     position: relative;
     z-index: 2;
@@ -174,16 +162,6 @@
     box-shadow: var(--shadow-premium);
     border: 1px solid var(--card-border);
     transition: var(--transition-smooth);
-}
-
-.image-stack-wrapper:hover .image-frame-border {
-    transform: translate(-15px, -15px);
-    border-color: var(--gold-dark);
-}
-
-.image-stack-wrapper:hover .philosophy-img {
-    transform: translate(15px, 15px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
 }
 
 
@@ -347,6 +325,22 @@
         gap: 20px;
     }
 }
+/* Note on seasonal products */
+.products-seasonality-note {
+    margin-top: 60px;
+    text-align: center;
+    width: 100%;
+}
+
+.products-seasonality-note p {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #555;
+    font-style: italic;
+    font-weight: 300;
+}
+
 
 @media (max-width: 768px) {
     .products-grid-layout {
@@ -377,6 +371,10 @@
         flex-direction: column;
         gap: 60px;
         text-align: center;
+    }
+
+    .philosophy-section .gold-line {
+        margin: 15px auto;
     }
 
     .image-stack-wrapper {

@@ -59,3 +59,14 @@ em {
 .gold-line.left-aligned {
     margin: 15px 0;
 }
+
+/* Link styling */
+a {
+    color: var(--gold);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+a:hover {
+    color: var(--gold-dark);
+}
