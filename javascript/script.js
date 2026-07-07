@@ -1,4 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Transparent to solid header on scroll (home page only)
+    const header = document.querySelector('.main-header');
+    if (header && document.body.classList.contains('home-page')) {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+    }
+
     // Smooth scroll with offset for nav buttons
     document.querySelectorAll('.nav-btn, .mobile-nav-btn').forEach(btn => {
         btn.addEventListener('click', e => {
@@ -14,6 +28,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Toggle read more in history section on mobile
+    const readMoreStoryBtn = document.getElementById('readMoreStoryBtn');
+    const philosophyCollapsed = document.getElementById('philosophyCollapsed');
+
+    if (readMoreStoryBtn && philosophyCollapsed) {
+        readMoreStoryBtn.addEventListener('click', () => {
+            const isExpanded = philosophyCollapsed.classList.toggle('expanded');
+            readMoreStoryBtn.classList.toggle('active');
+            
+            const btnText = readMoreStoryBtn.querySelector('span');
+            if (btnText) {
+                btnText.textContent = isExpanded ? 'Leggi meno' : 'Leggi di più';
+            }
+        });
+    }
 
     // Effetto Fade-In allo scroll per gli elementi
     const elementsToAnimate = document.querySelectorAll(
@@ -75,6 +105,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileMenu.classList.remove('active');
                 document.body.classList.remove('no-scroll');
             });
+        });
+
+        // Close menu when clicking the backdrop overlay
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                hamburgerBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            }
         });
     }
 });

@@ -42,7 +42,6 @@
     gap: 60px;
 }
 
-/* Card design */
 .place-card {
     background: transparent;
     border: none;
@@ -50,7 +49,7 @@
     overflow: visible;
     display: flex;
     flex-direction: row;
-    min-height: 380px;
+    min-height: 440px;
     box-shadow: none;
     padding-bottom: 60px;
     border-bottom: 1px dashed rgba(197, 160, 89, 0.25);
@@ -214,9 +213,24 @@
         min-height: auto;
     }
 
+    /* Disable Card Hovers on Mobile */
+    .place-card:hover {
+        transform: none !important;
+    }
+    .place-card:hover .place-image-wrap img {
+        transform: none !important;
+    }
+    .place-map-btn:hover {
+        color: var(--gold) !important;
+        border-bottom-color: rgba(197, 160, 89, 0.3) !important;
+        transform: none !important;
+    }
+
     .place-image-wrap {
         width: 100%;
+        max-width: none;
         aspect-ratio: 16 / 10;
+        margin: 0;
     }
 
     .place-body {

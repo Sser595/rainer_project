@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caffè Rainer | Firenze</title>
-    <meta name="description" content="Pasticceria Caffè Rainer a Firenze: la vera pasticceria austriaca (Sachertorte, Strudel tirato a mano) incontra la panificazione artigianale a lievito madre dal 1962.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -21,22 +20,17 @@
     <link rel="stylesheet" href="css/footer.css">
 </head>
 
-<body>
+<body class="home-page">
 
     <header class="main-header">
-        <nav class="header-nav nav-left">
-            <a href="#filosofia" class="nav-btn">La Storia</a>
-            <a href="menu.html" class="nav-btn">Il Menù</a>
-        </nav>
-
         <div class="logo-container">
             <a href="index.html">
                 <img src="img_pieghevole/logoRainer.png" alt="Caffè Rainer Logo" class="gambero-logo">
             </a>
         </div>
 
-        <nav class="header-nav nav-right">
-            <a href="#products" class="nav-btn">I Prodotti</a>
+        <nav class="header-nav">
+            <a href="menu.html" class="nav-btn">Il Menù</a>
             <a href="places.html" class="nav-btn">I Nostri Luoghi</a>
         </nav>
 
@@ -49,38 +43,36 @@
 
     <div class="mobile-menu-overlay" id="mobileMenu">
         <nav class="mobile-nav">
-            <a href="#filosofia" class="mobile-nav-btn">La Storia</a>
             <a href="menu.html" class="mobile-nav-btn">Il Menù</a>
-            <a href="#products" class="mobile-nav-btn">I Prodotti</a>
             <a href="places.html" class="mobile-nav-btn">I Nostri Luoghi</a>
+            <div class="mobile-socials">
+                <a href="https://instagram.com/cafferainer" target="_blank" aria-label="Instagram" class="mobile-social-link"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/cafferainer" target="_blank" aria-label="Facebook" class="mobile-social-link"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
         </nav>
     </div>
     <main>
-        <section class="hero-section hero-editorial">
-            <!-- Colonna di Sinistra: Testo -->
-            <div class="editorial-text-col">
-                <div class="editorial-content">
+        <section class="hero-section hero-fullwidth">
+            <div class="hero-bg-wrapper">
+                <img src="img_pieghevole/baguette.jpeg" alt="Pasticceria e caffetteria Caffè Rainer" class="hero-bg-img">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content-container">
+                <div class="hero-content">
                     <span class="gold-subtitle anim-fade-up" style="animation-delay: 0.1s;">DAL 2011</span>
-                    <h1 class="editorial-title anim-fade-up" style="animation-delay: 0.3s;">Pasticceria e caffetteria<br>nel cuore di Firenze.</h1>
-                    <div class="gold-line left-aligned anim-fade-up" style="animation-delay: 0.5s;"></div>
-                    <p class="editorial-description anim-fade-up" style="animation-delay: 0.6s;">
-                        Il primo bistrot-pasticceria austriaco a Firenze, dove la ricca tradizione dolciaria viennese incontra l'eccellenza della panificazione artigianale.
+                    <h1 class="hero-title anim-fade-up" style="animation-delay: 0.3s;">Pasticceria e caffetteria<br>nel cuore di Firenze.</h1>
+                    <div class="gold-line center-aligned anim-fade-up" style="animation-delay: 0.5s;"></div>
+                    <p class="hero-description anim-fade-up" style="animation-delay: 0.6s;">
+                        <strong> primo bistrot-pasticceria austriaco a Firenze, dove la ricca tradizione dolciaria viennese incontra l'eccellenza della panificazione artigianale.</strong>
                     </p>
-                    <div class="editorial-actions anim-fade-up" style="animation-delay: 0.8s;">
+                    <div class="hero-actions anim-fade-up" style="animation-delay: 0.8s;">
                         <a href="menu.html" class="btn-hero btn-primary">
                             <span>Sfoglia il Menù</span>
                             <i class="fa-solid fa-arrow-right btn-arrow"></i>
                         </a>
-                        <a href="#filosofia" class="btn-hero btn-secondary">La nostra storia</a>
+                        <a href="#filosofia" class="btn-hero btn-secondary-light">La nostra storia</a>
                     </div>
                 </div>
-                <!-- Scroll Indicator inside Text Col -->
-               
-            </div>
-            <!-- Colonna di Destra: Immagine Premium -->
-            <div class="editorial-image-col">
-                <img src="img_bg/bg-pattern.png" alt="Dettaglio Croissant Artigianale">
-                <div class="image-overlay-gold"></div>
             </div>
         </section>
 
@@ -93,12 +85,21 @@
                     <div class="gold-line"></div>
                     <p class="philosophy-paragraph">
                         Fondato nel 2011 da Rudolf Rainer e Silvia Rabito, Caffè Rainer porta nel cuore di Firenze lo spirito e la tradizione dell'omonimo, celebre locale aperto dal padre di Rudolf a Innsbruck nel 1962.
-
-La nostra proposta nasce da una formazione rigorosa e da quindici anni di esperienza nell’alta ristorazione fiorentina. Oggi, la nostra missione è offrire un’esperienza autentica: ogni dolce è realizzato artigianalmente nel nostro laboratorio, utilizzando materie prime d’eccellenza come farine austriache macinate a pietra e burro francese di alta qualità.
                     </p>
-                    <p class="philosophy-paragraph">
-                        Dalla classica Sachertorte allo Strudel di mele con sfoglia tirata a mano, fino a raffinate influenze di pasticceria francese: scopri un angolo di Austria nel centro storico di Firenze, dove la storia familiare incontra l’artigianalità contemporanea.
-                    </p>
+                    <div class="philosophy-collapsed-content" id="philosophyCollapsed">
+                        <div>
+                            <p class="philosophy-paragraph">
+                                La nostra proposta nasce da una formazione rigorosa e da quindici anni di esperienza nell’alta ristorazione fiorentina. Oggi, la nostra missione è offrire un’esperienza autentica: ogni dolce è realizzato artigianalmente nel nostro laboratorio, utilizzando materie prime d’eccellenza come farine austriache macinate a pietra e burro francese di alta qualità.
+                            </p>
+                            <p class="philosophy-paragraph">
+                                Dalla classica Sachertorte allo Strudel di mele con sfoglia tirata a mano, fino a raffinate influenze di pasticceria francese: scopri un angolo di Austria nel centro storico di Firenze, dove la storia familiare incontra l’artigianalità contemporanea.
+                            </p>
+                        </div>
+                    </div>
+                    <button class="read-more-btn" id="readMoreStoryBtn" aria-label="Leggi di più sulla nostra storia">
+                        <span>Leggi di più</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
                 </div>
                 <div class="philosophy-image-col">
                     <div class="image-stack-wrapper">
@@ -113,19 +114,19 @@ La nostra proposta nasce da una formazione rigorosa e da quindici anni di esperi
                 <span class="gold-subtitle">IL LABORATORIO</span>
                 <h2 class="handmade-title">Fatto a mano.<br>Ogni mattina.</h2>
                 <div class="gold-line left-aligned"></div>
-                <p class="handmade-desc">Ogni prodotto è fatto a mano da noi. Farine selezionate, burro di qualità, lievito madre</p>
+                <p class="handmade-desc">Ogni prodotto è fatto a mano da noi. Farine selezionate, burro di qualità e lievito madre</p>
             </div>
             <div class="handmade-photos">
-                <div class="handmade-photo-item">
+                <div class="handmade-photo-item item-1">
                     <div class="photo-wrap"><img src="img_handmade/segale_hm.jpeg" alt="Pane artigianale"></div>
                 </div>
-                <div class="handmade-photo-item">
+                <div class="handmade-photo-item item-2">
                     <div class="photo-wrap"><img src="img_handmade/cinnamon_hm.jpeg" alt="Lavorazione artigianale"></div>
                 </div>
-                <div class="handmade-photo-item">
+                <div class="handmade-photo-item item-3">
                     <div class="photo-wrap"><img src="img_handmade/croiss_hm.jpeg" alt="Sfoglia artigianale"></div>
                 </div>
-                <div class="handmade-photo-item">
+                <div class="handmade-photo-item item-4">
                     <div class="photo-wrap"><img src="img_handmade/pain_hm.jpeg" alt="Prodotti freschi"></div>
                 </div>
             </div>
@@ -141,39 +142,30 @@ La nostra proposta nasce da una formazione rigorosa e da quindici anni di esperi
 
             <div class="products-main-wrapper">
                 <div class="products-container">
-                    <article class="product-item large-item">
+                    <article class="product-item">
                         <div class="img-swap">
-                            <img src="img_pieghevole/Croissant.jpeg" class="img-main">
-                            <img src="img_pieghevole/croissant_after.jpeg" class="img-hover">
+                            <img src="img_pieghevole/pain_au_chocolat.jpeg" class="img-main">
+                            <img src="img_pieghevole/pain_au_chocolat_after.jpeg" class="img-hover">
                         </div>
                     </article>
-                    <div class="small-items-grid">
-                        <article class="product-item small-item">
-                            <div class="img-swap">
-                                <img src="img_pieghevole/pain_au_chocolat.jpeg" class="img-main">
-                                <img src="img_pieghevole/pain_au_chocolat_after.jpeg" class="img-hover">
-                            </div>
-
-                        </article>
-                        <article class="product-item small-item">
-                            <div class="img-swap">
-                                <img src="img_pieghevole/cannelès.jpeg" class="img-main">
-                                <img src="img_pieghevole/canneles_after.jpeg" class="img-hover">
-                            </div>
-                        </article>
-                        <article class="product-item small-item">
-                            <div class="img-swap">
-                                <img src="img_pieghevole/financier.jpeg" class="img-main">
-                                <img src="img_pieghevole/financier_after.jpeg" class="img-hover">
-                            </div>
-                        </article>
-                        <article class="product-item small-item">
-                            <div class="img-swap">
-                                <img src="img_pieghevole/eclair.jpeg" class="img-main">
-                                <img src="img_pieghevole/eclair_after.jpeg" class="img-hover">
-                            </div>
-                        </article>
-                    </div>
+                    <article class="product-item">
+                        <div class="img-swap">
+                            <img src="img_pieghevole/cannelès.jpeg" class="img-main">
+                            <img src="img_pieghevole/canneles_after.jpeg" class="img-hover">
+                        </div>
+                    </article>
+                    <article class="product-item">
+                        <div class="img-swap">
+                            <img src="img_pieghevole/financier.jpeg" class="img-main">
+                            <img src="img_pieghevole/financier_after.jpeg" class="img-hover">
+                        </div>
+                    </article>
+                    <article class="product-item">
+                        <div class="img-swap">
+                            <img src="img_pieghevole/eclair.jpeg" class="img-main">
+                            <img src="img_pieghevole/eclair_after.jpeg" class="img-hover">
+                        </div>
+                    </article>
                 </div>
 
                 <div class="products-text-side">
@@ -191,36 +183,28 @@ La nostra proposta nasce da una formazione rigorosa e da quindici anni di esperi
                 </div>
 
                 <div class="products-container">
-                    <div class="small-items-grid">
-                        <article class="product-item small-item">
-                            <div class="img-swap">
-                                <img src="img_pieghevole/baguette.jpeg" class="img-main">
-                                <img src="img_pieghevole/baguette_after.jpeg" class="img-hover">
-                            </div>
-                        </article>
-                        <article class="product-item small-item">
-                            <div class="img-swap">
-                                <img src="img_pieghevole/bread.jpeg" class="img-main">
-                                <img src="img_pieghevole/bread_after.jpeg" class="img-hover">
-                            </div>
-                        </article>
-                        <article class="product-item small-item">
-                            <div class="img-swap">
-                                <img src="img_pieghevole/bread1.jpeg" class="img-main">
-                                <img src="img_pieghevole/bread1_after.jpeg" class="img-hover">
-                            </div>
-                        </article>
-                        <article class="product-item small-item">
-                            <div class="img-swap">
-                                <img src="img_pieghevole/bread2.jpeg" class="img-main">
-                                <img src="img_pieghevole/bread2_after.jpeg" class="img-hover">
-                            </div>
-                        </article>
-                    </div>
-                    <article class="product-item large-item">
+                    <article class="product-item">
                         <div class="img-swap">
-                            <img src="bread/focaccia.jpeg" class="img-main" alt="Croissant">
-                            <img src="bread/focaccia_after.jpeg" class="img-hover" alt="Croissant">
+                            <img src="img_pieghevole/baguette.jpeg" class="img-main">
+                            <img src="img_pieghevole/baguette_after.jpeg" class="img-hover">
+                        </div>
+                    </article>
+                    <article class="product-item">
+                        <div class="img-swap">
+                            <img src="img_pieghevole/bread.jpeg" class="img-main">
+                            <img src="img_pieghevole/bread_after.jpeg" class="img-hover">
+                        </div>
+                    </article>
+                    <article class="product-item">
+                        <div class="img-swap">
+                            <img src="img_pieghevole/bread1.jpeg" class="img-main">
+                            <img src="img_pieghevole/bread1_after.jpeg" class="img-hover">
+                        </div>
+                    </article>
+                    <article class="product-item">
+                        <div class="img-swap">
+                            <img src="img_pieghevole/bread2.jpeg" class="img-main">
+                            <img src="img_pieghevole/bread2_after.jpeg" class="img-hover">
                         </div>
                     </article>
                 </div>
@@ -236,7 +220,7 @@ La nostra proposta nasce da una formazione rigorosa e da quindici anni di esperi
         <div class="footer-content">
             <div class="footer-brand">
                 <a href="index.html" class="footer-logo-title">Caffè Rainer</a>
-                <p class="footer-tagline">Firenze — Innsbruck dal 1962</p>
+                <p class="footer-tagline">Firenze - 2011</p>
                 <a href="mailto:info@cafferainer.it" class="footer-email">info@cafferainer.it</a>
             </div>
             

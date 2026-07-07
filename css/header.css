@@ -17,13 +17,66 @@
     transition: var(--transition-smooth);
 }
 
-/* Make header background transparent when mobile menu is active */
-.main-header:has(#hamburgerBtn.active) {
-    background: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    border-bottom-color: transparent;
-    box-shadow: none;
+/* Desktop-only Homepage Transparent Header Effect */
+@media (min-width: 769px) {
+    /* Homepage Transparent Header Overrides (At Scroll Top) */
+    .home-page .main-header {
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border-bottom-color: transparent;
+        box-shadow: none;
+    }
+
+    /* Scrolled State for Homepage Header */
+    .home-page .main-header.scrolled {
+        background: var(--bg-light);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Nav Button Color on Transparent Header */
+    .home-page .main-header:not(.scrolled) .nav-btn {
+        color: var(--text-hero-light);
+    }
+
+    .home-page .main-header:not(.scrolled) .nav-btn::after {
+        background-color: var(--text-hero-light);
+    }
+
+    /* Hamburger color in Transparent Header */
+    .home-page .main-header:not(.scrolled) .hamburger {
+        border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .home-page .main-header:not(.scrolled) .hamburger .bar {
+        background-color: var(--text-hero-light);
+    }
+
+    .home-page .main-header:not(.scrolled) .hamburger:hover {
+        border-color: var(--gold);
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Logo color in Transparent Header (White) */
+    .home-page .main-header:not(.scrolled) .gambero-logo {
+        filter: brightness(0) invert(1);
+    }
+
+    /* Make header background transparent when mobile menu is active */
+    .main-header:has(#hamburgerBtn.active) {
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border-bottom-color: transparent;
+        box-shadow: none;
+    }
+
+    .home-page main {
+        padding-top: 0;
+    }
 }
 
 /* Add this to your base or main CSS file */
@@ -34,22 +87,21 @@ main {
 
 
 .logo-container {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
     pointer-events: auto;
-    /* enable click/hover on logo */
     transition: var(--transition-smooth);
 }
 
 .logo-container:hover {
-    transform: translateX(-50%) scale(1.05);
+    transform: scale(1.05);
 }
 
 .gambero-logo {
     height: 54px;
     width: auto;
     display: block;
+    transition: filter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .header-nav {
@@ -151,75 +203,112 @@ main {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Mobile Menu Overlay */
+/* Mobile Menu Overlay (Dark glass backdrop) */
 .mobile-menu-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(252, 249, 245, 0.7);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background-color: rgba(12, 26, 19, 0.25);
     z-index: 1050;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateY(-100%);
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .mobile-menu-overlay.active {
-    transform: translateY(0);
     opacity: 1;
+    pointer-events: auto;
 }
 
+/* Top Drawer (Panel) occupying 1/3 of the page from the top */
 .mobile-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 33.33vh;
+    min-height: 270px;
+    background-color: rgba(255, 255, 255, 0.92);
+    padding: 100px 60px 60px 60px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 35px;
-    text-align: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 18px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-menu-overlay.active .mobile-nav {
+    transform: translateY(0);
 }
 
 .mobile-nav-btn {
-    font-family: var(--font-serif);
-    font-size: 2.2rem;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     color: #1a1a1a;
     text-decoration: none;
-    font-weight: 400;
-    letter-spacing: 1px;
-    transition: var(--transition-smooth);
     position: relative;
+    padding-left: 0;
+    transition: var(--transition-smooth);
 }
 
 .mobile-nav-btn::after {
     content: '';
     position: absolute;
-    bottom: -5px;
-    left: 50%;
+    bottom: -4px;
+    left: 0;
     width: 0;
-    height: 2px;
+    height: 1.5px;
     background-color: var(--gold);
     transition: var(--transition-smooth);
-    transform: translateX(-50%);
 }
 
 .mobile-nav-btn:hover {
     color: var(--gold);
+    padding-left: 8px;
 }
 
 .mobile-nav-btn:hover::after {
-    width: 50px;
+    width: 30px;
 }
 
 .mobile-nav-btn.active-nav {
     color: var(--gold);
+    padding-left: 8px;
 }
 
 .mobile-nav-btn.active-nav::after {
-    width: 50px;
+    width: 30px;
+}
+
+.mobile-socials {
+    display: flex;
+    gap: 24px;
+    margin-top: 12px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(197, 160, 89, 0.15);
+    width: 100%;
+}
+
+.mobile-social-link {
+    font-size: 1.35rem;
+    color: #1a1a1a;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-social-link:hover {
+    color: var(--gold);
 }
 
 /* Prevent body scrolling when menu is open */
@@ -242,11 +331,39 @@ body.no-scroll {
         display: flex;
     }
 
+    .hamburger:hover {
+        border-color: rgba(197, 160, 89, 0.25);
+        background-color: transparent;
+    }
+
+    .logo-container:hover {
+        transform: scale(1);
+    }
+
     .gambero-logo {
         height: 38px;
     }
 
     main {
         padding-top: 70px;
+    }
+
+    /* Disable Hamburger Menu Item Hover transitions on Mobile */
+    .mobile-nav-btn:hover {
+        color: #1a1a1a;
+        padding-left: 0;
+    }
+
+    .mobile-nav-btn:hover::after {
+        width: 0;
+    }
+
+    .mobile-nav-btn.active-nav:hover {
+        color: var(--gold);
+        padding-left: 8px;
+    }
+
+    .mobile-nav-btn.active-nav:hover::after {
+        width: 30px;
     }
 }

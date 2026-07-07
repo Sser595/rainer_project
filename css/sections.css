@@ -40,17 +40,55 @@
     font-weight: 300;
 }
 
-/* Right: 4 portrait photos in a row */
+/* Right: 4 portrait photos in a row (Editorial Collage) */
 .handmade-photos {
     flex: 1;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+    gap: 24px;
+    padding: 30px 0;
 }
 
 .handmade-photo-item {
     display: flex;
     flex-direction: column;
+    border: 1px solid rgba(197, 160, 89, 0.25);
+    background-color: var(--bg-dark-accent);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.handmade-photo-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.55);
+    border-color: var(--gold);
+    z-index: 10;
+}
+
+/* Staggered Vertical Offsets for Collage Effect (Desktop only) */
+@media (min-width: 1025px) {
+    .handmade-photo-item.item-2 {
+        transform: translateY(35px);
+    }
+    .handmade-photo-item.item-3 {
+        transform: translateY(-25px);
+    }
+    .handmade-photo-item.item-4 {
+        transform: translateY(15px);
+    }
+    
+    /* Keep offsets correctly aligned on hover */
+    .handmade-photo-item.item-2:hover {
+        transform: translateY(27px) scale(1.02);
+    }
+    .handmade-photo-item.item-3:hover {
+        transform: translateY(-33px) scale(1.02);
+    }
+    .handmade-photo-item.item-4:hover {
+        transform: translateY(7px) scale(1.02);
+    }
 }
 
 .photo-wrap {
@@ -64,13 +102,13 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-    filter: brightness(0.92);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: brightness(0.85);
 }
 
 .handmade-photo-item:hover .photo-wrap img {
     transform: scale(1.04);
-    filter: brightness(1);
+    filter: brightness(1.05);
 }
 
 
@@ -164,6 +202,71 @@
     transition: var(--transition-smooth);
 }
 
+/* Collapsible Content for Philosophy (mobile-only styling) */
+.philosophy-collapsed-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.philosophy-collapsed-content > div {
+    min-height: 0;
+}
+
+.philosophy-collapsed-content.expanded {
+    grid-template-rows: 1fr;
+    opacity: 1;
+}
+
+/* On Desktop: keep it fully expanded and hide the read-more button */
+@media (min-width: 1025px) {
+    .philosophy-collapsed-content {
+        display: block !important;
+        grid-template-rows: none !important;
+        opacity: 1 !important;
+        overflow: visible !important;
+    }
+    .read-more-btn {
+        display: none !important;
+    }
+}
+
+.read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 12px 26px;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    border-radius: 2px;
+}
+
+.read-more-btn:hover {
+    background-color: var(--gold);
+    color: var(--bg-dark);
+}
+
+.read-more-btn i {
+    font-size: 0.7rem;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.read-more-btn.active i {
+    transform: rotate(180deg);
+}
+
+
 
 /* --- SEZIONE PRODUCTS (STILE CATALOGO CARTACEO) --- */
 .products-grid-layout {
@@ -188,15 +291,15 @@
 /* Container Principale */
 .products-main-wrapper {
     display: grid;
-    grid-template-columns: 2.2fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
     gap: 60px;
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 0 auto;
     align-items: center;
 }
 
 .products-main-wrapper.inverted {
-    grid-template-columns: 1fr 2.2fr;
+    grid-template-columns: 1fr 1.2fr;
     margin-top: 100px;
 }
 
@@ -309,11 +412,11 @@
     }
 
     .products-main-wrapper .products-container {
-        order: 1;
+        order: 2;
     }
 
     .products-main-wrapper .products-text-side {
-        order: 2;
+        order: 1;
     }
 
     .large-item .img-swap {
@@ -352,7 +455,33 @@
     }
 
     .products-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    /* Disable Handmade Photo Hover scale on mobile */
+    .handmade-photo-item:hover {
+        transform: none !important;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
+        border-color: rgba(197, 160, 89, 0.25) !important;
+    }
+    .handmade-photo-item:hover .photo-wrap img {
+        transform: none !important;
+        filter: brightness(0.85) !important;
+    }
+
+    /* Disable Product Card Hover scale/swap on mobile */
+    .product-item:hover {
+        transform: none !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03) !important;
+    }
+    .product-item:hover .img-main {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    .product-item:hover .img-hover {
+        opacity: 0 !important;
+        transform: none !important;
     }
 }
 
