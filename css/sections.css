@@ -551,7 +551,6 @@
 .places-grid-section {
     padding: 80px 8%;
     background-color: #ffffff;
-    border-top: 1px solid rgba(197, 160, 89, 0.15);
 }
 
 .places-grid-header {
@@ -726,4 +725,19 @@
     z-index: 10;
     background-color: var(--bg-dark);
     box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.45);
+}
+
+.pattern-divider {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background-color: transparent !important;
+}
+
+.pattern-divider-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    display: block;
 }

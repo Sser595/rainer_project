@@ -13,7 +13,6 @@
     width: 100%;
     margin-top: 0; /* Fixed gap: header spacing already handled by body padding-top */
     background-color: #f9f8f6;
-    border-bottom: 1px solid rgba(197, 160, 89, 0.15);
 }
 
 .location-image-side {
@@ -364,6 +363,7 @@
 @media (max-width: 992px) {
     .single-location-section {
         flex-direction: column-reverse; /* Image on top on mobile, text below */
+        min-height: auto;
     }
 
     .location-image-side {
@@ -373,12 +373,18 @@
     .location-info-side {
         width: 100%;
         border-left: none;
-        border-top: 1px solid rgba(197, 160, 89, 0.15);
         padding: 40px 6%;
+        justify-content: flex-start;
     }
 
     .location-info-side .places-title {
         font-size: 2.4rem;
+    }
+
+    .gallery-subgrid {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
     }
 }
 
