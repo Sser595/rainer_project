@@ -74,6 +74,9 @@
 
     <main>
         <section class="single-location-section">
+            <div class="location-image-side">
+                <img src="img_locali/interno_bakery.jpeg" alt="Rainer Bakery Interni">
+            </div>
             <div class="location-info-side">
                 <div class="back-btn-container">
                     <a href="index.html" class="place-map-btn">
@@ -84,86 +87,88 @@
                 <span class="gold-subtitle">LABORATORIO • PANE • TAKE-AWAY</span>
                 <h1 class="places-title">Rainer Bakery</h1>
                 <div class="gold-line"></div>
-                
-                <p class="place-description">
-                    Rainer Bakery è il nostro laboratorio specializzato nella panificazione e nella produzione d'asporto. 
-                    Qui, la cura per il lievito madre e i lunghi tempi di fermentazione danno vita a pani unici, croccanti all'esterno e soffici all'interno. Offriamo inoltre un servizio take-away per colazioni con brioche, croissant sfogliati a mano, dolci di pasticceria fresca d'asporto e caffè da asporto di alta qualità.
-                </p>
 
-                <!-- Dettagli specifici -->
-                <div class="place-details">
-                    <div class="place-info-block">
-                        <h4>Orari di Apertura</h4>
-                        <p>
-                            <strong>Martedì - Sabato:</strong> 8:00 - 14:30<br>
-                            <strong>Domenica & Lunedì:</strong> Chiuso
-                        </p>
+                <!-- Structured details like Breads Bakery -->
+                <div class="location-info-details">
+                    <!-- Indirizzo -->
+                    <div class="info-row">
+                        <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="info-content">
+                            <h4>Indirizzo</h4>
+                            <p>Via Bartolomeo Cristofori 8, 50144 Firenze</p>
+                        </div>
                     </div>
-                    <div class="place-info-block">
-                        <h4>Contatti & Indirizzo</h4>
-                        <p>
-                            Via Bartolomeo Cristofori 8, Firenze<br>
-                            <strong>Tel:</strong> <a href="tel:+390555276634">055 527 6634</a><br>
-                            <strong>Email:</strong> <a href="mailto:info@cafferainer.it">info@cafferainer.it</a>
-                        </p>
+                    <!-- Orari -->
+                    <div class="info-row">
+                        <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div class="info-content">
+                            <h4>Orari di Apertura</h4>
+                            <p>
+                                <strong>Martedì - Sabato:</strong> 8:00 - 14:30<br>
+                                <strong>Domenica & Lunedì:</strong> Chiuso
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Contatti -->
+                    <div class="info-row">
+                        <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="info-content">
+                            <h4>Contatti</h4>
+                            <p>
+                                <strong>Tel:</strong> <a href="tel:+390555276634">055 527 6634</a><br>
+                                <strong>Email:</strong> <a href="mailto:info@cafferainer.it">info@cafferainer.it</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="location-actions-container">
-                    <a href="https://maps.google.com/?q=Rainer+Bakery+Via+Bartolomeo+Cristofori+8+Firenze" target="_blank" class="place-map-btn">
-                        <i class="fa-solid fa-map-location-dot"></i> Ottieni Indicazioni Stradali
+                    <a href="https://maps.google.com/?q=Rainer+Bakery+Via+Bartolomeo+Cristofori+8+Firenze" target="_blank" class="place-action-btn btn-primary">
+                        <i class="fa-solid fa-map-location-dot"></i> Ottieni Indicazioni
                     </a>
                 </div>
             </div>
-            <div class="location-image-side">
-                <img src="img_locali/interno_bakery.jpeg" alt="Rainer Bakery Interni">
-            </div>
         </section>
 
-        <!-- CATEGORIES GRID SECTION -->
+        <!-- CATEGORIES COLLAGE GRID SECTION (Breads Bakery Style) -->
         <section class="categories-grid-section">
-            <div class="places-header" style="margin-bottom: 50px; text-align: center;">
+            <div class="places-header">
                 <span class="gold-subtitle">LE NOSTRE PROPOSTE</span>
-                <h2 class="places-title" style="margin-top: 0;">L'Arte del Pane & Sfogliati</h2>
+                <h2>L'Arte del Pane & Sfogliati</h2>
                 <div class="gold-line center"></div>
-                <p class="places-intro" style="max-width: 700px; margin: 0 auto;">
+                <p class="places-intro">
                     Presso il Rainer Bakery proponiamo pani artigianali e una rinomata sfogliatura francese dolce e salata sfornata calda più volte al giorno.
                 </p>
             </div>
 
-            <div class="categories-grid">
-                <!-- Categoria 1: Il Pane -->
-                <article class="category-card">
-                    <div class="category-img-wrap">
+            <!-- Breads Bakery Collage Grid -->
+            <div class="gallery-grid-container">
+                <!-- Large card on the left (1/3 width) -->
+                <div class="gallery-item gallery-featured-item">
+                    <img src="img_handmade/croiss_hm.jpeg" alt="I Croissant Artigianali">
+                </div>
+
+                <!-- Subgrid on the right (2/3 width) -->
+                <div class="gallery-subgrid">
+                    <div class="gallery-item">
                         <img src="img_pieghevole/bread2.jpeg" alt="Il Pane Artigianale">
                     </div>
-                    <div class="category-info">
-                        <h3>Il Pane Artigianale</h3>
-                        <p>Pagnotte rustiche a lievitazione naturale e pani speciali preparati con ingredienti sani e semplici, perfetti da portare in tavola ogni giorno.</p>
-                    </div>
-                </article>
-
-                <!-- Categoria 2: I Croissant -->
-                <article class="category-card">
-                    <div class="category-img-wrap">
-                        <img src="img_handmade/croiss_hm.jpeg" alt="I Croissant Artigianali">
-                    </div>
-                    <div class="category-info">
-                        <h3>I Croissant</h3>
-                        <p>I tipici croissant sfogliati secondo la tradizione d'oltralpe con finissimo burro belga, fragranti, leggeri e alveolati.</p>
-                    </div>
-                </article>
-
-                <!-- Categoria 3: Pain au Chocolat -->
-                <article class="category-card">
-                    <div class="category-img-wrap">
+                    <div class="gallery-item">
                         <img src="img_pieghevole/pain_au_chocolat.jpeg" alt="Pain au Chocolat">
                     </div>
-                    <div class="category-info">
-                        <h3>Pain au Chocolat</h3>
-                        <p>La deliziosa sfoglia francese arricchita con filamenti di cioccolato fondente pregiato, ideale per una prima colazione memorabile.</p>
+                    <div class="gallery-item">
+                        <img src="img_handmade/segale_hm.jpeg" alt="Pane di Segale">
                     </div>
-                </article>
+                    <div class="gallery-item">
+                        <img src="img_handmade/cinnamon_hm.jpeg" alt="Cinnamon Rolls">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img_handmade/pain_hm.jpeg" alt="Panini e Sfogliati">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img_pieghevole/bread.jpeg" alt="Pane con Lievito Madre">
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -206,7 +211,5 @@
         </div>
     </footer>
     <script src="javascript/script.js"></script>
-
 </body>
-
 </html>

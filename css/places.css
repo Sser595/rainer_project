@@ -1,241 +1,9 @@
 /* ─── BASE & RESET ───────────────────────────── */
 .places-page {
-    background-color: var(--bg-light);
-    color: #1a1a1a;
+    background-color: #f9f8f6; /* Warm cream background like Breads Bakery */
+    color: #45251c; /* Rich coffee/dark brown text */
     margin: 0;
-}
-
-.places-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 140px 4% 80px 4%;
-}
-
-/* Header */
-.places-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.places-title {
-    font-family: var(--font-serif);
-    font-size: 3rem;
-    color: #0c1a13;
-    margin: 15px 0 20px;
-    font-weight: 400;
-}
-
-.places-intro {
     font-family: var(--font-sans);
-    font-size: 0.95rem;
-    line-height: 1.8;
-    color: #555;
-    max-width: 600px;
-    margin: 0 auto;
-    font-weight: 300;
-}
-
-/* Grid layout */
-.places-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-}
-
-.place-card {
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    overflow: visible;
-    display: flex;
-    flex-direction: row;
-    min-height: 440px;
-    box-shadow: none;
-    padding-bottom: 60px;
-    border-bottom: 1px dashed rgba(197, 160, 89, 0.25);
-    transition: var(--transition-smooth);
-}
-
-.place-card:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.place-card:nth-child(even) {
-    flex-direction: row-reverse;
-}
-
-
-/* Image section */
-.place-image-wrap {
-    width: 45%;
-    flex-shrink: 0;
-    position: relative;
-    overflow: hidden;
-    border-radius: 1px;
-}
-
-.place-image-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-   
-}
-
-
-
-
-/* Card body */
-.place-body {
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-grow: 1;
-}
-
-.place-eyebrow {
-    font-family: var(--font-sans);
-    font-size: 0.6rem;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 500;
-    margin-bottom: 8px;
-}
-
-.place-name {
-    font-family: var(--font-serif);
-    font-size: 1.8rem;
-    color: #0c1a13;
-    margin: 0 0 15px 0;
-    font-weight: 400;
-}
-
-.place-description {
-    font-family: var(--font-sans);
-    font-size: 0.85rem;
-    line-height: 1.65;
-    color: #666;
-    margin-bottom: 25px;
-    font-weight: 300;
-}
-
-.place-divider {
-    height: 1px;
-    background-color: rgba(197, 160, 89, 0.15);
-    margin-bottom: 20px;
-}
-
-/* Details grid inside body */
-.place-details {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 25px;
-}
-
-.place-info-block h4 {
-    font-family: var(--font-sans);
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #999;
-    margin: 0 0 4px 0;
-    font-weight: 500;
-}
-
-.place-info-block p {
-    font-family: var(--font-sans);
-    font-size: 0.8rem;
-    line-height: 1.5;
-    color: #444;
-    margin: 0;
-    font-weight: 300;
-}
-
-/* Map link button */
-.place-map-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    align-self: flex-start;
-    padding: 0 0 4px 0;
-    background: transparent;
-    color: var(--gold);
-    font-family: var(--font-sans);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(197, 160, 89, 0.3);
-    transition: var(--transition-smooth);
-}
-
-.place-map-btn:hover {
-    color: var(--bg-dark);
-    border-bottom-color: var(--bg-dark);
-    transform: translateX(4px);
-}
-
-/* Responsive details */
-@media (max-width: 992px) {
-    .place-card {
-        min-height: 320px;
-    }
-    .place-body {
-        padding: 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    .places-main {
-        padding: 100px 6% 60px 6%;
-    }
-    
-    .places-title {
-        font-size: 2.2rem;
-    }
-    
-    .places-grid {
-        gap: 45px;
-    }
-
-    .place-card {
-        flex-direction: column !important;
-        min-height: auto;
-    }
-
-    /* Disable Card Hovers on Mobile */
-    .place-card:hover {
-        transform: none !important;
-    }
-    .place-card:hover .place-image-wrap img {
-        transform: none !important;
-    }
-    .place-map-btn:hover {
-        color: var(--gold) !important;
-        border-bottom-color: rgba(197, 160, 89, 0.3) !important;
-        transform: none !important;
-    }
-
-    .place-image-wrap {
-        width: 100%;
-        max-width: none;
-        aspect-ratio: 16 / 10;
-        margin: 0;
-    }
-
-    .place-body {
-        padding: 25px;
-    }
-
-    .place-details {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
 }
 
 /* ─── SINGLE LOCATION SPLIT LAYOUT ──────────────── */
@@ -243,27 +11,55 @@
     display: flex;
     min-height: calc(100vh - 80px);
     width: 100%;
+    margin-top: 0; /* Fixed gap: header spacing already handled by body padding-top */
+    background-color: #f9f8f6;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+}
+
+.location-image-side {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+    background-color: #f9f8f6;
+}
+
+.location-image-side img {
+    position: absolute;
+    top: 0;
+    left: 120px; /* Padding just on the left side */
+    width: calc(100% - 120px);
+    height: 100%;
+    object-fit: cover;
 }
 
 .location-info-side {
-    width: 60%;
-    padding: 60px 8% 60px 8%;
+    width: 50%;
+    padding: 60px 8%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #ffffff;
-    color: #555555;
+    background-color: #fcfaf7; /* Slightly lighter warm cream for details */
+    color: #45251c;
+    border-left: 1px solid rgba(197, 160, 89, 0.15);
 }
 
-/* Cleanup layout classes for Single Location info side */
 .back-btn-container {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .back-btn-container .place-map-btn {
     border-bottom: none;
     padding-left: 0;
     color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: var(--transition-smooth);
 }
 
 .back-btn-container .place-map-btn:hover {
@@ -271,565 +67,331 @@
     transform: translateX(-4px);
 }
 
+/* Original Title Styling: Garamond & Black */
 .location-info-side .places-title {
-    text-align: left;
-    margin: 15px 0 20px;
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: 400;
     color: #0c1a13;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+    text-transform: none;
 }
 
 .location-info-side .gold-line {
-    margin-left: 0;
+    width: 60px;
+    height: 1px;
+    background-color: var(--gold);
     margin-bottom: 30px;
 }
 
-.location-info-side .place-description {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    margin-bottom: 30px;
-    color: #555555;
-}
-
-.location-info-side .place-details {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 30px;
+/* Info grid layout */
+.location-info-details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
     margin-bottom: 35px;
 }
 
-.location-info-side .place-info-block h4 {
-    font-size: 0.75rem;
-    margin-bottom: 8px;
-    color: var(--gold);
+.info-row {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    align-items: start;
+    gap: 15px;
 }
 
-.location-info-side .place-info-block p {
-    font-size: 0.9rem;
+.info-icon {
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-top: 2px;
+}
+
+.info-content h4 {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gold);
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+
+.info-content p {
+    font-size: 0.95rem;
     line-height: 1.6;
-    color: #555555;
+    color: #45251c;
+    margin: 0;
 }
 
-.location-info-side .place-info-block a {
-    color: var(--gold);
+.info-content a {
+    color: #45251c;
     text-decoration: none;
+    border-bottom: 1px solid rgba(69, 37, 28, 0.2);
     transition: var(--transition-smooth);
 }
 
-.location-info-side .place-info-block a:hover {
-    color: var(--gold-dark);
+.info-content a:hover {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
 }
 
-/* Bistrot Menu notice box on dark background */
+/* CTAs Container */
+.location-actions-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.place-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: var(--transition-smooth);
+}
+
+.place-action-btn.btn-primary {
+    background-color: #006747;
+    color: #ffffff;
+    border: 1px solid #006747;
+}
+
+.place-action-btn.btn-primary:hover {
+    background-color: #004d34;
+    border-color: #004d34;
+    transform: translateY(-2px);
+}
+
+.place-action-btn.btn-secondary {
+    background-color: transparent;
+    color: #006747;
+    border: 1px solid #006747;
+}
+
+.place-action-btn.btn-secondary:hover {
+    background-color: rgba(0, 103, 71, 0.05);
+    transform: translateY(-2px);
+}
+
+/* Bistro Menu notice box */
 .menu-notice-box {
-    background-color: rgba(197, 160, 89, 0.04);
-    border: 1px solid rgba(197, 160, 89, 0.12);
+    background-color: rgba(197, 160, 89, 0.05);
+    border: 1px solid rgba(197, 160, 89, 0.15);
     border-left: 4px solid var(--gold);
-    padding: 25px;
-    margin-bottom: 35px;
-    border-radius: 0;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 4px;
 }
 
 .menu-notice-box h3 {
-    font-family: var(--font-serif);
-    font-size: 1.25rem;
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    font-weight: 700;
     color: #0c1a13;
-    margin: 0 0 10px 0;
-    font-weight: 400;
+    margin: 0 0 8px 0;
 }
 
 .menu-notice-box p {
-    font-family: var(--font-sans);
     font-size: 0.85rem;
-    line-height: 1.6;
-    color: #555555;
-    margin: 0 0 15px 0;
+    line-height: 1.5;
+    color: #555;
+    margin: 0;
+}
+
+/* ─── CATEGORIES & GALLERY SECTIONS ──────────────── */
+.categories-grid-section {
+    padding: 80px 8%;
+    background-color: #f9f8f6;
+    border-top: 1px solid rgba(0, 103, 71, 0.08);
+}
+
+.places-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.places-header h2 {
+    font-family: var(--font-serif);
+    font-size: 2.6rem;
+    font-weight: 400;
+    color: #0c1a13;
+    margin: 10px 0;
+}
+
+.places-intro {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #66524d;
+    max-width: 700px;
+    margin: 0 auto;
     font-weight: 300;
 }
 
-.location-actions-container {
+/* Breads Bakery Collage Grid Styles */
+.gallery-grid-container {
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 12px;
+    margin: 30px auto 0 auto;
+    max-width: 1200px;
+    width: 100%;
 }
 
-.location-info-side .place-map-btn {
-    color: var(--gold);
-    border-bottom-color: rgba(197, 160, 89, 0.4);
-}
-
-.location-info-side .place-map-btn:hover {
-    color: var(--gold-dark);
-    border-bottom-color: var(--gold-dark);
-}
-
-.location-image-side {
-    width: 40%;
+.gallery-item {
     position: relative;
     overflow: hidden;
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: var(--shadow-soft);
+    aspect-ratio: 4 / 3;
 }
 
-.location-image-side img {
-    position: absolute;
-    top: 0;
-    left: 0;
+.gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
-/* Gallery Section Underneath */
-.location-gallery-section {
-    background-color: #ffffff;
-    padding: 50px 8%;
-    border-top: 1px solid rgba(197, 160, 89, 0.15);
+
+
+@media (min-width: 992px) {
+    .gallery-grid-container {
+        flex-direction: row;
+        height: 620px;
+    }
+    
+    .gallery-featured-item {
+        width: 33.333%;
+        height: 100%;
+        aspect-ratio: auto;
+    }
+    
+    .gallery-subgrid {
+        width: 66.666%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .gallery-subgrid .gallery-item {
+        aspect-ratio: auto;
+        height: 100%;
+    }
 }
 
-.gallery-section-title {
-    font-family: var(--font-serif);
-    font-size: 2rem;
-    color: #0c1a13;
-    text-align: center;
-    margin-bottom: 50px;
-    font-weight: 400;
+/* ─── FAQ ACCORDION SECTION (Breads Bakery Style) ─── */
+.faq-section {
+    padding: 80px 8%;
+    background-color: #fcfaf7;
+    border-top: 1px solid rgba(0, 103, 71, 0.08);
 }
 
-.gallery-grid-layout {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    max-width: 1200px;
+.faq-container {
+    max-width: 800px;
     margin: 0 auto;
 }
 
-.gallery-card {
-    background: transparent;
+.accordion {
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.gallery-img-wrap {
-    width: 100%;
-    aspect-ratio: 4 / 3;
+.accordion-item {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 103, 71, 0.08);
+    border-radius: 6px;
     overflow: hidden;
-    border-radius: 2px;
+    transition: var(--transition-smooth);
 }
 
-.gallery-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #45251c;
+    transition: var(--transition-smooth);
+    user-select: none;
 }
 
-.gallery-card-title {
-    font-family: var(--font-serif);
-    font-size: 1.2rem;
-    color: #0c1a13;
+.accordion-header:hover {
+    background-color: rgba(0, 103, 71, 0.02);
+    color: var(--gold);
+}
+
+.accordion-icon {
+    font-size: 0.9rem;
+    color: var(--gold);
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.accordion-content p {
+    padding: 0 24px 20px 24px;
     margin: 0;
-    font-weight: 500;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #66524d;
 }
 
-.gallery-card-desc {
-    font-family: var(--font-sans);
-    font-size: 0.85rem;
-    line-height: 1.6;
-    color: #666;
-    margin: 0;
-    font-weight: 300;
-}
-
-/* Responsive adjustments */
+/* ─── RESPONSIVE STYLES ────────────────────────── */
 @media (max-width: 992px) {
     .single-location-section {
-        flex-direction: column-reverse;
-        min-height: auto;
-        margin-top: 0;
+        flex-direction: column-reverse; /* Image on top on mobile, text below */
+    }
+
+    .location-image-side {
+        display: none;
     }
 
     .location-info-side {
         width: 100%;
+        border-left: none;
+        border-top: 1px solid rgba(197, 160, 89, 0.15);
         padding: 40px 6%;
     }
 
-    .location-image-side {
-        width: 100%;
-        height: 400px;
+    .location-info-side .places-title {
+        font-size: 2.4rem;
     }
-    
-    .location-image-side img {
-        position: relative;
-        height: 100%;
-    }
-
-    .location-info-side .place-details {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-}
-
-/* --- ALTERNATING ZIG-ZAG DETAILS SECTION --- */
-.location-details-zigzag {
-    border-top: 1px solid rgba(197, 160, 89, 0.15);
-    background-color: #ffffff;
-}
-
-.location-detail-row {
-    display: flex;
-    align-items: center;
-    gap: 80px;
-    padding: 60px 8%;
-}
-
-.location-detail-row:nth-child(even) {
-    flex-direction: row-reverse;
-    background-color: #ffffff;
-}
-
-.detail-text-col {
-    flex: 1.3;
-}
-
-.detail-text-col h3 {
-    font-family: var(--font-serif);
-    font-size: 2.2rem;
-    color: #0c1a13;
-    margin-bottom: 20px;
-    font-weight: 400;
-}
-
-.detail-text-col p {
-    font-family: var(--font-sans);
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #555;
-    font-weight: 300;
-}
-
-.detail-img-col {
-    flex: 0.7;
-    aspect-ratio: 3 / 4;
-    overflow: hidden;
-    border-radius: 2px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    border: 1px solid rgba(197, 160, 89, 0.15);
-}
-
-.detail-img-col img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: var(--transition-smooth);
 }
 
 @media (max-width: 768px) {
-    .location-detail-row {
-        flex-direction: column !important;
-        gap: 30px;
-        padding: 60px 6%;
+    .places-header h2 {
+        font-size: 2rem;
     }
-    .detail-img-col {
-        width: 100%;
-        aspect-ratio: 3 / 4;
-    }
-    .detail-text-col h3 {
-        font-size: 1.8rem;
-    }
-}
 
-/* --- SEZIONE TORTE SHOWCASE --- */
-.cakes-showcase-section {
-    padding: 60px 8%;
-    background-color: #ffffff;
-    text-align: center;
-    border-top: 1px solid rgba(197, 160, 89, 0.15);
-}
-
-.cakes-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    max-width: 1200px;
-    margin: 40px auto 0 auto;
-}
-
-.cake-card {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-
-.cake-img-wrap {
-    width: 100%;
-    aspect-ratio: 4 / 4;
-    overflow: hidden;
-    border-radius: 2px;
-    border: 1px solid rgba(197, 160, 89, 0.15);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    margin-bottom: 20px;
-}
-
-.cake-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: var(--transition-smooth);
-}
-
-.cake-card:hover .cake-img-wrap img {
-    filter: brightness(1.05);
-}
-
-.cake-title {
-    font-family: var(--font-serif);
-    font-size: 2rem;
-    color: #000000;
-    margin-bottom: 8px;
-    font-weight: 400;
-}
-
-.cake-desc {
-    font-family: var(--font-sans);
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: #666;
-    font-weight: 300;
-}
-
-@media (max-width: 768px) {
-    .cakes-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-}
-
-/* --- SEZIONE LE NOSTRE SPECIALITÀ (BENTO GRID SENZA CORNICI) --- */
-.sweets-bento-section {
-    padding: 60px 8%;
-    background-color: #ffffff;
-    border-top: 1px solid rgba(197, 160, 89, 0.15);
-}
-
-.sweets-bento-grid {
-    display: grid;
-    grid-template-columns: 1.8fr 1fr;
-    grid-template-rows: 320px 320px;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 40px auto 0 auto;
-}
-
-.bento-card {
-    background-color: transparent;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-    display: flex;
-    overflow: hidden;
-}
-
-/* Schede Orizzontali (Monoporzioni & Financier) */
-.bento-card.wide-card {
-    flex-direction: row;
-    align-items: center;
-    gap: 30px;
-}
-
-.bento-card.wide-card.reverse {
-    flex-direction: row-reverse;
-}
-
-.bento-card.wide-card .bento-img-wrap {
-    width: 70%;
-    height: 100%;
-    border-radius: 2px;
-    border: 1px solid rgba(197, 160, 89, 0.15);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-}
-
-.bento-card.wide-card .bento-text-wrap {
-    width: 30%;
-    padding: 0;
-    text-align: left;
-}
-
-/* Scheda Verticale Alta (Arco di Linz) */
-.bento-card.tall-card {
-    grid-column: 2;
-    grid-row: 1 / 3;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.bento-card.tall-card .bento-img-wrap {
-    width: 100%;
-    height: 75%;
-    border-radius: 2px;
-    border: 1px solid rgba(197, 160, 89, 0.15);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-}
-
-.bento-card.tall-card .bento-text-wrap {
-    width: 100%;
-    height: 25%;
-    padding: 0;
-    text-align: left;
-}
-
-.bento-img-wrap {
-    overflow: hidden;
-}
-
-.bento-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: filter 0.4s ease;
-}
-
-.bento-card:hover .bento-img-wrap img {
-    filter: brightness(1.05);
-}
-
-.bento-text-wrap h3 {
-    font-family: var(--font-serif);
-    font-size: 1.6rem;
-    color: #0c1a13;
-    margin-bottom: 8px;
-    font-weight: 400;
-}
-
-.bento-text-wrap p {
-    font-family: var(--font-sans);
-    font-size: 0.85rem;
-    line-height: 1.6;
-    color: #666;
-    font-weight: 300;
-}
-
-@media (max-width: 992px) {
-    .sweets-bento-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        gap: 40px;
-    }
-    .bento-card.tall-card {
-        grid-column: auto;
-        grid-row: auto;
-        gap: 15px;
-    }
-    .bento-card.wide-card {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .bento-card.wide-card.reverse {
+    .location-actions-container {
         flex-direction: column;
     }
-    .bento-card.wide-card .bento-img-wrap,
-    .bento-card.wide-card .bento-text-wrap,
-    .bento-card.tall-card .bento-img-wrap,
-    .bento-card.tall-card .bento-text-wrap {
+
+    .place-action-btn {
         width: 100%;
-        height: auto;
-    }
-    .bento-card.wide-card .bento-img-wrap,
-    .bento-card.tall-card .bento-img-wrap {
-        aspect-ratio: 3 / 2;
-    }
-}
-
-@media (max-width: 992px) {
-    .sweets-shapes-grid {
-        grid-template-columns: 1fr;
-        gap: 60px;
-    }
-    .shape-item.circle-shape .shape-img-wrap {
-        max-width: 320px;
-    }
-}
-
-/* --- CATEGORIES GRID SECTION --- */
-.categories-grid-section {
-    padding: 60px 8%;
-    background-color: #ffffff;
-    border-top: 1px solid rgba(197, 160, 89, 0.15);
-}
-
-.categories-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    max-width: 1200px;
-    margin: 40px auto 0 auto;
-}
-
-.category-card {
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff;
-    transition: transform 0.4s ease;
-}
-
-.category-card:hover {
-    transform: translateY(-5px);
-}
-
-.category-img-wrap {
-    width: 100%;
-    aspect-ratio: 3 / 4;
-    overflow: hidden;
-    border-radius: 2px;
-    border: 1px solid rgba(197, 160, 89, 0.15);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    margin-bottom: 24px;
-}
-
-.category-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: var(--transition-smooth);
-}
-
-.category-card:hover .category-img-wrap img {
-    filter: brightness(1.05);
-}
-
-.category-info h3 {
-    font-family: var(--font-serif);
-    font-size: 1.8rem;
-    color: #0c1a13;
-    margin-bottom: 12px;
-    font-weight: 400;
-    text-align: left;
-}
-
-.category-info p {
-    font-family: var(--font-sans);
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: #555;
-    font-weight: 300;
-    text-align: left;
-    margin: 0;
-}
-
-@media (max-width: 900px) {
-    .categories-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    
-    .category-img-wrap {
-        aspect-ratio: 16 / 10;
-    }
-}
-
-@media (min-width: 901px) {
-    .categories-grid.four-columns {
-        grid-template-columns: repeat(4, 1fr);
-        max-width: 95%;
     }
 }
