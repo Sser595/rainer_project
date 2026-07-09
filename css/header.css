@@ -1,3 +1,7 @@
+/* ==========================================================================
+   TOP HEADER NAVIGATION SYSTEM
+   ========================================================================== */
+
 .main-header {
     position: fixed;
     top: 0;
@@ -10,34 +14,199 @@
     align-items: center;
     padding: 0 60px;
     background: var(--bg-light);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(197, 160, 89, 0.15);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Menu open header state to solve stacking context issues */
+.main-header.menu-open {
+    background-color: transparent !important;
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+    z-index: 1300 !important;
+}
+
+.main-header.menu-open .gambero-logo {
+    filter: brightness(0) invert(1) !important;
+}
+
+/* Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+}
+
+.gambero-logo {
+    height: 60px;
+    width: auto;
+    display: block;
+    transition: filter 0.4s ease;
+}
+
+/* Desktop Navigation */
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    flex: 1;
+}
+
+.header-nav-left {
+    justify-content: flex-end;
+    margin-right: 45px;
+}
+
+.header-nav-right {
+    justify-content: flex-start;
+    margin-left: 45px;
+}
+
+.nav-btn {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--bg-dark-accent);
+    text-transform: uppercase;
+    letter-spacing: 2.2px;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    position: relative;
+    padding: 10px 0;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.nav-btn:hover,
+.nav-btn.active-nav {
+    color: var(--gold);
+}
+
+.nav-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: right;
+}
+
+.nav-btn:hover::after,
+.nav-btn.active-nav::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-arrow {
+    font-size: 0.7rem;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    width: 220px;
+    background-color: var(--bg-light);
+    border: 1px solid rgba(197, 160, 89, 0.12);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+    border-radius: 2px;
+    padding: 10px 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1210;
+}
+
+/* Invisible bridge to keep hover active across the 8px layout gap */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: transparent;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(8px);
+}
+
+.dropdown-menu a {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #000000 !important;
+    padding: 12px 24px;
+    text-decoration: none;
     transition: var(--transition-smooth);
 }
 
-/* Desktop-only Homepage Transparent Header Effect */
-@media (min-width: 769px) {
-    /* Homepage Transparent Header Overrides (At Scroll Top) */
+.dropdown-menu a:hover,
+.dropdown-menu a.active-nav {
+    background-color: rgba(197, 160, 89, 0.05);
+    color: var(--gold) !important;
+    padding-left: 28px;
+}
+
+/* Hamburger Button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1300;
+}
+
+.hamburger .bar {
+    width: 100%;
+    height: 2px;
+    background-color: var(--bg-dark-accent);
+    transition: all 0.3s ease;
+}
+
+/* Transparent Header Effect for Homepage */
+@media (min-width: 993px) {
     .home-page .main-header {
-        background: transparent;
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
+        background-color: transparent;
         border-bottom-color: transparent;
         box-shadow: none;
     }
 
-    /* Scrolled State for Homepage Header */
     .home-page .main-header.scrolled {
-        background: var(--bg-light);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
+        background-color: var(--bg-light);
         border-bottom: 1px solid rgba(197, 160, 89, 0.15);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     }
 
-    /* Nav Button Color on Transparent Header */
     .home-page .main-header:not(.scrolled) .nav-btn {
         color: var(--text-hero-light);
     }
@@ -46,281 +215,144 @@
         background-color: var(--text-hero-light);
     }
 
-    /* Hamburger color in Transparent Header */
-    .home-page .main-header:not(.scrolled) .hamburger {
-        border-color: rgba(255, 255, 255, 0.25);
-    }
-
-    .home-page .main-header:not(.scrolled) .hamburger .bar {
-        background-color: var(--text-hero-light);
-    }
-
-    .home-page .main-header:not(.scrolled) .hamburger:hover {
-        border-color: var(--gold);
-        background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    /* Logo color in Transparent Header (White) */
     .home-page .main-header:not(.scrolled) .gambero-logo {
         filter: brightness(0) invert(1);
     }
 
-    /* Make header background transparent when mobile menu is active */
-    .main-header:has(#hamburgerBtn.active) {
-        background: transparent;
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-        border-bottom-color: transparent;
-        box-shadow: none;
+    /* Scrolled state nav-btn styling to ensure they turn black */
+    .home-page .main-header.scrolled .nav-btn {
+        color: #000000;
     }
 
-    .home-page main {
-        padding-top: 0;
+    .home-page .main-header.scrolled .nav-btn::after {
+        background-color: var(--gold);
+    }
+
+    .home-page .main-header.scrolled .nav-btn:hover,
+    .home-page .main-header.scrolled .nav-btn.active-nav {
+        color: var(--gold);
     }
 }
 
-/* Add this to your base or main CSS file */
-main {
-    padding-top: 80px;
-}
-
-
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    pointer-events: auto;
-    transition: var(--transition-smooth);
-}
-
-.logo-container:hover {
-    transform: scale(1.05);
-}
-
-.gambero-logo {
-    height: 54px;
-    width: auto;
-    display: block;
-    transition: filter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.header-nav {
-    display: flex;
-    gap: 45px;
-    align-items: center;
-    pointer-events: auto;
-}
-
-/* Elegant Hover Underline Effect */
-.nav-btn {
-    font-family: var(--font-sans);
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #1a1a1a;
-    text-decoration: none;
-    position: relative;
-    padding: 8px 0;
-    transition: color 0.3s;
-}
-
-.nav-btn::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 1.5px;
-    background-color: var(--gold);
-    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.nav-btn:hover {
-    color: var(--gold);
-}
-
-.nav-btn:hover::after {
-    width: 100%;
-    left: 0;
-}
-
-/* Active navigation item style */
-.nav-btn.active-nav {
-    color: var(--gold);
-}
-
-.nav-btn.active-nav::after {
-    width: 100%;
-    left: 0;
-}
-
-/* Hamburger Menu Button */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 42px;
-    height: 42px;
-    background: transparent;
-    border: 1px solid rgba(197, 160, 89, 0.25);
-    border-radius: 50%;
-    cursor: pointer;
-    padding: 12px 11px;
-    z-index: 1100;
-    transition: var(--transition-smooth);
-}
-
-.hamburger:hover {
-    border-color: var(--gold);
-    background-color: rgba(197, 160, 89, 0.06);
-}
-
-.hamburger .bar {
-    width: 100%;
-    height: 1.5px;
-    background-color: #1a1a1a;
-    transition: var(--transition-smooth);
-    transform-origin: center;
-}
-
-/* Asymmetric line layout */
-.hamburger .bar:nth-child(2) {
-    width: 70%;
-    align-self: flex-end;
-}
-
-.hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-
-.hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-    width: 0;
-}
-
-.hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
-
-/* Mobile Menu Overlay (Dark glass backdrop) */
+/* Mobile Navigation Overlay */
 .mobile-menu-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(12, 26, 19, 0.25);
-    z-index: 1050;
+    inset: 0;
+    background-color: rgba(12, 26, 19, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 1250;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(-100%);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .mobile-menu-overlay.active {
     opacity: 1;
     pointer-events: auto;
+    transform: translateY(0);
 }
 
-/* Top Drawer (Panel) occupying 1/3 of the page from the top */
 .mobile-nav {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 33.33vh;
-    min-height: 270px;
-    background-color: rgba(255, 255, 255, 0.92);
-    padding: 100px 60px 60px 60px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 18px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    border-bottom: 1px solid rgba(197, 160, 89, 0.15);
-    transform: translateY(-100%);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.mobile-menu-overlay.active .mobile-nav {
-    transform: translateY(0);
+    align-items: center;
+    gap: 20px;
+    text-align: center;
 }
 
 .mobile-nav-btn {
     font-family: var(--font-sans);
-    font-size: 0.85rem;
+    font-size: 1.1rem;
     font-weight: 500;
-    letter-spacing: 2px;
+    color: var(--text-light);
     text-transform: uppercase;
-    color: #1a1a1a;
+    letter-spacing: 2px;
     text-decoration: none;
-    position: relative;
-    padding-left: 0;
+    padding: 10px 0;
     transition: var(--transition-smooth);
 }
 
-.mobile-nav-btn::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 1.5px;
-    background-color: var(--gold);
-    transition: var(--transition-smooth);
-}
-
-.mobile-nav-btn:hover {
-    color: var(--gold);
-    padding-left: 8px;
-}
-
-.mobile-nav-btn:hover::after {
-    width: 30px;
-}
-
+.mobile-nav-btn:hover,
 .mobile-nav-btn.active-nav {
     color: var(--gold);
-    padding-left: 8px;
 }
 
-.mobile-nav-btn.active-nav::after {
-    width: 30px;
+.mobile-nav-heading {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin-top: 15px;
+}
+
+.mobile-nav-sub-btn {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: #b3bfae;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.mobile-nav-sub-btn:hover,
+.mobile-nav-sub-btn.active-nav {
+    color: var(--text-light);
 }
 
 .mobile-socials {
     display: flex;
-    gap: 24px;
-    margin-top: 12px;
-    padding-top: 18px;
-    border-top: 1px solid rgba(197, 160, 89, 0.15);
-    width: 100%;
+    gap: 25px;
+    margin-top: 30px;
 }
 
 .mobile-social-link {
-    font-size: 1.35rem;
-    color: #1a1a1a;
-    transition: color 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    color: #b3bfae;
+    font-size: 1.3rem;
+    transition: var(--transition-smooth);
 }
 
 .mobile-social-link:hover {
     color: var(--gold);
 }
 
-/* Prevent body scrolling when menu is open */
-body.no-scroll {
-    overflow: hidden;
+/* ==========================================================================
+   RESPONSIVE LAYOUTS
+   ========================================================================== */
+
+body {
+    padding-top: 80px;
+    padding-left: 0 !important;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+.home-page {
+    padding-top: 0;
+}
+
+main {
+    padding-top: 0 !important;
+}
+
+@media (max-width: 992px) {
     .main-header {
-        padding: 0 24px;
+        padding: 0 30px;
         height: 70px;
+    }
+    
+    .logo-container {
+        flex: none;
+    }
+    
+    body {
+        padding-top: 70px;
+    }
+    
+    .gambero-logo {
+        height: 48px;
     }
 
     .header-nav {
@@ -331,39 +363,49 @@ body.no-scroll {
         display: flex;
     }
 
-    .hamburger:hover {
-        border-color: rgba(197, 160, 89, 0.25);
+    /* Hamburger active states */
+    .hamburger.active {
+        position: fixed;
+        top: 26px;
+        right: 30px;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .hamburger.active .bar {
+        background-color: var(--text-light) !important;
+    }
+    
+    .home-page .main-header:not(.scrolled) .hamburger .bar {
+        background-color: var(--text-hero-light);
+    }
+    
+    .home-page .main-header.scrolled .hamburger .bar {
+        background-color: var(--bg-dark-accent);
+    }
+
+    /* Transparency overrides for mobile view on Homepage */
+    .home-page .main-header {
         background-color: transparent;
+        border-bottom-color: transparent;
+        box-shadow: none;
     }
 
-    .logo-container:hover {
-        transform: scale(1);
+    .home-page .main-header.scrolled {
+        background-color: var(--bg-light);
+        border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     }
 
-    .gambero-logo {
-        height: 38px;
-    }
-
-    main {
-        padding-top: 70px;
-    }
-
-    /* Disable Hamburger Menu Item Hover transitions on Mobile */
-    .mobile-nav-btn:hover {
-        color: #1a1a1a;
-        padding-left: 0;
-    }
-
-    .mobile-nav-btn:hover::after {
-        width: 0;
-    }
-
-    .mobile-nav-btn.active-nav:hover {
-        color: var(--gold);
-        padding-left: 8px;
-    }
-
-    .mobile-nav-btn.active-nav:hover::after {
-        width: 30px;
+    .home-page .main-header:not(.scrolled) .gambero-logo {
+        filter: brightness(0) invert(1);
     }
 }

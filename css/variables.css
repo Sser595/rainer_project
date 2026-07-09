@@ -1,7 +1,7 @@
 :root {
     --bg-light: #ffffff;
     --bg-dark: #006747; /* Original brand green */
-    --bg-dark-accent: #0c1a13;
+    --bg-dark-accent: #000000;
     --text-hero-light: #ffffff;
     --text-hero-muted: #e2dcd0;
     --text-light: #f5f2eb;
@@ -9,7 +9,7 @@
     --gold: #c5a059; /* Brushed premium gold */
     --gold-dark: #aa862c;
     --card-border: #006747;
-    --font-serif: 'Playfair Display', serif;
+    --font-serif: 'EB Garamond', serif;
     --font-sans: 'Montserrat', sans-serif;
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);

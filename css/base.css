@@ -34,11 +34,11 @@ em {
 .gold-subtitle {
     display: inline-block;
     font-family: var(--font-sans);
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-size: 0.72rem;
+    font-weight: 500;
     color: var(--gold);
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     margin-bottom: 12px;
 }
 

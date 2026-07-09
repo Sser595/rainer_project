@@ -65,9 +65,6 @@
     flex-direction: row-reverse;
 }
 
-.place-card:hover {
-    transform: translateY(-2px);
-}
 
 /* Image section */
 .place-image-wrap {
@@ -83,12 +80,10 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+   
 }
 
-.place-card:hover .place-image-wrap img {
-    transform: scale(1.05);
-}
+
 
 
 /* Card body */
@@ -240,5 +235,601 @@
     .place-details {
         grid-template-columns: 1fr;
         gap: 15px;
+    }
+}
+
+/* ─── SINGLE LOCATION SPLIT LAYOUT ──────────────── */
+.single-location-section {
+    display: flex;
+    min-height: calc(100vh - 80px);
+    width: 100%;
+}
+
+.location-info-side {
+    width: 60%;
+    padding: 60px 8% 60px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+    color: #555555;
+}
+
+/* Cleanup layout classes for Single Location info side */
+.back-btn-container {
+    margin-bottom: 30px;
+}
+
+.back-btn-container .place-map-btn {
+    border-bottom: none;
+    padding-left: 0;
+    color: var(--gold);
+}
+
+.back-btn-container .place-map-btn:hover {
+    color: var(--gold-dark);
+    transform: translateX(-4px);
+}
+
+.location-info-side .places-title {
+    text-align: left;
+    margin: 15px 0 20px;
+    color: #0c1a13;
+}
+
+.location-info-side .gold-line {
+    margin-left: 0;
+    margin-bottom: 30px;
+}
+
+.location-info-side .place-description {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: #555555;
+}
+
+.location-info-side .place-details {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+.location-info-side .place-info-block h4 {
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+    color: var(--gold);
+}
+
+.location-info-side .place-info-block p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555555;
+}
+
+.location-info-side .place-info-block a {
+    color: var(--gold);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.location-info-side .place-info-block a:hover {
+    color: var(--gold-dark);
+}
+
+/* Bistrot Menu notice box on dark background */
+.menu-notice-box {
+    background-color: rgba(197, 160, 89, 0.04);
+    border: 1px solid rgba(197, 160, 89, 0.12);
+    border-left: 4px solid var(--gold);
+    padding: 25px;
+    margin-bottom: 35px;
+    border-radius: 0;
+}
+
+.menu-notice-box h3 {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: #0c1a13;
+    margin: 0 0 10px 0;
+    font-weight: 400;
+}
+
+.menu-notice-box p {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #555555;
+    margin: 0 0 15px 0;
+    font-weight: 300;
+}
+
+.location-actions-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.location-info-side .place-map-btn {
+    color: var(--gold);
+    border-bottom-color: rgba(197, 160, 89, 0.4);
+}
+
+.location-info-side .place-map-btn:hover {
+    color: var(--gold-dark);
+    border-bottom-color: var(--gold-dark);
+}
+
+.location-image-side {
+    width: 40%;
+    position: relative;
+    overflow: hidden;
+}
+
+.location-image-side img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Gallery Section Underneath */
+.location-gallery-section {
+    background-color: #ffffff;
+    padding: 50px 8%;
+    border-top: 1px solid rgba(197, 160, 89, 0.15);
+}
+
+.gallery-section-title {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: #0c1a13;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 400;
+}
+
+.gallery-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-card {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.gallery-img-wrap {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.gallery-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-card-title {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: #0c1a13;
+    margin: 0;
+    font-weight: 500;
+}
+
+.gallery-card-desc {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+    font-weight: 300;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .single-location-section {
+        flex-direction: column-reverse;
+        min-height: auto;
+        margin-top: 0;
+    }
+
+    .location-info-side {
+        width: 100%;
+        padding: 40px 6%;
+    }
+
+    .location-image-side {
+        width: 100%;
+        height: 400px;
+    }
+    
+    .location-image-side img {
+        position: relative;
+        height: 100%;
+    }
+
+    .location-info-side .place-details {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* --- ALTERNATING ZIG-ZAG DETAILS SECTION --- */
+.location-details-zigzag {
+    border-top: 1px solid rgba(197, 160, 89, 0.15);
+    background-color: #ffffff;
+}
+
+.location-detail-row {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    padding: 60px 8%;
+}
+
+.location-detail-row:nth-child(even) {
+    flex-direction: row-reverse;
+    background-color: #ffffff;
+}
+
+.detail-text-col {
+    flex: 1.3;
+}
+
+.detail-text-col h3 {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    color: #0c1a13;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.detail-text-col p {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    font-weight: 300;
+}
+
+.detail-img-col {
+    flex: 0.7;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border-radius: 2px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(197, 160, 89, 0.15);
+}
+
+.detail-img-col img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition-smooth);
+}
+
+@media (max-width: 768px) {
+    .location-detail-row {
+        flex-direction: column !important;
+        gap: 30px;
+        padding: 60px 6%;
+    }
+    .detail-img-col {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+    }
+    .detail-text-col h3 {
+        font-size: 1.8rem;
+    }
+}
+
+/* --- SEZIONE TORTE SHOWCASE --- */
+.cakes-showcase-section {
+    padding: 60px 8%;
+    background-color: #ffffff;
+    text-align: center;
+    border-top: 1px solid rgba(197, 160, 89, 0.15);
+}
+
+.cakes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+}
+
+.cake-card {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.cake-img-wrap {
+    width: 100%;
+    aspect-ratio: 4 / 4;
+    overflow: hidden;
+    border-radius: 2px;
+    border: 1px solid rgba(197, 160, 89, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.cake-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition-smooth);
+}
+
+.cake-card:hover .cake-img-wrap img {
+    filter: brightness(1.05);
+}
+
+.cake-title {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+
+.cake-desc {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #666;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .cakes-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+/* --- SEZIONE LE NOSTRE SPECIALITÀ (BENTO GRID SENZA CORNICI) --- */
+.sweets-bento-section {
+    padding: 60px 8%;
+    background-color: #ffffff;
+    border-top: 1px solid rgba(197, 160, 89, 0.15);
+}
+
+.sweets-bento-grid {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    grid-template-rows: 320px 320px;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+}
+
+.bento-card {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Schede Orizzontali (Monoporzioni & Financier) */
+.bento-card.wide-card {
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+.bento-card.wide-card.reverse {
+    flex-direction: row-reverse;
+}
+
+.bento-card.wide-card .bento-img-wrap {
+    width: 70%;
+    height: 100%;
+    border-radius: 2px;
+    border: 1px solid rgba(197, 160, 89, 0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.bento-card.wide-card .bento-text-wrap {
+    width: 30%;
+    padding: 0;
+    text-align: left;
+}
+
+/* Scheda Verticale Alta (Arco di Linz) */
+.bento-card.tall-card {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bento-card.tall-card .bento-img-wrap {
+    width: 100%;
+    height: 75%;
+    border-radius: 2px;
+    border: 1px solid rgba(197, 160, 89, 0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.bento-card.tall-card .bento-text-wrap {
+    width: 100%;
+    height: 25%;
+    padding: 0;
+    text-align: left;
+}
+
+.bento-img-wrap {
+    overflow: hidden;
+}
+
+.bento-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.4s ease;
+}
+
+.bento-card:hover .bento-img-wrap img {
+    filter: brightness(1.05);
+}
+
+.bento-text-wrap h3 {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    color: #0c1a13;
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+
+.bento-text-wrap p {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #666;
+    font-weight: 300;
+}
+
+@media (max-width: 992px) {
+    .sweets-bento-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 40px;
+    }
+    .bento-card.tall-card {
+        grid-column: auto;
+        grid-row: auto;
+        gap: 15px;
+    }
+    .bento-card.wide-card {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .bento-card.wide-card.reverse {
+        flex-direction: column;
+    }
+    .bento-card.wide-card .bento-img-wrap,
+    .bento-card.wide-card .bento-text-wrap,
+    .bento-card.tall-card .bento-img-wrap,
+    .bento-card.tall-card .bento-text-wrap {
+        width: 100%;
+        height: auto;
+    }
+    .bento-card.wide-card .bento-img-wrap,
+    .bento-card.tall-card .bento-img-wrap {
+        aspect-ratio: 3 / 2;
+    }
+}
+
+@media (max-width: 992px) {
+    .sweets-shapes-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    .shape-item.circle-shape .shape-img-wrap {
+        max-width: 320px;
+    }
+}
+
+/* --- CATEGORIES GRID SECTION --- */
+.categories-grid-section {
+    padding: 60px 8%;
+    background-color: #ffffff;
+    border-top: 1px solid rgba(197, 160, 89, 0.15);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    transition: transform 0.4s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+.category-img-wrap {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border-radius: 2px;
+    border: 1px solid rgba(197, 160, 89, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
+}
+
+.category-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition-smooth);
+}
+
+.category-card:hover .category-img-wrap img {
+    filter: brightness(1.05);
+}
+
+.category-info h3 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: #0c1a13;
+    margin-bottom: 12px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.category-info p {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #555;
+    font-weight: 300;
+    text-align: left;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .category-img-wrap {
+        aspect-ratio: 16 / 10;
+    }
+}
+
+@media (min-width: 901px) {
+    .categories-grid.four-columns {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 95%;
     }
 }

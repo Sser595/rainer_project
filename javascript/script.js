@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.main-header');
     if (header && document.body.classList.contains('home-page')) {
         const handleScroll = () => {
-            if (window.scrollY > 50) {
+            const heroHeight = window.innerHeight;
+            if (window.scrollY > (heroHeight / 2)) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
@@ -47,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Effetto Fade-In allo scroll per gli elementi
     const elementsToAnimate = document.querySelectorAll(
-        '.place-card, .philosophy-text-col, .philosophy-image-col, .handmade-intro, .handmade-photos, .products-main-wrapper'
+        '.handmade-intro, .handmade-photos, .products-grid-container'
     );
 
     // Imposta l'opacità iniziale a 0
@@ -87,32 +88,111 @@ document.addEventListener('DOMContentLoaded', () => {
     // Controllo al caricamento iniziale
     checkVisibility();
 
-    // Toggle Mobile Menu
+    // Toggle Mobile Menu Overlay
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileMenu = document.getElementById('mobileMenu');
 
     if (hamburgerBtn && mobileMenu) {
-        hamburgerBtn.addEventListener('click', () => {
+        const toggleMenu = () => {
             hamburgerBtn.classList.toggle('active');
             mobileMenu.classList.toggle('active');
+            if (header) header.classList.toggle('menu-open');
             document.body.classList.toggle('no-scroll');
+        };
+
+        const closeMenu = () => {
+            hamburgerBtn.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            if (header) header.classList.remove('menu-open');
+            document.body.classList.remove('no-scroll');
+        };
+
+        hamburgerBtn.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking mobile links
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
         });
 
-        // Close menu when clicking a link
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburgerBtn.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                document.body.classList.remove('no-scroll');
+        // Close menu when clicking the overlay backdrop
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                closeMenu();
+            }
+        });
+
+        // Close menu when pressing Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+    }
+
+
+
+    // Hero Carousel background changer
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-dot');
+    let currentSlide = 0;
+    let slideInterval;
+    const intervalTime = 5500; // 5.5 seconds for readable/user-friendly pacing
+
+    if (slides.length > 0 && dots.length > 0) {
+        // Initialize slides positions side-by-side
+        const initializeSlides = () => {
+            slides.forEach((slide, idx) => {
+                slide.style.transform = `translateX(${idx * 100}%)`;
+            });
+        };
+
+        const changeSlide = (index) => {
+            dots[currentSlide].classList.remove('active');
+            currentSlide = index;
+            dots[currentSlide].classList.add('active');
+
+            // Shift all slides relative to the new active index
+            slides.forEach((slide, idx) => {
+                slide.style.transform = `translateX(${(idx - currentSlide) * 100}%)`;
+            });
+        };
+
+        const nextSlide = () => {
+            let nextIndex = (currentSlide + 1) % slides.length;
+            changeSlide(nextIndex);
+        };
+
+        const startSlideShow = () => {
+            slideInterval = setInterval(nextSlide, intervalTime);
+        };
+
+        const resetSlideShow = () => {
+            clearInterval(slideInterval);
+            startSlideShow();
+        };
+
+        // Click on dots to change slide
+        dots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => {
+                changeSlide(idx);
+                resetSlideShow();
             });
         });
 
-        // Close menu when clicking the backdrop overlay
-        mobileMenu.addEventListener('click', (e) => {
-            if (e.target === mobileMenu) {
-                hamburgerBtn.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                document.body.classList.remove('no-scroll');
+        initializeSlides();
+        startSlideShow();
+    }
+
+    // Parallax scroll effect for hero background
+    const heroBgWrapper = document.querySelector('.hero-bg-wrapper');
+    if (heroBgWrapper) {
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth > 768) {
+                const scrolled = window.scrollY;
+                // Slowly translate the background wrapper to create a parallax cover effect
+                heroBgWrapper.style.transform = `translateY(${scrolled * 0.4}px)`;
+            } else {
+                heroBgWrapper.style.transform = '';
             }
         });
     }

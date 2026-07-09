@@ -10,6 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
         rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
@@ -23,15 +24,27 @@
 <body class="menu-page">
 
     <header class="main-header">
+        <nav class="header-nav header-nav-left">
+            <a href="index.html" class="nav-btn">Home</a>
+            <div class="dropdown">
+                <a class="nav-btn dropdown-toggle">I Nostri Luoghi <i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                <div class="dropdown-menu">
+                    <a href="caffe-rainer.html">Caffè Rainer</a>
+                    <a href="forno-storico.html">Il Forno più piccolo</a>
+                    <a href="bakery.html">Rainer Bakery</a>
+                </div>
+            </div>
+        </nav>
+
         <div class="logo-container">
             <a href="index.html">
                 <img src="img_pieghevole/logoRainer.png" alt="Caffè Rainer Logo" class="gambero-logo">
             </a>
         </div>
 
-        <nav class="header-nav">
-            <a href="menu.html" class="nav-btn active-nav">Il Menù</a>
-            <a href="places.html" class="nav-btn">I Nostri Luoghi</a>
+        <nav class="header-nav header-nav-right">
+            <a href="menu.html" class="nav-btn active-nav">Il Nostro Menù</a>
+            <a href="contatti.html" class="nav-btn">Contatti</a>
         </nav>
 
         <button class="hamburger" id="hamburgerBtn" aria-label="Apri Menu">
@@ -43,8 +56,13 @@
 
     <div class="mobile-menu-overlay" id="mobileMenu">
         <nav class="mobile-nav">
-            <a href="menu.html" class="mobile-nav-btn active-nav">Il Menù</a>
-            <a href="places.html" class="mobile-nav-btn">I Nostri Luoghi</a>
+            <a href="index.html" class="mobile-nav-btn">Home</a>
+            <span class="mobile-nav-heading">I Nostri Luoghi</span>
+            <a href="caffe-rainer.html" class="mobile-nav-sub-btn">Caffè Rainer</a>
+            <a href="forno-storico.html" class="mobile-nav-sub-btn">Il Forno più piccolo</a>
+            <a href="bakery.html" class="mobile-nav-sub-btn">Rainer Bakery</a>
+            <a href="menu.html" class="mobile-nav-btn active-nav">Il Nostro Menù</a>
+            <a href="contatti.html" class="mobile-nav-btn">Contatti</a>
             <div class="mobile-socials">
                 <a href="https://instagram.com/cafferainer" target="_blank" aria-label="Instagram" class="mobile-social-link"><i class="fa-brands fa-instagram"></i></a>
                 <a href="https://www.facebook.com/cafferainer" target="_blank" aria-label="Facebook" class="mobile-social-link"><i class="fa-brands fa-facebook-f"></i></a>
@@ -53,11 +71,11 @@
     </div>
 <main class="menu-main">
     <section class="menu-hero">
-        <span class="gold-subtitle">IL PRANZO</span>
+        <span class="gold-subtitle">CAFFÈ RAINER • IL BISTROT</span>
         <h1 class="menu-title">Proposte Gastronomiche</h1>
         <p class="menu-subtitle">
-            Ogni giorno, la nostra cucina propone una selezione di piatti pensati per accompagnare il ritmo della vostra giornata. 
-            Utilizziamo materie prime fresche, che variano in base alla stagionalità del mercato.
+            Il menù pranzo del nostro bistrot in Via San Zanobi 97/R.
+            Ogni giorno, la nostra cucina propone piatti tradizionali austriaci preparati con materie prime fresche e ingredienti di stagione.
         </p>
     </section>
 
@@ -128,14 +146,14 @@
                     <span class="footer-col-title">Caffè & Bistrot</span>
                     <a href="tel:+390554932207" class="footer-link">055 493 2207</a>
                     <a href="https://instagram.com/cafferainer" target="_blank" class="footer-link">@cafferainer</a>
-                    <a href="places.html" class="footer-link">Via San Zanobi 97/R</a>
+                    <a href="caffe-rainer.html" class="footer-link">Via San Zanobi 97/R</a>
                 </div>
                 
                 <div class="footer-col">
                     <span class="footer-col-title">Rainer Bakery</span>
                     <a href="tel:+390555276634" class="footer-link">055 527 6634</a>
                     <a href="https://instagram.com/rainerbakery" target="_blank" class="footer-link">@rainerbakery</a>
-                    <a href="places.html" class="footer-link">Via Cristofori 8</a>
+                    <a href="bakery.html" class="footer-link">Via Cristofori 8</a>
                 </div>
             </div>
 
