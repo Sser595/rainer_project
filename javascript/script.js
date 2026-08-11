@@ -155,6 +155,16 @@ document.addEventListener('DOMContentLoaded', () => {
             slides.forEach((slide, idx) => {
                 slide.style.transform = `translateX(${(idx - currentSlide) * 100}%)`;
             });
+
+            // Update active hero content text
+            const heroContents = document.querySelectorAll('.hero-content');
+            heroContents.forEach((content, idx) => {
+                if (idx === currentSlide) {
+                    content.classList.add('active');
+                } else {
+                    content.classList.remove('active');
+                }
+            });
         };
 
         const nextSlide = () => {

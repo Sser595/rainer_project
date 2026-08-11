@@ -22,28 +22,23 @@
 </head>
 
 <body class="home-page">
-
     <header class="main-header">
-        <nav class="header-nav header-nav-left">
-            <a href="index.html" class="nav-btn active-nav">Home</a>
-            <div class="dropdown">
-                <a class="nav-btn dropdown-toggle">I Nostri Luoghi <i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
-                <div class="dropdown-menu">
-                    <a href="caffe-rainer.html">Caffè Rainer</a>
-                    <a href="forno-storico.html">Il Forno più piccolo</a>
-                    <a href="bakery.html">Rainer Bakery</a>
-                </div>
-            </div>
-        </nav>
-
         <div class="logo-container">
             <a href="index.html">
                 <img src="img_pieghevole/logoRainer.png" alt="Caffè Rainer Logo" class="gambero-logo">
             </a>
         </div>
 
-        <nav class="header-nav header-nav-right">
-            <a href="menu.html" class="nav-btn">Il Nostro Menù</a>
+        <nav class="header-nav header-nav-center">
+            <a href="#filosofia" class="nav-btn">La Nostra Storia</a>
+            <div class="dropdown">
+                <a class="nav-btn dropdown-toggle">I Nostri Luoghi <i class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                <div class="dropdown-menu">
+                    <a href="caffe-rainer.html">Caffè Rainer</a>
+                    <a href="forno-storico.html">Il Forno</a>
+                    <a href="bakery.html">Rainer Bakery</a>
+                </div>
+            </div>
             <a href="contatti.html" class="nav-btn">Contatti</a>
         </nav>
 
@@ -56,12 +51,11 @@
 
     <div class="mobile-menu-overlay" id="mobileMenu">
         <nav class="mobile-nav">
-            <a href="index.html" class="mobile-nav-btn active-nav">Home</a>
+            <a href="#filosofia" class="mobile-nav-btn">La Nostra Storia</a>
             <span class="mobile-nav-heading">I Nostri Luoghi</span>
             <a href="caffe-rainer.html" class="mobile-nav-sub-btn">Caffè Rainer</a>
-            <a href="forno-storico.html" class="mobile-nav-sub-btn">Il Forno più piccolo</a>
+            <a href="forno-storico.html" class="mobile-nav-sub-btn">Il Forno</a>
             <a href="bakery.html" class="mobile-nav-sub-btn">Rainer Bakery</a>
-            <a href="menu.html" class="mobile-nav-btn">Il Nostro Menù</a>
             <a href="contatti.html" class="mobile-nav-btn">Contatti</a>
             <div class="mobile-socials">
                 <a href="https://instagram.com/cafferainer" target="_blank" aria-label="Instagram" class="mobile-social-link"><i class="fa-brands fa-instagram"></i></a>
@@ -73,10 +67,10 @@
         <section class="hero-section hero-fullwidth">
             <div class="hero-bg-wrapper">
                 <div class="hero-slide active">
-                    <img src="img_caffe/mini2.jpeg" alt="Pasticceria artigianale Caffè Rainer" class="hero-bg-img">
+                    <img src="img_pieghevole/financier.jpeg" alt="Interni Caffè Rainer" class="hero-bg-img">
                 </div>
                 <div class="hero-slide">
-                    <img src="img_pieghevole/financier.jpeg" alt="Interni Caffè Rainer" class="hero-bg-img">
+                    <img src="img_caffe/mini2.jpeg" alt="Pasticceria artigianale Caffè Rainer" class="hero-bg-img">
                 </div>
                 <div class="hero-slide">
                     <img src="img_hero/bread_hero.jpeg" alt="Panificazione Caffè Rainer" class="hero-bg-img">
@@ -89,19 +83,46 @@
                 <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
             </div>
             <div class="hero-content-container">
-                <div class="hero-content">
+                <div class="hero-content active">
                     <span class="gold-subtitle anim-fade-up" style="animation-delay: 0.1s;">DAL 2011</span>
                     <h1 class="hero-title anim-fade-up" style="animation-delay: 0.3s;">Pasticceria e caffetteria<br>nel cuore di Firenze.</h1>
                     <div class="gold-line center-aligned anim-fade-up" style="animation-delay: 0.5s;"></div>
                     <p class="hero-description anim-fade-up" style="animation-delay: 0.6s;">
-                         primo bistrot-pasticceria austriaco a Firenze, dove la ricca tradizione dolciaria viennese incontra l'eccellenza della panificazione artigianale.
+                         Il primo bistrot-pasticceria austriaco a Firenze, dove la ricca tradizione dolciaria viennese incontra l'eccellenza della panificazione artigianale.
                     </p>
                     <div class="hero-actions anim-fade-up" style="animation-delay: 0.8s;">
                         <a href="caffe-rainer.html" class="btn-hero btn-primary">
                             <span>Scopri il Bistrot</span>
                             <i class="fa-solid fa-arrow-right btn-arrow"></i>
                         </a>
-                        <a href="#filosofia" class="btn-hero btn-secondary-light">La nostra storia</a>
+                    </div>
+                </div>
+                <div class="hero-content">
+                    <span class="gold-subtitle">IL FORNO ARTIGIANALE</span>
+                    <h1 class="hero-title">Il Forno più piccolo<br>di Firenze.</h1>
+                    <div class="gold-line center-aligned"></div>
+                    <p class="hero-description">
+                        Nel nostro storico forno artigianale utilizziamo esclusivamente farine biologiche macinate a pietra e lievito madre a fermentazione naturale.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="forno-storico.html" class="btn-hero btn-primary">
+                            <span>Visita il Forno</span>
+                            <i class="fa-solid fa-arrow-right btn-arrow"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-content">
+                    <span class="gold-subtitle">RAINER BAKERY</span>
+                    <h1 class="hero-title">La bakery contemporanea<br>a Firenze.</h1>
+                    <div class="gold-line center-aligned"></div>
+                    <p class="hero-description">
+                        Il nostro spazio contemporaneo dedicato alla panificazione moderna, con pani speciali, focacce farcite ed eleganti proposte per l'asporto.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="bakery.html" class="btn-hero btn-primary">
+                            <span>Visita la Bakery</span>
+                            <i class="fa-solid fa-arrow-right btn-arrow"></i>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -54,14 +54,13 @@
     flex: 1;
 }
 
-.header-nav-left {
-    justify-content: flex-end;
-    margin-right: 45px;
-}
-
-.header-nav-right {
-    justify-content: flex-start;
-    margin-left: 45px;
+.header-nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 35px;
 }
 
 .nav-btn {

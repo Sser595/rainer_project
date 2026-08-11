@@ -25,8 +25,8 @@
 .location-image-side img {
     position: absolute;
     top: 0;
-    left: 120px; /* Padding just on the left side */
-    width: calc(100% - 120px);
+    left: 0;
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
@@ -82,6 +82,14 @@
     height: 1px;
     background-color: var(--gold);
     margin-bottom: 30px;
+}
+
+.location-intro-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #66524d;
+    margin-bottom: 35px;
+    font-weight: 300;
 }
 
 /* Info grid layout */
@@ -236,6 +244,50 @@
 }
 
 /* Breads Bakery Collage Grid Styles */
+.gallery-intro-text-card {
+    width: 33.333%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+
+.gallery-intro-text-card .gold-subtitle {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.gallery-intro-text-card h2 {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: #0c1a13;
+    margin: 10px 0 20px 0;
+    line-height: 1.25;
+}
+
+.gallery-intro-text-card .gold-line {
+    width: 50px;
+    height: 1px;
+    background-color: var(--gold);
+    margin-bottom: 25px;
+}
+
+.gallery-intro-text-card .places-intro {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #66524d;
+    font-weight: 300;
+    margin: 0;
+}
+
 .gallery-grid-container {
     display: flex;
     flex-direction: column;
@@ -385,6 +437,18 @@
         display: flex;
         flex-direction: column;
         gap: 12px;
+    }
+
+    .gallery-intro-text-card {
+        width: 100%;
+        height: auto;
+        padding: 20px 0 40px 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .gallery-intro-text-card .gold-line {
+        margin: 0 auto 20px auto;
     }
 }
 
