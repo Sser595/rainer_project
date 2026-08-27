@@ -32,8 +32,8 @@
 .footer-tagline {
     font-family: var(--font-sans);
     font-size: 0.75rem;
-    color: var(--text-muted);
-    letter-spacing: 1px;
+    color: #d1ded6;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
@@ -41,9 +41,9 @@
 .footer-email {
     font-family: var(--font-sans);
     font-size: 0.85rem;
-    color: var(--text-light);
+    color: #ffffff;
     text-decoration: none;
-    opacity: 0.8;
+    opacity: 0.92;
     transition: var(--transition-smooth);
 }
 
@@ -66,7 +66,7 @@
 
 .footer-col-title {
     font-family: var(--font-sans);
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -77,9 +77,9 @@
 .footer-link {
     font-family: var(--font-sans);
     font-size: 0.85rem;
-    color: var(--text-light);
+    color: #f7f3ed;
     text-decoration: none;
-    opacity: 0.75;
+    opacity: 0.9;
     transition: var(--transition-smooth);
 }
 
@@ -98,7 +98,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .gambero-rosso-badge img {
@@ -112,16 +112,16 @@
     font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: var(--text-light);
+    color: #ffffff;
     line-height: 1.4;
 }
 
 .footer-bottom {
     text-align: center;
-    font-size: 0.7rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
     padding-top: 30px;
-    color: var(--text-muted);
+    color: #d1ded6;
 }
 
 /* Responsive */

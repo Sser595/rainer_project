@@ -11,7 +11,7 @@ html {
 
 body {
     background-color: var(--bg-light);
-    color: var(--text-light);
+    color: var(--text-dark);
     font-family: var(--font-sans);
     line-height: 1.6;
     overflow-x: hidden;
@@ -24,6 +24,7 @@ h4,
 .serif {
     font-family: var(--font-serif);
     font-weight: 400;
+    color: #0c1a13;
 }
 
 em {
@@ -35,11 +36,21 @@ em {
     display: inline-block;
     font-family: var(--font-sans);
     font-size: 0.72rem;
-    font-weight: 500;
-    color: var(--gold);
+    font-weight: 600;
+    color: var(--gold-dark);
     text-transform: uppercase;
-    letter-spacing: 4px;
+    letter-spacing: 3.5px;
     margin-bottom: 12px;
+}
+
+/* Gold Subtitle on dark backgrounds */
+.hero-section .gold-subtitle,
+.handmade-section .gold-subtitle,
+.philosophy-section .gold-subtitle,
+.menu-hero .gold-subtitle,
+.minimal-footer .gold-subtitle,
+.mobile-menu-overlay .gold-subtitle {
+    color: var(--gold);
 }
 
 /* Global Gold Line Divider Utility */
@@ -62,11 +73,21 @@ em {
 
 /* Link styling */
 a {
-    color: var(--gold);
+    color: var(--gold-dark);
     text-decoration: none;
     transition: var(--transition-smooth);
 }
 
 a:hover {
-    color: var(--gold-dark);
+    color: #6b4d12;
+}
+
+/* Inline SVG icons (self-hosted, replaces Font Awesome) */
+.svg-icon {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    display: inline-block;
+    vertical-align: middle;
+    flex-shrink: 0;
 }

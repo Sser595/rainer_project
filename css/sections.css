@@ -256,12 +256,12 @@
     color: var(--bg-dark);
 }
 
-.read-more-btn i {
+.read-more-btn .svg-icon {
     font-size: 0.7rem;
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.read-more-btn.active i {
+.read-more-btn.active .svg-icon {
     transform: rotate(180deg);
 }
 
@@ -288,28 +288,6 @@
 }
 
 /* Container Principale */
-.products-main-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 60px;
-    max-width: 1200px;
-    margin: 0 auto;
-    align-items: center;
-}
-
-.products-main-wrapper.inverted {
-    grid-template-columns: 1.2fr 1fr;
-    margin-top: 100px;
-}
-
-/* Griglia Immagini: Divide lo spazio sinistro in 2 colonne */
-.products-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    height: 100%;
-}
-
 .product-item {
     display: flex;
     flex-direction: column;
@@ -332,18 +310,6 @@
     aspect-ratio: 3 / 4;
     overflow: hidden;
     background-color: #f5f2eb;
-}
-
-.large-item .img-swap {
-    height: 100%;
-    aspect-ratio: auto;
-}
-
-.small-items-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    gap: 20px;
 }
 
 .img-swap img {
@@ -369,61 +335,7 @@
     opacity: 1;
 }
 
-/* Sidebar di testo */
-.products-text-side {
-    padding: 0;
-    background: none;
-    border-radius: 0;
-    border: none;
-    box-shadow: none;
-    color: #0c1a13;
-}
-
-.products-text-side h3 {
-    font-family: var(--font-serif);
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    color: #0c1a13;
-}
-
-.products-text-side p {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #555;
-    font-weight: 300;
-}
-
 /* --- 2. RESPONSIVE OTTIMIZZATO --- */
-@media (max-width: 1024px) {
-
-    .products-main-wrapper,
-    .products-main-wrapper.inverted {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .products-main-wrapper.inverted {
-        margin-top: 60px;
-    }
-
-    .products-main-wrapper .products-container {
-        order: 2;
-    }
-
-    .products-main-wrapper .products-text-side {
-        order: 1;
-    }
-
-    .large-item .img-swap {
-        aspect-ratio: 3 / 4;
-        height: auto;
-    }
-
-    .products-container {
-        gap: 20px;
-    }
-}
 /* Note on seasonal products */
 .products-seasonality-note {
     margin-top: 60px;
@@ -435,9 +347,9 @@
     font-family: var(--font-sans);
     font-size: 0.95rem;
     line-height: 1.8;
-    color: #555;
+    color: #403833;
     font-style: italic;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 
@@ -448,11 +360,6 @@
 
     .products-section-title {
         font-size: 2.5rem;
-    }
-
-    .products-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
     }
 
     /* Disable Handmade Photo Hover scale on mobile */
@@ -480,10 +387,6 @@
         transform: none !important;
     }
 }
-
-
-/* Media query for larger screens */
-
 
 
 /* --- RESPONSIVE BASICO --- */
@@ -528,7 +431,7 @@
     font-family: var(--font-sans);
     font-size: 1.05rem;
     line-height: 1.8;
-    color: #555;
+    color: #403833;
     font-weight: 300;
 }
 
@@ -546,198 +449,10 @@
     }
 }
 
-/* --- SEZIONE I NOSTRI LUOGHI (ZIG-ZAG HOMEPAGE) --- */
-/* --- SEZIONE I NOSTRI LUOGHI (CARDS GRID HOMEPAGE) --- */
-.places-grid-section {
-    padding: 80px 8%;
-    background-color: #ffffff;
-}
-
-.places-grid-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.places-grid-header h2 {
-    color: #000000;
-    font-size: 3rem;
-    line-height: 1.2;
-}
-
-.places-grid-intro {
-    max-width: 700px;
-    margin: 20px auto 0 auto;
-    font-family: var(--font-sans);
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #555;
-    font-weight: 300;
-}
-
-.places-cards-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 1350px;
-    margin: 0 auto;
-}
-
-.place-grid-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    background: #0c1a13;
-    border-radius: 2px;
-    overflow: hidden;
-    aspect-ratio: 2 / 3;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-    transition: box-shadow 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.place-grid-card:hover {
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-}
-
-/* Card Border Layer (sits on top of images) */
-.place-grid-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border: 1.5px solid rgba(197, 160, 89, 0.2);
-    border-radius: 2px;
-    z-index: 4;
-    transition: border-color 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    pointer-events: none;
-}
-
-.place-grid-card:hover::before {
-    border-color: var(--gold);
-}
-
-/* Gradient overlay for text legibility */
-.place-grid-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(12, 26, 19, 0.05) 0%, rgba(12, 26, 19, 0.45) 45%, rgba(12, 26, 19, 0.95) 100%);
-    z-index: 2;
-    opacity: 0.9;
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    pointer-events: none;
-}
-
-.place-grid-card:hover::after {
-    opacity: 1;
-}
-
-.place-card-img-wrap {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-.place-card-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.place-card-content {
-    position: relative;
-    z-index: 3;
-    padding: 35px 25px 25px 25px;
-    display: flex;
-    flex-direction: column;
-}
-
-.place-card-tag {
-    font-family: var(--font-sans);
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--gold);
-    margin-bottom: 8px;
-}
-
-.place-card-content h3 {
-    font-family: var(--font-serif);
-    font-size: 1.8rem;
-    color: #ffffff;
-    margin-bottom: 12px;
-    font-weight: 400;
-}
-
-.place-card-content p {
-    font-family: var(--font-sans);
-    font-size: 0.88rem;
-    line-height: 1.6;
-    color: var(--text-hero-muted);
-    font-weight: 300;
-    margin-bottom: 20px;
-}
-
-.btn-card-link {
-    font-family: var(--font-sans);
-    font-size: 0.78rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--gold);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 0;
-    transition: color 0.3s ease, border-color 0.3s ease;
-    border-bottom: 1px solid transparent;
-    align-self: flex-start;
-}
-
-.btn-card-link:hover {
-    color: var(--gold-dark);
-    border-bottom-color: var(--gold-dark);
-}
-
-.btn-card-link i {
-    font-size: 0.8rem;
-    transition: transform 0.3s ease;
-}
-
-.btn-card-link:hover i {
-    transform: translateX(5px);
-}
-
-@media (max-width: 992px) {
-    .places-cards-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-}
-
 /* Reveal effect for index hero overlay */
 .main-content-reveal {
     position: relative;
     z-index: 10;
     background-color: var(--bg-dark);
     box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.45);
-}
-
-.pattern-divider {
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-    background-color: transparent !important;
-}
-
-.pattern-divider-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center bottom;
-    display: block;
 }

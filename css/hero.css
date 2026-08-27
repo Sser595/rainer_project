@@ -219,19 +219,6 @@
     box-shadow: 0 10px 20px rgba(0, 103, 71, 0.15);
 }
 
-.btn-hero.btn-secondary-light {
-    background-color: transparent;
-    color: white;
-    border: 1.5px solid white;
-}
-
-.btn-hero.btn-secondary-light:hover {
-    background-color: white;
-    color: black;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
-}
-
 /* Staggered entrance animations */
 .anim-fade-up {
     opacity: 0;
@@ -320,9 +307,5 @@
     .btn-hero.btn-secondary:hover {
         background-color: transparent !important;
         color: var(--bg-dark) !important;
-    }
-    .btn-hero.btn-secondary-light:hover {
-        background-color: transparent !important;
-        color: white !important;
     }
 }

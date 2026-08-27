@@ -2,12 +2,14 @@
     --bg-light: #ffffff;
     --bg-dark: #006747; /* Original brand green */
     --bg-dark-accent: #000000;
+    --text-dark: #222222;
+    --text-coffee: #45251c;
     --text-hero-light: #ffffff;
     --text-hero-muted: #e2dcd0;
     --text-light: #f5f2eb;
-    --text-muted: #a6b7ad;
+    --text-muted: #d2dfd7; /* High contrast muted text on dark brand green */
     --gold: #c5a059; /* Brushed premium gold */
-    --gold-dark: #aa862c;
+    --gold-dark: #966c1e; /* High contrast gold for light backgrounds (WCAG AA) */
     --card-border: #006747;
     --font-serif: 'EB Garamond', serif;
     --font-sans: 'Montserrat', sans-serif;
