@@ -44,36 +44,31 @@ document.addEventListener('DOMContentLoaded', () => {
         '.handmade-intro, .handmade-photos, .products-grid-container'
     );
 
-    if (revealTargets.length) {
-        if ('IntersectionObserver' in window) {
-            const revealObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting) return;
-                    const el = entry.target;
-                    el.classList.add('is-animated');
-                    el.style.opacity = '1';
-                    el.style.transform = 'translateY(0)';
-                    // Clear inline styles once the transition ends so that
-                    // hover transitions defined in CSS keep working.
-                    el.addEventListener('transitionend', e => {
-                        if (e.target !== el) return;
-                        el.style.opacity = '';
-                        el.style.transform = '';
-                        el.style.transition = '';
-                    }, { once: true });
-                    observer.unobserve(el);
-                });
-            }, { threshold: 0.2 });
-
-            revealTargets.forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-                revealObserver.observe(el);
+    if (revealTargets.length && 'IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+                // Clear inline styles once the transition ends so that
+                // hover transitions defined in CSS keep working.
+                el.addEventListener('transitionend', e => {
+                    if (e.target !== el) return;
+                    el.style.opacity = '';
+                    el.style.transform = '';
+                    el.style.transition = '';
+                }, { once: true });
+                observer.unobserve(el);
             });
-        } else {
-            revealTargets.forEach(el => el.classList.add('is-animated'));
-        }
+        }, { threshold: 0.2 });
+
+        revealTargets.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            revealObserver.observe(el);
+        });
     }
 
     // ============================================================
@@ -179,10 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(slideInterval);
             slideInterval = setInterval(() => changeSlide((currentSlide + 1) % slides.length), intervalTime);
         };
-
-        slides.forEach((slide, idx) => {
-            slide.style.transform = `translateX(${idx * 100}%)`;
-        });
 
         dots.forEach((dot, idx) => {
             dot.addEventListener('click', () => {

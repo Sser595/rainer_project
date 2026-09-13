@@ -4,7 +4,7 @@
 
 .menu-page {
     background-color: var(--bg-light);
-    color: #1a1a1a;
+    color: var(--text-strong);
 }
 
 .menu-main {
@@ -22,15 +22,11 @@
     color: var(--text-light);
 }
 
-.menu-hero .gold-subtitle {
-    margin-bottom: 12px;
-}
-
 .menu-title {
     font-family: var(--font-serif);
     font-size: 3.2rem;
     line-height: 1.2;
-    color: #ffffff;
+    color: var(--white);
     margin-bottom: 20px;
 }
 
@@ -111,7 +107,7 @@
 .item-name {
     font-family: var(--font-serif);
     font-size: 1.35rem;
-    color: #0c1a13;
+    color: var(--text-heading);
     font-weight: 500;
     margin-bottom: 8px;
     transition: color 0.3s;
@@ -126,7 +122,7 @@
     font-family: var(--font-sans);
     font-size: 0.9rem;
     line-height: 1.6;
-    color: #403833;
+    color: var(--text-body);
     font-weight: 300;
 }
 
@@ -143,7 +139,7 @@
     font-family: var(--font-sans);
     font-size: 0.9rem;
     font-style: italic;
-    color: #403833;
+    color: var(--text-body);
     opacity: 0.9;
     font-weight: 300;
     line-height: 1.7;

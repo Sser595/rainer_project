@@ -19,16 +19,12 @@
     font-family: var(--font-serif);
     font-size: 2.8rem;
     line-height: 1.15;
-    color: #ffffff;
+    color: var(--white);
     margin: 12px 0 22px;
     font-weight: 400;
 }
 
 .handmade-section .gold-line {
-    background-color: var(--gold);
-    height: 1.5px;
-    width: 40px;
-    border: none;
     margin: 0 0 22px;
 }
 
@@ -219,19 +215,6 @@
     opacity: 1;
 }
 
-/* On Desktop: keep it fully expanded and hide the read-more button */
-@media (min-width: 1025px) {
-    .philosophy-collapsed-content {
-        display: block !important;
-        grid-template-rows: none !important;
-        opacity: 1 !important;
-        overflow: visible !important;
-    }
-    .read-more-btn {
-        display: none !important;
-    }
-}
-
 .read-more-btn {
     display: inline-flex;
     align-items: center;
@@ -265,6 +248,18 @@
     transform: rotate(180deg);
 }
 
+@media (min-width: 1025px) {
+    .philosophy-collapsed-content {
+        display: block;
+        grid-template-rows: none;
+        opacity: 1;
+        overflow: visible;
+    }
+    .read-more-btn {
+        display: none;
+    }
+}
+
 
 
 /* --- SEZIONE PRODUCTS (STILE CATALOGO CARTACEO) --- */
@@ -282,7 +277,7 @@
 .products-section-title {
     font-size: 3rem;
     line-height: 1.25;
-    color: #0c1a13;
+    color: var(--text-heading);
     margin-bottom: 25px;
     letter-spacing: -0.5px;
 }
@@ -291,7 +286,7 @@
 .product-item {
     display: flex;
     flex-direction: column;
-    background: #ffffff;
+    background: var(--white);
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
     border: 1px solid rgba(197, 160, 89, 0.15);
@@ -309,7 +304,7 @@
     width: 100%;
     aspect-ratio: 3 / 4;
     overflow: hidden;
-    background-color: #f5f2eb;
+    background-color: var(--text-light);
 }
 
 .img-swap img {
@@ -347,7 +342,7 @@
     font-family: var(--font-sans);
     font-size: 0.95rem;
     line-height: 1.8;
-    color: #403833;
+    color: var(--text-body);
     font-style: italic;
     font-weight: 400;
 }
@@ -364,27 +359,27 @@
 
     /* Disable Handmade Photo Hover scale on mobile */
     .handmade-photo-item:hover {
-        transform: none !important;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
-        border-color: rgba(197, 160, 89, 0.25) !important;
+        transform: none;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        border-color: rgba(197, 160, 89, 0.25);
     }
     .handmade-photo-item:hover .photo-wrap img {
-        transform: none !important;
-        filter: brightness(0.85) !important;
+        transform: none;
+        filter: brightness(0.85);
     }
 
     /* Disable Product Card Hover scale/swap on mobile */
     .product-item:hover {
-        transform: none !important;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03) !important;
+        transform: none;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
     }
     .product-item:hover .img-main {
-        opacity: 1 !important;
-        transform: none !important;
+        opacity: 1;
+        transform: none;
     }
     .product-item:hover .img-hover {
-        opacity: 0 !important;
-        transform: none !important;
+        opacity: 0;
+        transform: none;
     }
 }
 
@@ -431,7 +426,7 @@
     font-family: var(--font-sans);
     font-size: 1.05rem;
     line-height: 1.8;
-    color: #403833;
+    color: var(--text-body);
     font-weight: 300;
 }
 

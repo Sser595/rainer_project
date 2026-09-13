@@ -1,16 +1,28 @@
 :root {
+    --white: #ffffff;
     --bg-light: #ffffff;
+    --bg-cream: #f9f8f6;
+    --bg-cream-light: #fcfaf7;
     --bg-dark: #006747; /* Original brand green */
+    --bg-dark-hover: #004d34;
     --bg-dark-accent: #000000;
     --text-dark: #222222;
+    --text-strong: #1a1a1a;
+    --text-heading: #0c1a13;
+    --text-body: #403833;
+    --text-brown: #55413c;
+    --text-brown-strong: #2b1711;
     --text-coffee: #45251c;
     --text-hero-light: #ffffff;
     --text-hero-muted: #e2dcd0;
     --text-light: #f5f2eb;
+    --text-warm: #f7f3ed;
     --text-muted: #d2dfd7; /* High contrast muted text on dark brand green */
+    --text-muted-soft: #d1ded6;
     --gold: #c5a059; /* Brushed premium gold */
     --gold-dark: #966c1e; /* High contrast gold for light backgrounds (WCAG AA) */
-    --card-border: #006747;
+    --gold-darker: #6b4d12;
+    --card-border: var(--bg-dark);
     --font-serif: 'EB Garamond', serif;
     --font-sans: 'Montserrat', sans-serif;
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);

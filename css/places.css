@@ -1,7 +1,7 @@
 /* ─── BASE & RESET ───────────────────────────── */
 .places-page {
-    background-color: #f9f8f6; /* Warm cream background like Breads Bakery */
-    color: #45251c; /* Rich coffee/dark brown text */
+    background-color: var(--bg-cream); /* Warm cream background like Breads Bakery */
+    color: var(--text-coffee); /* Rich coffee/dark brown text */
     margin: 0;
     font-family: var(--font-sans);
 }
@@ -12,14 +12,14 @@
     min-height: calc(100vh - 80px);
     width: 100%;
     margin-top: 0; /* Fixed gap: header spacing already handled by body padding-top */
-    background-color: #f9f8f6;
+    background-color: var(--bg-cream);
 }
 
 .location-image-side {
     width: 50%;
     position: relative;
     overflow: hidden;
-    background-color: #f9f8f6;
+    background-color: var(--bg-cream);
 }
 
 .location-image-side img {
@@ -37,8 +37,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #fcfaf7; /* Slightly lighter warm cream for details */
-    color: #45251c;
+    background-color: var(--bg-cream-light); /* Slightly lighter warm cream for details */
+    color: var(--text-coffee);
     border-left: 1px solid rgba(197, 160, 89, 0.15);
 }
 
@@ -66,7 +66,7 @@
 }
 
 .back-btn-container .place-map-btn:hover {
-    color: #6b4d12;
+    color: var(--gold-darker);
     transform: translateX(-4px);
     box-shadow: none;
 }
@@ -76,7 +76,7 @@
     font-family: var(--font-serif);
     font-size: 3rem;
     font-weight: 400;
-    color: #0c1a13;
+    color: var(--text-heading);
     margin: 0 0 20px 0;
     line-height: 1.2;
     text-transform: none;
@@ -92,7 +92,7 @@
 .location-intro-text {
     font-size: 1.05rem;
     line-height: 1.7;
-    color: #55413c;
+    color: var(--text-brown);
     margin-bottom: 35px;
     font-weight: 300;
 }
@@ -131,19 +131,21 @@
 .info-content p {
     font-size: 0.95rem;
     line-height: 1.6;
-    color: #45251c;
+    color: var(--text-coffee);
     margin: 0;
 }
 
-.info-content a {
-    color: #45251c;
+.info-content a,
+.place-info-block a {
+    color: var(--text-coffee);
     text-decoration: none;
     border-bottom: 1px solid rgba(69, 37, 28, 0.25);
     font-weight: 500;
     transition: var(--transition-smooth);
 }
 
-.info-content a:hover {
+.info-content a:hover,
+.place-info-block a:hover {
     color: var(--gold-dark);
     border-bottom-color: var(--gold-dark);
 }
@@ -173,22 +175,22 @@
 }
 
 .place-action-btn.btn-primary {
-    background-color: #006747;
-    color: #ffffff;
-    border: 1px solid #006747;
+    background-color: var(--bg-dark);
+    color: var(--white);
+    border: 1px solid var(--bg-dark);
 }
 
 .place-action-btn.btn-primary:hover {
-    background-color: #004d34;
-    border-color: #004d34;
+    background-color: var(--bg-dark-hover);
+    border-color: var(--bg-dark-hover);
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(0, 103, 71, 0.2);
 }
 
 .place-action-btn.btn-secondary {
     background-color: transparent;
-    color: #006747;
-    border: 1px solid #006747;
+    color: var(--bg-dark);
+    border: 1px solid var(--bg-dark);
 }
 
 .place-action-btn.btn-secondary:hover {
@@ -210,21 +212,21 @@
     font-family: var(--font-sans);
     font-size: 1.1rem;
     font-weight: 700;
-    color: #0c1a13;
+    color: var(--text-heading);
     margin: 0 0 8px 0;
 }
 
 .menu-notice-box p {
     font-size: 0.88rem;
     line-height: 1.6;
-    color: #403833;
+    color: var(--text-body);
     margin: 0;
 }
 
 /* ─── CATEGORIES & GALLERY SECTIONS ──────────────── */
 .categories-grid-section {
     padding: 80px 8%;
-    background-color: #f9f8f6;
+    background-color: var(--bg-cream);
     border-top: 1px solid rgba(0, 103, 71, 0.08);
 }
 
@@ -239,7 +241,7 @@
     font-family: var(--font-serif);
     font-size: 2.8rem;
     font-weight: 400;
-    color: #0c1a13;
+    color: var(--text-heading);
     margin: 10px 0 15px 0;
     line-height: 1.2;
 }
@@ -247,7 +249,7 @@
 .places-intro {
     font-size: 1.05rem;
     line-height: 1.7;
-    color: #55413c;
+    color: var(--text-brown);
     max-width: 700px;
     margin: 0 auto;
     font-weight: 300;
@@ -273,7 +275,7 @@
     font-family: var(--font-serif);
     font-size: 3rem;
     font-weight: 400;
-    color: #0c1a13;
+    color: var(--text-heading);
     margin: 10px 0 15px;
     line-height: 1.2;
 }
@@ -287,7 +289,7 @@
 }
 
 .place-card {
-    background-color: #ffffff;
+    background-color: var(--white);
     border-radius: 6px;
     overflow: hidden;
     border: 1px solid rgba(197, 160, 89, 0.22);
@@ -318,7 +320,7 @@
     font-family: var(--font-serif);
     font-size: 1.85rem;
     font-weight: 400;
-    color: #0c1a13;
+    color: var(--text-heading);
     margin: 0 0 12px 0;
     line-height: 1.2;
 }
@@ -365,27 +367,14 @@
 .place-info-block p {
     font-size: 0.95rem;
     line-height: 1.65;
-    color: #45251c;
+    color: var(--text-coffee);
     margin: 0;
     font-weight: 400;
 }
 
 .place-info-block p strong {
     font-weight: 600;
-    color: #2b1711;
-}
-
-.place-info-block a {
-    color: #45251c;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(69, 37, 28, 0.25);
-    font-weight: 500;
-    transition: var(--transition-smooth);
-}
-
-.place-info-block a:hover {
-    color: var(--gold-dark);
-    border-bottom-color: var(--gold-dark);
+    color: var(--text-brown-strong);
 }
 
 .place-card-actions {
@@ -417,72 +406,30 @@
 }
 
 .place-map-btn.btn-primary {
-    background-color: #006747;
-    color: #ffffff;
-    border: 1.5px solid #006747;
+    background-color: var(--bg-dark);
+    color: var(--white);
+    border: 1.5px solid var(--bg-dark);
 }
 
 .place-map-btn.btn-primary:hover {
-    background-color: #004d34;
-    border-color: #004d34;
-    color: #ffffff;
+    background-color: var(--bg-dark-hover);
+    border-color: var(--bg-dark-hover);
+    color: var(--white);
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(0, 103, 71, 0.2);
 }
 
 .place-map-btn.btn-secondary {
     background-color: transparent;
-    color: #006747;
-    border: 1.5px solid #006747;
+    color: var(--bg-dark);
+    border: 1.5px solid var(--bg-dark);
 }
 
 .place-map-btn.btn-secondary:hover {
     background-color: rgba(0, 103, 71, 0.06);
-    color: #004d34;
-    border-color: #004d34;
+    color: var(--bg-dark-hover);
+    border-color: var(--bg-dark-hover);
     transform: translateY(-2px);
-}
-
-/* ─── CONTACT INQUIRY SECTION ──────────────────── */
-.contact-inquiry-section {
-    margin-top: 70px;
-    background-color: #ffffff;
-    border: 1px solid rgba(197, 160, 89, 0.22);
-    border-radius: 6px;
-    padding: 50px 60px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.contact-inquiry-text {
-    flex: 1.4;
-}
-
-.contact-inquiry-text h3 {
-    font-family: var(--font-serif);
-    font-size: 2.2rem;
-    color: #0c1a13;
-    margin: 8px 0 15px;
-    line-height: 1.25;
-}
-
-.contact-inquiry-text p {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #55413c;
-    margin: 0;
-    font-weight: 300;
-}
-
-.contact-inquiry-actions {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: stretch;
 }
 
 /* Breads Bakery Collage Grid Styles */
@@ -499,7 +446,7 @@
     position: relative;
     overflow: hidden;
     border-radius: 6px;
-    background-color: #ffffff;
+    background-color: var(--white);
     box-shadow: var(--shadow-soft);
     aspect-ratio: 4 / 3;
 }
@@ -543,17 +490,6 @@
     .places-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 25px;
-    }
-
-    .contact-inquiry-section {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 30px;
-    }
-
-    .contact-inquiry-actions {
-        width: 100%;
-        max-width: 400px;
     }
 }
 
@@ -601,14 +537,6 @@
 
     .place-body {
         padding: 24px 20px;
-    }
-
-    .contact-inquiry-section {
-        padding: 30px 20px;
-    }
-
-    .contact-inquiry-text h3 {
-        font-size: 1.6rem;
     }
 
     .places-header h1,

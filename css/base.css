@@ -17,6 +17,10 @@ body {
     overflow-x: hidden;
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
+
 h1,
 h2,
 h3,
@@ -24,7 +28,7 @@ h4,
 .serif {
     font-family: var(--font-serif);
     font-weight: 400;
-    color: #0c1a13;
+    color: var(--text-heading);
 }
 
 em {
@@ -79,7 +83,7 @@ a {
 }
 
 a:hover {
-    color: #6b4d12;
+    color: var(--gold-darker);
 }
 
 /* Inline SVG icons (self-hosted, replaces Font Awesome) */

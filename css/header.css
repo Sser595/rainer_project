@@ -19,18 +19,6 @@
     transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Menu open header state to solve stacking context issues */
-.main-header.menu-open {
-    background-color: transparent !important;
-    border-bottom-color: transparent !important;
-    box-shadow: none !important;
-    z-index: 1300 !important;
-}
-
-.main-header.menu-open .gambero-logo {
-    filter: brightness(0) invert(1) !important;
-}
-
 /* Logo */
 .logo-container {
     display: flex;
@@ -43,6 +31,7 @@
     height: 60px;
     width: auto;
     display: block;
+    padding-left: 80px;
     transition: filter 0.4s ease;
 }
 
@@ -80,6 +69,10 @@
 .nav-btn:hover,
 .nav-btn.active-nav {
     color: var(--gold-dark);
+}
+
+.header-nav-center .nav-btn:last-child {
+    margin-right: 80px;
 }
 
 .nav-btn::after {
@@ -160,7 +153,7 @@
 
     /* Scrolled state nav-btn styling to ensure they turn black */
     .home-page .main-header.scrolled .nav-btn {
-        color: #000000;
+        color: var(--bg-dark-accent);
     }
 
     .home-page .main-header.scrolled .nav-btn::after {
@@ -233,14 +226,14 @@
 .mobile-nav-sub-btn {
     font-family: var(--font-sans);
     font-size: 0.95rem;
-    color: #d1ded6;
+    color: var(--text-muted-soft);
     text-decoration: none;
     transition: var(--transition-smooth);
 }
 
 .mobile-nav-sub-btn:hover,
 .mobile-nav-sub-btn.active-nav {
-    color: #ffffff;
+    color: var(--white);
 }
 
 .mobile-socials {
@@ -250,7 +243,7 @@
 }
 
 .mobile-social-link {
-    color: #d1ded6;
+    color: var(--text-muted-soft);
     font-size: 1.3rem;
     transition: var(--transition-smooth);
 }
@@ -265,15 +258,10 @@
 
 body {
     padding-top: 80px;
-    padding-left: 0 !important;
 }
 
 .home-page {
-    padding-top: 0 !important;
-}
-
-main {
-    padding-top: 0 !important;
+    padding-top: 0;
 }
 
 @media (max-width: 992px) {
@@ -319,16 +307,16 @@ main {
         transform: translateY(-8px) rotate(-45deg);
     }
     
-    .hamburger.active .bar {
-        background-color: var(--text-light) !important;
-    }
-    
     .home-page .main-header:not(.scrolled) .hamburger .bar {
         background-color: var(--text-hero-light);
     }
     
     .home-page .main-header.scrolled .hamburger .bar {
         background-color: var(--bg-dark-accent);
+    }
+
+    .main-header.menu-open .hamburger.active .bar {
+        background-color: var(--text-light);
     }
 
     /* Transparency overrides for mobile view on Homepage */
@@ -347,4 +335,16 @@ main {
     .home-page .main-header:not(.scrolled) .gambero-logo {
         filter: brightness(0) invert(1);
     }
+}
+
+.main-header.menu-open,
+.home-page .main-header.menu-open {
+    background-color: transparent;
+    border-bottom-color: transparent;
+    box-shadow: none;
+    z-index: 1300;
+}
+
+.main-header.menu-open .gambero-logo {
+    filter: brightness(0) invert(1);
 }
