@@ -96,11 +96,6 @@
     border: none;
     border-bottom: 1px dashed rgba(197, 160, 89, 0.25);
     box-shadow: none;
-    transition: var(--transition-smooth);
-}
-
-.menu-item:hover {
-    transform: translateX(4px);
 }
 
 /* nome piatto */
@@ -110,11 +105,6 @@
     color: var(--text-heading);
     font-weight: 500;
     margin-bottom: 8px;
-    transition: color 0.3s;
-}
-
-.menu-item:hover .item-name {
-    color: var(--gold);
 }
 
 /* descrizione */
