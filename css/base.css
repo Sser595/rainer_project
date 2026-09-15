@@ -95,3 +95,201 @@ a:hover {
     vertical-align: middle;
     flex-shrink: 0;
 }
+
+/* ==========================================================================
+   ACCESSIBILITÀ
+   ========================================================================== */
+
+/* Visible keyboard focus ring */
+:focus-visible {
+    outline: 3px solid var(--gold-dark);
+    outline-offset: 3px;
+}
+
+/* Higher-contrast ring on dark backgrounds */
+.hero-section :focus-visible,
+.handmade-section :focus-visible,
+.philosophy-section :focus-visible,
+.menu-hero :focus-visible,
+.minimal-footer :focus-visible,
+.mobile-menu-overlay :focus-visible,
+.main-header:not(.scrolled) :focus-visible {
+    outline-color: var(--gold);
+}
+
+/* Screen-reader only utility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Skip link */
+.skip-link {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+    background-color: var(--bg-dark);
+    color: var(--white);
+    padding: 12px 22px;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 0 0 4px 4px;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+    color: var(--white);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.breadcrumb ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.breadcrumb li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-body);
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: "/";
+    color: var(--gold-dark);
+}
+
+.breadcrumb a {
+    color: var(--gold-dark);
+}
+
+.breadcrumb a:hover {
+    color: var(--gold-darker);
+}
+
+.breadcrumb.on-dark li {
+    color: var(--text-muted-soft);
+}
+
+.breadcrumb.on-dark a,
+.breadcrumb.on-dark li:not(:last-child)::after {
+    color: var(--gold);
+}
+
+.breadcrumb.on-dark a:hover {
+    color: var(--white);
+}
+
+.places-header .breadcrumb ol,
+.menu-hero .breadcrumb ol {
+    justify-content: center;
+}
+
+/* Back to top */
+.back-to-top {
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    z-index: 1100;
+    width: 46px;
+    height: 46px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--bg-dark);
+    color: var(--white);
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.back-to-top.visible {
+    display: flex;
+}
+
+.actions-center {
+    justify-content: center;
+}
+
+/* Legal / policy pages */
+.legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.legal-content h2 {
+    font-size: 1.6rem;
+    margin: 34px 0 12px;
+    color: var(--text-heading);
+}
+
+.legal-content p,
+.legal-content li {
+    font-size: 0.98rem;
+    line-height: 1.8;
+    color: var(--text-body);
+    margin-bottom: 12px;
+}
+
+.legal-content ul {
+    padding-left: 22px;
+    margin-bottom: 12px;
+}
+
+.legal-content a {
+    color: var(--gold-dark);
+}
+
+.back-to-top:hover {
+    background-color: var(--bg-dark-hover);
+}
+
+@media (max-width: 992px) {
+    .back-to-top {
+        display: none !important;
+    }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}

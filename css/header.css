@@ -280,6 +280,7 @@ body {
     
     .gambero-logo {
         height: 48px;
+        padding-left: 0;
     }
 
     .header-nav {

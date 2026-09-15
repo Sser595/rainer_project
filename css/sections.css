@@ -53,14 +53,6 @@
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     border-radius: 2px;
     overflow: hidden;
-    transition: var(--transition-smooth);
-}
-
-.handmade-photo-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.55);
-    border-color: var(--gold);
-    z-index: 10;
 }
 
 /* Staggered Vertical Offsets for Collage Effect (Desktop only) */
@@ -73,17 +65,6 @@
     }
     .handmade-photo-item.item-4 {
         transform: translateY(15px);
-    }
-    
-    /* Keep offsets correctly aligned on hover */
-    .handmade-photo-item.item-2:hover {
-        transform: translateY(27px);
-    }
-    .handmade-photo-item.item-3:hover {
-        transform: translateY(-33px);
-    }
-    .handmade-photo-item.item-4:hover {
-        transform: translateY(7px);
     }
 }
 
@@ -102,9 +83,7 @@
     filter: brightness(0.85);
 }
 
-.handmade-photo-item:hover .photo-wrap img {
-    filter: brightness(1.05);
-}
+
 
 
 
@@ -357,17 +336,6 @@
         font-size: 2.5rem;
     }
 
-    /* Disable Handmade Photo Hover scale on mobile */
-    .handmade-photo-item:hover {
-        transform: none;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-        border-color: rgba(197, 160, 89, 0.25);
-    }
-    .handmade-photo-item:hover .photo-wrap img {
-        transform: none;
-        filter: brightness(0.85);
-    }
-
     /* Disable Product Card Hover scale/swap on mobile */
     .product-item:hover {
         transform: none;
@@ -450,4 +418,22 @@
     z-index: 10;
     background-color: var(--bg-dark);
     box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* ============================
+   BANNER DECORATIVO
+   ============================ */
+.banner-section {
+    width: 100%;
+    background-color: var(--white);
+    line-height: 0;
+}
+
+.banner-section img {
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }

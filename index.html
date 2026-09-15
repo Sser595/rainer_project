@@ -16,13 +16,75 @@
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/sections.css">
     <link rel="stylesheet" href="css/footer.css">
+    <meta name="description" content="Caffè Rainer a Firenze: bistrot e pasticceria austriaca dal 2011. Pasticceria viennese, caffetteria, forno artigianale e Rainer Bakery in Via San Zanobi.">
+    <meta name="theme-color" content="#006747">
+    <link rel="canonical" href="https://www.cafferainer.it/">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Caffè Rainer">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:title" content="Caffè Rainer | Firenze">
+    <meta property="og:description" content="Caffè Rainer a Firenze: bistrot e pasticceria austriaca dal 2011. Pasticceria viennese, caffetteria, forno artigianale e Rainer Bakery in Via San Zanobi.">
+    <meta property="og:url" content="https://www.cafferainer.it/">
+    <meta property="og:image" content="https://www.cafferainer.it/img_pieghevole/financier.webp">
+    <meta property="og:image:alt" content="Interni del Caffè Rainer a Firenze">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Caffè Rainer | Firenze">
+    <meta name="twitter:description" content="Caffè Rainer a Firenze: bistrot e pasticceria austriaca dal 2011. Pasticceria viennese, caffetteria, forno artigianale e Rainer Bakery in Via San Zanobi.">
+    <meta name="twitter:image" content="https://www.cafferainer.it/img_pieghevole/financier.webp">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Restaurant", "CafeOrCoffeeShop"],
+      "@id": "https://www.cafferainer.it/#business",
+      "name": "Caffè Rainer",
+      "description": "Bistrot e pasticceria austriaca a Firenze dal 2011. Pasticceria viennese, caffetteria, forno artigianale e Rainer Bakery.",
+      "url": "https://www.cafferainer.it/",
+      "logo": "https://www.cafferainer.it/icon-512.png",
+      "image": "https://www.cafferainer.it/img_pieghevole/financier.webp",
+      "telephone": "+39 055 493 2207",
+      "email": "info@cafferainer.it",
+      "priceRange": "€€",
+      "servesCuisine": ["Pasticceria austriaca", "Caffetteria", "Bistrot"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via San Zanobi 97/R",
+        "postalCode": "50129",
+        "addressLocality": "Firenze",
+        "addressRegion": "Toscana",
+        "addressCountry": "IT"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "08:00",
+          "closes": "15:00"
+        }
+      ],
+      "sameAs": [
+        "https://instagram.com/cafferainer",
+        "https://www.facebook.com/cafferainer"
+      ]
+    }
+    </script>
 </head>
 
 <body class="home-page">
+    <a class="skip-link" href="#main-content">Vai al contenuto</a>
     <header class="main-header">
         <div class="logo-container">
             <a href="index.html">
-                <img src="img_pieghevole/logoRainer.png" alt="Caffè Rainer Logo" class="gambero-logo">
+                <img src="img_pieghevole/logoRainer.webp" alt="Caffè Rainer Logo" class="gambero-logo" width="730" height="308">
             </a>
         </div>
 
@@ -34,15 +96,15 @@
             <a href="contatti.html" class="nav-btn">Contatti</a>
         </nav>
 
-        <button class="hamburger" id="hamburgerBtn" aria-label="Apri Menu">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Apri Menu" aria-controls="mobileMenu" aria-expanded="false">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </button>
     </header>
 
-    <div class="mobile-menu-overlay" id="mobileMenu">
-        <nav class="mobile-nav">
+    <div class="mobile-menu-overlay" id="mobileMenu" aria-hidden="true" inert>
+        <nav class="mobile-nav" aria-label="Menu principale">
             <a href="#filosofia" class="mobile-nav-btn">La Nostra Storia</a>
             <span class="mobile-nav-heading">I Nostri Luoghi</span>
             <a href="caffe-rainer.html" class="mobile-nav-sub-btn">Caffè Rainer</a>
@@ -50,38 +112,36 @@
             <a href="bakery.html" class="mobile-nav-sub-btn">Rainer Bakery</a>
             <a href="contatti.html" class="mobile-nav-btn">Contatti</a>
             <div class="mobile-socials">
-                <a href="https://instagram.com/cafferainer" target="_blank" aria-label="Instagram" class="mobile-social-link"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
-                <a href="https://www.facebook.com/cafferainer" target="_blank" aria-label="Facebook" class="mobile-social-link"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a>
+                <a href="https://instagram.com/cafferainer" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="mobile-social-link"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+                <a href="https://www.facebook.com/cafferainer" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="mobile-social-link"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a>
             </div>
         </nav>
     </div>
-    <main>
+    <main id="main-content">
         <section class="hero-section hero-fullwidth">
             <div class="hero-bg-wrapper">
                 <div class="hero-slide active">
-                    <img src="img_pieghevole/financier.jpeg" alt="Interni Caffè Rainer" class="hero-bg-img" fetchpriority="high" decoding="async">
+                    <img src="img_pieghevole/financier.webp" alt="Interni Caffè Rainer" class="hero-bg-img" fetchpriority="high" decoding="async" width="1341" height="1010">
                 </div>
                 <div class="hero-slide">
-                    <img src="img_caffe/mini2.jpeg" alt="Pasticceria artigianale Caffè Rainer" class="hero-bg-img" decoding="async">
+                    <img src="img_hero/bread_hero.webp" alt="Pasticceria artigianale Caffè Rainer" class="hero-bg-img" decoding="async" width="1200" height="1600">
                 </div>
                 <div class="hero-slide">
-                    <img src="img_hero/bread_hero.jpeg" alt="Panificazione Caffè Rainer" class="hero-bg-img" decoding="async">
+                    <img src="img_hero/heroBakery.png" alt="Panificazione Caffè Rainer" class="hero-bg-img" decoding="async" width="1245" height="997">
                 </div>
                 <div class="hero-overlay"></div>
             </div>
             <div class="hero-dots">
-                <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
-                <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
-                <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
+                <button class="hero-dot active" data-slide="0" aria-label="Vai alla slide 1" aria-current="true"></button>
+                <button class="hero-dot" data-slide="1" aria-label="Vai alla slide 2"></button>
+                <button class="hero-dot" data-slide="2" aria-label="Vai alla slide 3"></button>
+                <button class="hero-pause" id="heroPauseBtn" type="button" aria-label="Metti in pausa presentazione" aria-pressed="false"></button>
             </div>
             <div class="hero-content-container">
                 <div class="hero-content active">
                     <span class="gold-subtitle anim-fade-up" style="animation-delay: 0.1s;">DAL 2011</span>
                     <h1 class="hero-title anim-fade-up" style="animation-delay: 0.3s;">Pasticceria e caffetteria<br>nel cuore di Firenze.</h1>
                     <div class="gold-line anim-fade-up" style="animation-delay: 0.5s;"></div>
-                    <p class="hero-description anim-fade-up" style="animation-delay: 0.6s;">
-                         Il primo bistrot-pasticceria austriaco a Firenze, dove la ricca tradizione dolciaria viennese incontra l'eccellenza della panificazione artigianale.
-                    </p>
                     <div class="hero-actions anim-fade-up" style="animation-delay: 0.8s;">
                         <a href="caffe-rainer.html" class="btn-hero btn-primary">
                             <span>Scopri il Bistrot</span>
@@ -89,13 +149,10 @@
                         </a>
                     </div>
                 </div>
-                <div class="hero-content">
+                <div class="hero-content" aria-hidden="true">
                     <span class="gold-subtitle">IL FORNO ARTIGIANALE</span>
-                    <h1 class="hero-title">Il Forno più piccolo<br>di Firenze.</h1>
+                    <h2 class="hero-title">Il Forno più piccolo<br>di Firenze.</h2>
                     <div class="gold-line"></div>
-                    <p class="hero-description">
-                        Nel nostro forno artigianale utilizziamo esclusivamente farine biologiche macinate a pietra e lievito madre a fermentazione naturale.
-                    </p>
                     <div class="hero-actions">
                         <a href="forno-storico.html" class="btn-hero btn-primary">
                             <span>Visita il Forno</span>
@@ -103,13 +160,10 @@
                         </a>
                     </div>
                 </div>
-                <div class="hero-content">
+                <div class="hero-content" aria-hidden="true">
                     <span class="gold-subtitle">RAINER BAKERY</span>
-                    <h1 class="hero-title">La bakery contemporanea<br>a Firenze.</h1>
+                    <h2 class="hero-title">La bakery contemporanea<br>a Firenze.</h2>
                     <div class="gold-line"></div>
-                    <p class="hero-description">
-                        Il nostro spazio contemporaneo dedicato alla panificazione moderna, con pani speciali, focacce farcite ed eleganti proposte per l'asporto.
-                    </p>
                     <div class="hero-actions">
                         <a href="bakery.html" class="btn-hero btn-primary">
                             <span>Visita la Bakery</span>
@@ -141,14 +195,14 @@
                             </p>
                         </div>
                     </div>
-                    <button class="read-more-btn" id="readMoreStoryBtn" aria-label="Leggi di più sulla nostra storia">
+                    <button class="read-more-btn" id="readMoreStoryBtn" aria-label="Leggi di più sulla nostra storia" aria-expanded="false" aria-controls="philosophyCollapsed">
                         <span>Leggi di più</span>
                         <svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
                     </button>
                 </div>
                 <div class="philosophy-image-col">
                     <div class="image-stack-wrapper">
-                        <img src="img_pieghevole/silviaRudi.webp" alt="Rainer e Silvia" class="philosophy-img main-img" loading="lazy" decoding="async">
+                        <img src="img_pieghevole/silviaRudi.webp" alt="Rainer e Silvia" class="philosophy-img main-img" loading="lazy" decoding="async" width="900" height="1350">
                     </div>
                 </div>
             </div>
@@ -164,19 +218,24 @@
             </div>
             <div class="handmade-photos">
                 <div class="handmade-photo-item item-1">
-                    <div class="photo-wrap"><img src="img_handmade/segale_hm.jpeg" alt="Pane artigianale" loading="lazy" decoding="async"></div>
+                    <div class="photo-wrap"><img src="img_handmade/segale_hm.webp" alt="Pane artigianale" loading="lazy" decoding="async" width="900" height="1208"></div>
                 </div>
                 <div class="handmade-photo-item item-2">
-                    <div class="photo-wrap"><img src="img_handmade/cinnamon_hm.jpeg" alt="Lavorazione artigianale" loading="lazy" decoding="async"></div>
+                    <div class="photo-wrap"><img src="img_handmade/cinnamon_hm.webp" alt="Lavorazione artigianale" loading="lazy" decoding="async" width="900" height="1205"></div>
                 </div>
                 <div class="handmade-photo-item item-3">
-                    <div class="photo-wrap"><img src="img_handmade/croiss_hm.jpeg" alt="Sfoglia artigianale" loading="lazy" decoding="async"></div>
+                    <div class="photo-wrap"><img src="img_handmade/croiss_hm.webp" alt="Sfoglia artigianale" loading="lazy" decoding="async" width="900" height="1188"></div>
                 </div>
                 <div class="handmade-photo-item item-4">
-                    <div class="photo-wrap"><img src="img_handmade/pain_hm.jpeg" alt="Prodotti freschi" loading="lazy" decoding="async"></div>
+                    <div class="photo-wrap"><img src="img_handmade/pain_hm.webp" alt="Prodotti freschi" loading="lazy" decoding="async" width="900" height="994"></div>
                 </div>
             </div>
         </section>
+
+        <!-- BANNER DECORATIVO -->
+        <div class="banner-section">
+            <img src="banner/banner.webp" alt="" width="2560" height="1280" loading="lazy" decoding="async">
+        </div>
 
         <!-- sezione PRODOTTI CON DESCRIZIONE-->
         <section id="products" class="products-grid-layout">
@@ -191,38 +250,38 @@
                 <!-- Prodotto 1: Pain au Chocolat (Pasticceria) -->
                 <article class="product-item">
                     <div class="img-swap">
-                        <img src="img_pieghevole/pain_au_chocolat.jpeg" class="img-main" alt="Pain au Chocolat" loading="lazy" decoding="async">
-                        <img src="img_pieghevole/pain_au_chocolat_after.jpeg" class="img-hover" alt="Pain au Chocolat Sezione" loading="lazy" decoding="async">
+                        <img src="img_pieghevole/pain_au_chocolat.webp" class="img-main" alt="Pain au Chocolat" loading="lazy" decoding="async" width="900" height="1214">
+                        <img src="img_pieghevole/pain_au_chocolat_after.webp" class="img-hover" alt="Pain au Chocolat Sezione" loading="lazy" decoding="async" width="900" height="1176">
                     </div>
                 </article>
 
                 <!-- Prodotto 2: Cannelés (Pasticceria) -->
                 <article class="product-item">
                     <div class="img-swap">
-                        <img src="img_pieghevole/cannelès.jpeg" class="img-main" alt="Cannelés" loading="lazy" decoding="async">
-                        <img src="img_pieghevole/canneles_after.jpeg" class="img-hover" alt="Cannelés Dettaglio" loading="lazy" decoding="async">
+                        <img src="img_pieghevole/canneles.webp" class="img-main" alt="Cannelés" loading="lazy" decoding="async" width="900" height="1089">
+                        <img src="img_pieghevole/canneles_after.webp" class="img-hover" alt="Cannelés Dettaglio" loading="lazy" decoding="async" width="900" height="1081">
                     </div>
                 </article>
 
                 <!-- Prodotto 3: Baguette (Forno) -->
                 <article class="product-item">
                     <div class="img-swap">
-                        <img src="img_pieghevole/baguette.jpeg" class="img-main" alt="Baguette" loading="lazy" decoding="async">
-                        <img src="img_pieghevole/baguette_after.jpeg" class="img-hover" alt="Baguette Dettaglio" loading="lazy" decoding="async">
+                        <img src="img_pieghevole/baguette.webp" class="img-main" alt="Baguette" loading="lazy" decoding="async" width="900" height="1168">
+                        <img src="img_pieghevole/baguette_after.webp" class="img-hover" alt="Baguette Dettaglio" loading="lazy" decoding="async" width="795" height="1056">
                     </div>
                 </article>
 
                 <!-- Prodotto 4: Pane Artigianale (Forno) -->
                 <article class="product-item">
                     <div class="img-swap">
-                        <img src="img_pieghevole/bread.jpeg" class="img-main" alt="Pane Artigianale" loading="lazy" decoding="async">
-                        <img src="img_pieghevole/bread_after.jpeg" class="img-hover" alt="Pane Artigianale Sezione" loading="lazy" decoding="async">
+                        <img src="img_pieghevole/bread.webp" class="img-main" alt="Pane Artigianale" loading="lazy" decoding="async" width="900" height="1135">
+                        <img src="img_pieghevole/bread_after.webp" class="img-hover" alt="Pane Artigianale Sezione" loading="lazy" decoding="async" width="900" height="1118">
                     </div>
                 </article>
             </div>
 
             <div class="products-seasonality-note">
-                <p>Le nostre creazioni seguono la stagionalità dei prodotti, scrivi a <a href="https://instagram.com/cafferainer" target="_blank">@cafferainer</a> o chiamaci a +39 055 493 2207 per controllarne la disponibilità.</p>
+                <p>Le nostre creazioni seguono la stagionalità dei prodotti, scrivi a <a href="https://instagram.com/cafferainer" target="_blank" rel="noopener noreferrer">@cafferainer</a> o chiamaci a +39 055 493 2207 per controllarne la disponibilità.</p>
             </div>
         </section>
         <!-- sezione PRODOTTI -->
@@ -231,7 +290,9 @@
         <footer class="minimal-footer">
         <div class="footer-content">
             <div class="footer-brand">
-                <a href="index.html" class="footer-logo-title">Caffè Rainer</a>
+                <a href="index.html" class="footer-logo" aria-label="Caffè Rainer — Home">
+                    <img src="img_pieghevole/logoRainer.webp" alt="Caffè Rainer" width="730" height="308">
+                </a>
                 <p class="footer-tagline">Firenze - 2011</p>
                 <a href="mailto:info@cafferainer.it" class="footer-email">info@cafferainer.it</a>
             </div>
@@ -240,32 +301,35 @@
                 <div class="footer-col">
                     <span class="footer-col-title">Caffè & Bistrot</span>
                     <a href="tel:+390554932207" class="footer-link">055 493 2207</a>
-                    <a href="https://instagram.com/cafferainer" target="_blank" class="footer-link">@cafferainer</a>
+                    <a href="https://instagram.com/cafferainer" target="_blank" rel="noopener noreferrer" class="footer-link">@cafferainer</a>
                     <a href="caffe-rainer.html" class="footer-link">Via San Zanobi 97/R</a>
                 </div>
                 
                 <div class="footer-col">
                     <span class="footer-col-title">Rainer Bakery</span>
                     <a href="tel:+390555276634" class="footer-link">055 527 6634</a>
-                    <a href="https://instagram.com/rainerbakery" target="_blank" class="footer-link">@rainerbakery</a>
+                    <a href="https://instagram.com/rainerbakery" target="_blank" rel="noopener noreferrer" class="footer-link">@rainerbakery</a>
                     <a href="bakery.html" class="footer-link">Via Cristofori 8</a>
                 </div>
             </div>
 
             <div class="footer-badge-col">
                 <div class="gambero-rosso-badge">
-                    <img src="img_pieghevole/gambero-rosso.png" alt="Guida Gambero Rosso" loading="lazy" decoding="async">
+                    <img src="img_pieghevole/gambero-rosso.webp" alt="Guida Gambero Rosso" loading="lazy" decoding="async" width="1182" height="329">
                     <span>Selezionato nelle Guide</span>
                 </div>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2026 Caffè Rainer. All rights reserved.</p>
+            <p>&copy; 2026 Caffè Rainer. All rights reserved. — <a href="privacy.html" class="footer-link">Privacy &amp; Cookie</a></p>
         </div>
     </footer>
     </div> <!-- /.main-content-reveal -->
     </main>
+    <button class="back-to-top" type="button" aria-label="Torna in cima alla pagina">
+        <svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 448 512"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>
+    </button>
     <script src="javascript/script.js" defer></script>
 </body>
 

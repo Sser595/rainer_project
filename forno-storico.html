@@ -16,14 +16,32 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/places.css">
+    <meta name="theme-color" content="#006747">
+    <link rel="canonical" href="https://www.cafferainer.it/forno-storico.html">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Caffè Rainer">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:title" content="Il Forno più piccolo di Firenze | I Nostri Luoghi – Caffè Rainer">
+    <meta property="og:description" content="Scopri il Forno più piccolo di Firenze adiacente al Caffè Rainer: pane a lievitazione naturale, dolci tradizionali e sfoglie fragranti.">
+    <meta property="og:url" content="https://www.cafferainer.it/forno-storico.html">
+    <meta property="og:image" content="https://www.cafferainer.it/img_pieghevole/financier.webp">
+    <meta property="og:image:alt" content="Interni del Caffè Rainer a Firenze">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Il Forno più piccolo di Firenze | I Nostri Luoghi – Caffè Rainer">
+    <meta name="twitter:description" content="Scopri il Forno più piccolo di Firenze adiacente al Caffè Rainer: pane a lievitazione naturale, dolci tradizionali e sfoglie fragranti.">
+    <meta name="twitter:image" content="https://www.cafferainer.it/img_pieghevole/financier.webp">
 </head>
 
 <body class="places-page">
-
+    <a class="skip-link" href="#main-content">Vai al contenuto</a>
     <header class="main-header">
         <div class="logo-container">
             <a href="index.html">
-                <img src="img_pieghevole/logoRainer.png" alt="Caffè Rainer Logo" class="gambero-logo">
+                <img src="img_pieghevole/logoRainer.webp" alt="Caffè Rainer Logo" class="gambero-logo" width="730" height="308">
             </a>
         </div>
 
@@ -35,15 +53,15 @@
             <a href="contatti.html" class="nav-btn">Contatti</a>
         </nav>
 
-        <button class="hamburger" id="hamburgerBtn" aria-label="Apri Menu">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Apri Menu" aria-controls="mobileMenu" aria-expanded="false">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </button>
     </header>
 
-    <div class="mobile-menu-overlay" id="mobileMenu">
-        <nav class="mobile-nav">
+    <div class="mobile-menu-overlay" id="mobileMenu" aria-hidden="true" inert>
+        <nav class="mobile-nav" aria-label="Menu principale">
             <a href="index.html#filosofia" class="mobile-nav-btn">La Nostra Storia</a>
             <span class="mobile-nav-heading">I Nostri Luoghi</span>
             <a href="caffe-rainer.html" class="mobile-nav-sub-btn">Caffè Rainer</a>
@@ -51,24 +69,24 @@
             <a href="bakery.html" class="mobile-nav-sub-btn">Rainer Bakery</a>
             <a href="contatti.html" class="mobile-nav-btn">Contatti</a>
             <div class="mobile-socials">
-                <a href="https://instagram.com/cafferainer" target="_blank" aria-label="Instagram" class="mobile-social-link"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
-                <a href="https://www.facebook.com/cafferainer" target="_blank" aria-label="Facebook" class="mobile-social-link"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a>
+                <a href="https://instagram.com/cafferainer" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="mobile-social-link"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+                <a href="https://www.facebook.com/cafferainer" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="mobile-social-link"><svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 320 512"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a>
             </div>
         </nav>
     </div>
 
-    <main>
+    <main id="main-content">
         <section class="single-location-section">
             <div class="location-image-side">
-                <img src="img_locali/interno_forno.jpeg" alt="Il Forno Interno" fetchpriority="high" decoding="async">
+                <img src="img_locali/interno_forno.webp" alt="Il Forno Interno" fetchpriority="high" decoding="async" width="900" height="1147">
             </div>
             <div class="location-info-side">
-                <div class="back-btn-container">
-                    <a href="index.html" class="place-map-btn">
-                        <svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg> Torna alla Home
-                    </a>
-                </div>
-
+                <nav class="breadcrumb" aria-label="Percorso di navigazione">
+                    <ol>
+                        <li><a href="index.html">Home</a></li>
+                        <li><span aria-current="page">Il Forno</span></li>
+                    </ol>
+                </nav>
                 <h1 class="places-title">Il Forno più piccolo di Firenze</h1>
                 <div class="gold-line"></div>
 
@@ -111,7 +129,7 @@
                 </div>
 
                 <div class="location-actions-container">
-                    <a href="https://maps.google.com/?q=Via+delle+Ruote+33r+Firenze" target="_blank" class="place-action-btn btn-primary">
+                    <a href="https://www.google.com/maps/place/Il+forno+pi%C3%B9+piccolo+di+firenze/@43.7815887,11.2534155,17.61z/data=!4m15!1m8!3m7!1s0x132a541c19b42909:0x7c56b85f5941dc07!2sVia+delle+Ruote,+33+R,+50129+Firenze+FI!3b1!8m2!3d43.7811507!4d11.2568287!16s%2Fg%2F11k3gls5h0!3m5!1s0x132a55a44af98edb:0x119c27fb7094e4d3!8m2!3d43.7811507!4d11.2568287!16s%2Fg%2F11zb71cdk1?entry=ttu&g_ep=EgoyMDI2MDkxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="place-action-btn btn-primary">
                         <svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 576 512"><path d="M408 120c0 54.6-73.1 151.9-105.2 192c-7.7 9.6-22 9.6-29.6 0C241.1 271.9 168 174.6 168 120C168 53.7 221.7 0 288 0s120 53.7 120 120zm8 80.4c3.5-6.9 6.7-13.8 9.6-20.6c.5-1.2 1-2.5 1.5-3.7l116-46.4C558.9 123.4 576 135 576 152V422.8c0 9.8-6 18.6-15.1 22.3L416 503V200.4zM137.6 138.3c2.4 14.1 7.2 28.3 12.8 41.5c2.9 6.8 6.1 13.7 9.6 20.6V451.8L32.9 502.7C17.1 509 0 497.4 0 480.4V209.6c0-9.8 6-18.6 15.1-22.3l122.6-49zM327.8 332c13.9-17.4 35.7-45.7 56.2-77V504.3L192 449.4V255c20.5 31.3 42.3 59.6 56.2 77c20.5 25.6 59.1 25.6 79.6 0zM288 152a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/></svg> Ottieni Indicazioni
                     </a>
                 </div>
@@ -123,28 +141,28 @@
             <div class="gallery-grid-container">
                 <!-- Large card on the left (1/3 width) -->
                 <div class="gallery-item gallery-featured-item">
-                    <img src="img_forno/forno_fuori.jpeg" alt="Il Pane di Segale" loading="lazy" decoding="async">
+                    <img src="img_forno/forno_fuori.webp" alt="Il Pane di Segale" loading="lazy" decoding="async" width="900" height="1200">
                 </div>
 
                 <!-- Subgrid on the right (2/3 width) -->
                 <div class="gallery-subgrid">
                     <div class="gallery-item">
-                        <img src="img_pieghevole/bread.jpeg" alt="Lievito Madre" loading="lazy" decoding="async">
+                        <img src="img_pieghevole/bread.webp" alt="Lievito Madre" loading="lazy" decoding="async" width="900" height="1135">
                     </div>
                     <div class="gallery-item">
-                        <img src="img_pieghevole/bread1.jpeg" alt="La Focaccia Artigianale" loading="lazy" decoding="async">
+                        <img src="img_pieghevole/bread1.webp" alt="La Focaccia Artigianale" loading="lazy" decoding="async" width="900" height="1219">
                     </div>
                     <div class="gallery-item">
-                        <img src="img_forno/baguette_forno.jpeg" alt="La Baguette Tradizionale" loading="lazy" decoding="async">
+                        <img src="img_forno/baguette_forno.webp" alt="La Baguette Tradizionale" loading="lazy" decoding="async" width="900" height="1200">
                     </div>
                     <div class="gallery-item">
-                        <img src="img_forno/schiacciatozza.jpeg" alt="Sfogliati Dolci" loading="lazy" decoding="async">
+                        <img src="img_forno/schiacciatozza.webp" alt="Sfogliati Dolci" loading="lazy" decoding="async" width="900" height="1200">
                     </div>
                     <div class="gallery-item">
-                        <img src="img_forno/panozzo.jpeg" alt="I Nostri Croissant" loading="lazy" decoding="async">
+                        <img src="img_forno/panozzo.webp" alt="I Nostri Croissant" loading="lazy" decoding="async" width="900" height="1200">
                     </div>
                     <div class="gallery-item">
-                        <img src="img_pieghevole/bread2.jpeg" alt="Pane Speciale" loading="lazy" decoding="async">
+                        <img src="img_pieghevole/bread2.webp" alt="Pane Speciale" loading="lazy" decoding="async" width="900" height="1213">
                     </div>
                 </div>
             </div>
@@ -155,7 +173,9 @@
     <footer class="minimal-footer">
         <div class="footer-content">
             <div class="footer-brand">
-                <a href="index.html" class="footer-logo-title">Caffè Rainer</a>
+                <a href="index.html" class="footer-logo" aria-label="Caffè Rainer — Home">
+                    <img src="img_pieghevole/logoRainer.webp" alt="Caffè Rainer" width="730" height="308">
+                </a>
                 <p class="footer-tagline">Firenze — 2011</p>
                 <a href="mailto:info@cafferainer.it" class="footer-email">info@cafferainer.it</a>
             </div>
@@ -164,30 +184,33 @@
                 <div class="footer-col">
                     <span class="footer-col-title">Caffè & Bistrot</span>
                     <a href="tel:+390554932207" class="footer-link">055 493 2207</a>
-                    <a href="https://instagram.com/cafferainer" target="_blank" class="footer-link">@cafferainer</a>
+                    <a href="https://instagram.com/cafferainer" target="_blank" rel="noopener noreferrer" class="footer-link">@cafferainer</a>
                     <a href="caffe-rainer.html" class="footer-link">Via San Zanobi 97/R</a>
                 </div>
                 
                 <div class="footer-col">
                     <span class="footer-col-title">Rainer Bakery</span>
                     <a href="tel:+390555276634" class="footer-link">055 527 6634</a>
-                    <a href="https://instagram.com/rainerbakery" target="_blank" class="footer-link">@rainerbakery</a>
+                    <a href="https://instagram.com/rainerbakery" target="_blank" rel="noopener noreferrer" class="footer-link">@rainerbakery</a>
                     <a href="bakery.html" class="footer-link">Via Cristofori 8</a>
                 </div>
             </div>
 
             <div class="footer-badge-col">
                 <div class="gambero-rosso-badge">
-                    <img src="img_pieghevole/gambero-rosso.png" alt="Guida Gambero Rosso" loading="lazy" decoding="async">
+                    <img src="img_pieghevole/gambero-rosso.webp" alt="Guida Gambero Rosso" loading="lazy" decoding="async" width="1182" height="329">
                     <span>Selezionato nelle Guide</span>
                 </div>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2026 Caffè Rainer. All rights reserved.</p>
+            <p>&copy; 2026 Caffè Rainer. All rights reserved. — <a href="privacy.html" class="footer-link">Privacy &amp; Cookie</a></p>
         </div>
     </footer>
+    <button class="back-to-top" type="button" aria-label="Torna in cima alla pagina">
+        <svg class="svg-icon" aria-hidden="true" focusable="false" viewBox="0 0 448 512"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>
+    </button>
     <script src="javascript/script.js" defer></script>
 </body>
 </html>

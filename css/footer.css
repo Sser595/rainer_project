@@ -19,14 +19,16 @@
     flex: 1 1 250px;
 }
 
-.footer-logo-title {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    color: var(--white);
-    text-decoration: none;
+.footer-logo {
     display: inline-block;
     margin-bottom: 8px;
-    letter-spacing: 0.5px;
+}
+
+.footer-logo img {
+    display: block;
+    height: 54px;
+    width: auto;
+    filter: brightness(0) invert(1);
 }
 
 .footer-tagline {
@@ -56,12 +58,15 @@
     display: flex;
     gap: 60px;
     flex: 2 1 400px;
+    justify-content: center;
 }
 
 .footer-col {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    align-items: center;
+    text-align: center;
 }
 
 .footer-col-title {
