@@ -3,4 +3,4 @@ Allow: /
 Disallow: /privacy.html
 Disallow: /404.html
 
-Sitemap: https://www.cafferainer.it/sitemap.xml
+Sitemap: https://www.pasticceriaaustriaca.it/sitemap.xml
